@@ -1,0 +1,8 @@
+svg {
+    height: 90%;}
+
+    @media only screen and (max-width: 990px) {
+
+        svg {
+            height: 90%;}
+    }

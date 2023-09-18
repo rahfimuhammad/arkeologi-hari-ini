@@ -1,0 +1,572 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {-webkit-tap-highlight-color: transparent;}
+
+a {
+    color: black;}
+
+a:visited {
+    color: black;}
+
+:root {
+    color-scheme: only light;}
+
+.prehistoricParallaxContainer {
+    width: 100%;
+    position: relative;
+    height: 115vh;
+    background-color: #b7b6b6;}
+
+.parallaxImage {
+    height: 115vh;
+    background-position: center bottom;
+    background-size: auto 115vh;
+    background-repeat: repeat-x;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;}
+
+#background {
+    background-image: url(./assetsPrehistoricOfIndonesia/Background.png);}
+
+#mountain {
+    background-image: url(./assetsPrehistoricOfIndonesia/Mountain.png);}
+
+#logoland {
+    background-image: url(./assetsPrehistoricOfIndonesia/Logoland.png);}
+
+#jungle0 {
+    background-image: url(./assetsPrehistoricOfIndonesia/Jungle0.png);}
+
+#jungle1 {
+    background-image: url(./assetsPrehistoricOfIndonesia/Jungle1.png);}
+
+#jungle2 {
+    background-image: url(./assetsPrehistoricOfIndonesia/Jungle2.png);}
+    
+#jungle3 {
+    background-image: url(./assetsPrehistoricOfIndonesia/Jungle3.png);}
+
+#jungle4 {
+    background-image: url(./assetsPrehistoricOfIndonesia/Jungle4.png);}
+
+#jungle5 {
+    background-image: url(./assetsPrehistoricOfIndonesia/Jungle5.png);}
+
+#prehistoricMan{
+    background-image: url(./assetsPrehistoricOfIndonesia/PrehistoricMan.png);}
+
+.prehistoricInstruction, .displayNone {
+    opacity: 0.5;
+    width: 100%;
+    position: absolute;
+    bottom: 28vh;
+    z-index: 14;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;}
+
+.prehistoricInstruction {
+    animation: scrollAnim1 2.5s ease-in-out infinite;}
+
+.displayNone {
+    animation: displayNone .3s ease-in forwards;}
+
+@keyframes displayNone {
+    0% {
+        opacity: .5;}
+    100% {
+        opacity: 0;}}
+
+@keyframes scrollAnim1 {
+    0%, 100% {
+        opacity: .5;}
+    50% {
+        opacity: 1;}}
+
+.scrollIcon {
+    opacity: .5;
+    width: 7vw;}
+
+.prehistoricMainContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 114vh;
+    height: 225.5vw;
+    padding: 3vw 8vw 0vw 8vw;
+    background-color: rgb(229, 229, 229);
+    z-index: 2;}
+
+.prehistoricLineContainer {
+    top: -1px;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    z-index: 12;}
+
+.middle-line-first, .middle-line-second {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+
+.side-line-first, .side-line-second {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;}
+
+.side-line-first {
+    margin-bottom: -24vw;}
+
+.middle-line-second {
+    margin-bottom: -24vw;}
+
+.line-horizontal {
+    width: 10px;
+    height: 5px;
+    background-color: rgba(53, 52, 52, 0.4);}
+
+.line-wrapper {
+    width: 22vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;}
+
+.line-wrap {
+    width: 6vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+
+.line-one, .line-two, .line-three, .line-four {
+    width: 5px;
+    background-color: rgba(53, 52, 52, 0.4);}
+
+.line-one {
+    height: calc(60vw - 5px);}
+
+.line-two {
+    height: calc(46.2vw - 5px);}
+
+.line-three {
+    height: 113.1vw;}
+
+.line-four {
+    height: 24vw;}
+
+.block {
+    width: 100%;
+    height: 15vw;
+    background-color: rgba(94, 63, 24, 0.3);
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.4) ;}
+
+.dashed-line {
+    position: relative;
+    width: 100%;
+    height: 3vw;
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.4);
+    margin-bottom: calc(-3vw - 2px);
+    align-self: flex-end;
+    z-index: -1;}
+
+/* Content */
+
+.prehistoricContentContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: -226vw;
+    position: relative;
+    z-index: 13;}
+
+.content-container-first, .content-container-second, .content-container-third, .content-container-fourth, .content-container-fifth, .content-container-sixth, .content-container-seventh, .content-container-eighth, .content-container-ninth {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;}
+
+.content-container-second {
+    margin-bottom: 12vw;}
+
+.content-container-third, .content-container-eighth {
+    margin-bottom: 24vw;}
+
+.content-container-first, .content-container-fourth, .content-container-fifth, .content-container-sixth {
+    margin-bottom: 18vw;}
+
+.content-container-seventh {
+    margin-bottom: 6vw;}
+
+.content-container-ninth {
+    margin-bottom: 3vw;}
+
+#btn {
+    height: calc(6vw - 2px);
+    width: calc(6vw - 2px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid rgb(159, 159, 159);
+    transition: transform 400ms, opacity 400ms;
+    text-indent: -100vw;}
+
+#years-container {
+    width: 6vw;
+    height: 6vw}
+    
+.btn-container, .btn-container-middle {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;}
+
+.btn-container {
+    width: 22vw;;}
+
+.btn-container-middle {
+    width: 8vw;}
+    
+#years-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;}
+  
+#years {
+    width: 6vw;
+    height: 3vw;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;} 
+    
+#btn:hover {
+    transform: translateY(-1vw);}
+
+/* Modal */
+
+ .modal, .overlay {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;}
+
+.overlay {
+    background-color: rgb(0, 0, 0, 0.5);}
+
+.modal-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: fit-content;
+    border-radius: 20px;
+    margin: auto;
+    background-color: rgb(229, 229, 229);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3%;
+    opacity: 1;
+    z-index: 4;}
+
+.modal-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 15%;}
+
+.modal-button:hover {
+    cursor: pointer;}
+
+#mdiv {
+    width: 25px;
+    height: 25px;}
+  
+.mdiv {
+    height: 25px;
+    width: 2px;
+    margin-left: 12px;
+    background-color: rgb(109, 106, 106);
+    transform: rotate(45deg);
+    Z-index: 1;}
+  
+.md {
+    height: 25px;
+    width: 2px;
+    background-color: rgb(109, 106, 106);
+    transform: rotate(90deg);
+    Z-index: 2;}
+
+.modal-image img {
+    width: 100px;
+    height: 100px}
+
+.modal-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;}
+
+.modal-image {
+    width: 18%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;}
+
+.modal-title {
+    width: 63%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;}
+
+.modal-summary {
+    height: fit-content;
+    padding: 0;}
+
+.modal-summary p {
+    text-align: justify;
+    margin: 2%;}
+
+
+    @media only screen and (max-width: 990px) {
+
+        .parallaxImage {
+            height: 80vh;
+            top: 30vh;
+            background-size: auto 80vh;}
+
+        .scrollIcon {
+            width: 15vw;}
+        
+        .prehistoricMainContainer {
+            height: 428vw;
+            padding: 3vw 3vw 0% 3vw;
+            top: 109.5vh;}
+
+        .prehistoricLineContainer {
+            margin-top: 0;
+            height: 428vw;}
+
+        .prehistoricContentContainer {
+            margin-top: -429vw;}
+
+        .side-line-first {
+            width: 94vw;
+            margin-bottom: -44vw;}
+        
+        .middle-line-second {
+            margin-bottom: -53.9vw;}
+        
+        .line-wrapper {
+            width: 37vw;}
+            
+        .line-wrap {
+            width: 11vw;}
+
+        .line-horizontal {
+            width: 1.5vw;
+            height: 0.75vw;}
+
+        .line-one, .line-two, .line-three, .line-four {
+            width: 0.75vw;}
+                 
+        .line-one {
+            height: 109.75vw;}
+        
+        .line-two {
+            height: 86.9vw;}
+        
+        .line-three {
+            height: 220vw;}
+        
+        .line-four {
+            height: 53.9vw;}
+        
+        .block {
+            height: 26.5vw;
+            border-bottom: 0.3vw dashed rgba(0, 0, 0, 0.4) ;}
+        
+        #btn {
+            width: calc(11vw - 2px);
+            height: calc(11vw - 2px);}
+
+        #years {
+            width: 11vw;
+            height: 5.5vw;
+            font-size: 15px;}
+        
+        #years-container {
+            width: 11vw;
+            height: 11vw;}
+
+        .btn-container {
+            width: 37vw;}
+        
+        .btn-container-middle {
+            width: 11vw;}
+
+        .dashed-line {
+            border-bottom: 0.3vw dashed rgba(0, 0, 0, 0.4);
+            height: 5vw;
+            margin-bottom: -5vw;}
+            
+        .content-container-second {
+            margin-bottom: 22vw;}
+            
+        .content-container-third, .content-container-eighth {
+            margin-bottom: 44vw;}
+            
+        .content-container-first, .content-container-fourth, .content-container-fifth, .content-container-sixth {
+            margin-bottom: 33vw;}
+            
+        .content-container-seventh {
+            margin-bottom: 11vw;}
+
+        .content-container-ninth {
+            margin-bottom: 5.5vw;}
+            
+        .modal-content {
+            width: 80%;}}
+
+            @media only screen and (max-width: 600px) {
+
+                .parallaxImage {
+                    top: 35vh;
+                    height: 65vh;
+                    background-size: auto 65vh;}
+
+                .scrollIcon {
+                    width: 20vw;}
+                
+                .prehistoricMainContainer {
+                    padding: 5% 3% 0% 3%;
+                    top: 99vh;}
+                
+                #logoland {
+                    background-position: right bottom;}
+                
+                #years {
+                    font-size: 9px;}
+                
+                .modal-content {
+                    width:85%;
+                    margin-top: 10%;}
+                    
+                #mdiv {
+                    width: 25px;
+                    height: 25px;}
+                    
+                .mdiv {
+                    height: 15px;
+                    width: 2px;
+                    margin-left: 12px;}
+                    
+                .md {
+                    height: 15px;
+                    width: 2px;}
+                    
+                .modal-image img {
+                    width: 55px;
+                    height: 55px;}
+                    
+                .modal-header {
+                    width: 100%;}
+            
+                .modal-title h1 {
+                    font-size: 17px;}
+            
+                .modal-title h3 {
+                    font-size: 12px;}
+            
+                .modal-summary p {
+                    font-size: 13px;}}
+        
+                    @media only screen and (max-width: 376px) {
+
+                        .parallaxImage {
+                            top: 25vh;
+                            height: 75vh;
+                            background-size: auto 75vh;}
+                        
+                        .prehistoricMainContainer {
+                            padding: 5% 3% 0% 3%;
+                            top: 99vh;}
+
+                        #years {
+                            font-size: 8px;}
+
+                        .md {
+                            height: 15px;
+                            width: 2px;}
+                            
+                        .modal-image img {
+                            width: 50px;
+                            height: 50px;}
+                        
+                        .modal-title h1 {
+                            font-size: 15px;}
+                        
+                        .modal-title h3 {
+                            font-size: 10px;}
+                        
+                        .modal-summary p {
+                            font-size: 12px;}}
+
+                        @media only screen and (max-width: 330px) {
+
+                            #years {
+                                font-size: 6px;}
+
+                            .modal-image img {
+                                width: 40px;
+                                height: 40px;}
+                            
+                            .modal-title h1 {
+                                font-size: 13px;}
+                            
+                            .modal-title h3 {
+                                font-size: 9px;}
+                            
+                            .modal-summary p {
+                                font-size: 10px;}} 
+                        @media only screen and (max-width: 250px) {
+
+                            .modal-content {
+                                height: fit-content;
+                                border-radius: 2px;}
+
+                            #years {
+                                font-size: 5px;}
+
+                            .modal-image img {
+                                width: 15px;
+                                height: 15px;}
+                            
+                            .modal-title h1 {
+                                font-size: 7px;}
+                            
+                            .modal-title h3 {
+                                font-size: 4px;}
+                            
+                            .modal-summary p {
+                                font-size: 3px;}} 
+                

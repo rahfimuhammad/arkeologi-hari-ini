@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/gagalin');
+@import url('https://fonts.cdnfonts.com/css/komika-axis');
+/* Animation */
+
+.butterfly-container {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: black;
+    filter: drop-shadow(0 100px 10px rgba(0, 0, 0, .3));}
+
+.wrap {
+    margin-top: 10%;
+    margin-left: 10%;
+    height: 1vw;
+    position: absolute;
+    transform: rotateX(-120deg) rotateZ(240deg);
+    transform-style: preserve-3d;}
+
+.wrap div {
+    transform-style: preserve-3d;}
+
+.body {
+    position: absolute;
+    height: 1vw;
+    width: 0.1vw;
+    background: rgba(51, 51, 51, .6);
+    border-radius: 100%;
+    transform: rotateY(100deg) rotateX(30deg)}
+
+.left-wing {
+    left: 0vw;
+    position: absolute;
+    height: 2vw;
+    transform-origin: 0 40%;
+    --deg: -80deg; 
+    --deg2: 30deg;
+    --tranx: 0.15vw;
+    animation: fly .4s infinite cubic-bezier(.48, .01, .54, 1);}
+
+@keyframes fly {
+    
+    0%, 100% {
+        transform: rotateX(30deg) translateZ(var(--tranx)) rotateY(var(--deg))
+    }
+
+    50% {
+        transform: rotateX(30deg) translateZ(var(--tranx)) rotateY(var(--deg2))
+    }}
+
+.left-wing::after {
+    content: "";
+    position: absolute;
+    transform-origin: 100% 50%;
+    right: 0.03vw;
+    height: 0.7vw;
+    width: 1.2vw;
+    background: rgba(197, 24, 24, 0.5);
+    top: .2vw;
+    border-radius: 100%;
+    transform: rotateZ(30deg);}
+
+.left-wing::before {
+    content: "";
+    position: absolute;
+    right: 0.03vw;
+    height: 0.4vw;
+    width: .8vw;
+    transform-origin: 100% 50%;
+    background: rgba(197, 24, 24, 0.5);
+    top: .2vw;
+    border-radius: 100%;
+    transform: rotateZ(-30deg);}
+
+.right-wing {
+    left: .2vw;
+    position: absolute;
+    height: 1vw;
+    transform-origin: 100% 50%;
+    --deg: 80deg; 
+    --deg2: -30deg;
+    --tranx: -0.15vw;
+    animation: fly .4s infinite cubic-bezier(.48, .01, .54, 1);}
+
+.right-wing::after {
+    content: '';
+    position: absolute;
+    left:0.03vw;
+    height: .7vw;
+    width: 1.2vw;
+    transform-origin: 0% 50%;
+    background: rgba(197, 24, 24, 0.5);
+    top: .2vw;
+    border-radius: 100%;
+    transform: rotateZ(-30deg);}
+
+.right-wing::before {
+    content: "";
+    position: absolute;
+    left: 0.03vw;
+    height: .4vw;
+    width: .8vw;
+    transform-origin: 0% 50%;
+    background: rgba(197, 24, 24, 0.5);
+    top: .2vw;
+    border-radius: 100%;
+    transform: rotateZ(30deg);}
+
+.intro-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background: linear-gradient(184deg, rgba(255,255,255,1) 10%, rgba(226,244,255,1) 100%);}
+
+.coverContainerPotrait {
+    top: 10vh;
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;}
+
+.coverContainerLandscape {
+    top: 15vh;
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;}
+
+.coverTopPotrait, .coverBottomPotrait {
+    width: 100%;
+    position: relative;
+    height: 35vh;}
+
+.coverTopLandscape, .coverBottomLandscape {
+    width: 30%;
+    position: relative;}
+
+.titlePotrait {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+
+.titleLandscape {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+
+.titleLandscape h1 {
+    width: 100%;
+    font-size: 55px;
+    text-align: center;
+    font-family: 'Komika Axis', sans-serif;
+    letter-spacing: 2px;}
+
+.titlePotrait h1 {
+    width: 100%;
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Komika Axis', sans-serif;}
+
+.topImagePotrait, .bottomImagePotrait {
+    position: absolute;
+    border-radius: 50%;
+    height: 35vh;
+    width: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+
+.topImageLandscape, .bottomImageLandscape {
+    position: absolute;
+    border-radius: 50%;
+    height: 80vh;
+    width: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+
+.topImagePotrait {
+    right: -17.5vh;}
+
+.bottomImagePotrait {
+    left: -17.5vh;}
+
+.topImageLandscape {
+    right: -40vh;}
+
+.bottomImageLandscape {
+    left: -40vh;}
+
+.bottomImagePotrait img, .topImagePotrait img {
+    width: 28vh;
+    height: auto;}
+
+.bottomImageLandscape img, .topImageLandscape img {
+    width: 60vh;
+    height: auto;}
+
+.content-borobudur-potrait {
+    overflow-x: hidden;
+    width: 100%;
+    position: absolute;
+    top: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px}
+
+.borobudurInNumbersContainer {
+    width: 100vw;}
+
+.borobudur-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50vw;}
+
+.borobudur-content-container {
+    padding-top: 4vw;
+    background-color: rgba(137,137,137,0.0);
+    position: relative;
+    width: 50vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+
+.numbers {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 20px;}
+    
+#numbers {
+    font-family: 'jetBrains Mono';
+    position: relative;
+    color: #3f424f;
+    background-color: white;
+    padding: 0px 15px;
+    height: 40px;
+    width: fit-content;
+    font-size: 30px;
+    font-weight: bold;
+    align-self: center;
+    justify-self: center;
+    overflow-y: hidden;}
+
+.line {
+    position: relative;
+    margin-bottom: -20px;
+    width: 100%;
+    height: 40px;
+    border-bottom: 2px solid #363636;
+    align-self: flex-end;}
+
+.image {
+    width: 50vw;}
+
+.description {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;}
+
+.description p {
+    width: 80%;
+    height: fit-content;
+    text-align: center;
+    /* font-weight: bolder; */
+    color: #51827a;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;}
+
+.places, .digits{
+    color: #3f424f;}
+
+.coverPlaces {
+    color: #51827a;;}
+
+
+@media only screen and (max-width: 800px) {
+
+    .wrap {
+        height: 2vw;}
+    
+    .body {
+        height: 2vw;
+        width: .2vw;}
+    
+    .left-wing {
+        height: 4vw;
+        --tranx: 0.3vw;}
+    
+    
+    .left-wing::after {
+        right: 0.06vw;
+        height: 1.4vw;
+        width: 2.4vw;
+        top: 0.4vw;}
+    
+    .left-wing::before {
+        right: 0.06vw;
+        height: .8vw;
+        width: 1.6vw;
+        top: .4vw;;}
+    
+    .right-wing {
+        left: .4vw;
+        height: 2vw;
+        --tranx: -0.3vw;}
+    
+    .right-wing::after {
+        left:0.06vw;
+        height: 1.4vw;
+        width: 2.4vw;
+        top: 0.4vw;}
+    
+    .right-wing::before {
+        left: 0.06vw;
+        height: 0.8vw;
+        width: 1.6vw;
+        top: .4vw;}
+
+    .borobudur-container {
+        width: 100vw;}
+
+    .borobudur-content-container {
+        width: 100vw;}
+
+    .numbers {
+        width: 95%;}
+        
+    #numbers {
+        padding: 0px 8px;
+        height: 38px;
+        font-size: 30px;}
+    
+    .line {
+        width: 100%;
+        height: 50px;
+        margin-bottom: -19px;}
+    
+    .image {
+        width: 100%;}
+    
+    .description {
+        width: 100%;
+        height: fit-content;}
+    
+    .description p {
+        width: 85%;}
+    
+    .description p {
+            font-size: 26px;}}
+
+
+    @media only screen and (max-width: 990px) {
+
+        .titleLandscape h1 {
+            font-size: 40px;}
+
+        .description p {
+            font-size: 18px;}}
+    
+    @media only screen and (max-width: 600px) {
+
+        .content-borobudur-potrait {
+            padding-bottom: 5vh;}
+
+        .titlePotrait h1 {
+           font-size: 35px;}
+
+        .titleLandscape h1 {
+           font-size: 28px;}
+
+        .borobudurTitle p {
+            font-size: 45px;}
+
+        .line {
+            width: 100%;
+            height: 50px;
+            margin-bottom: -15px;}
+
+        #numbers {
+            padding: 0px 8px;
+            height: 30px;
+            font-size: 25px;}
+
+        .description p {
+            font-size: 14px;}}
+    
+    @media only screen and (max-width: 376px) {
+
+        .titlePotrait h1 {
+            font-size: 30px;}
+
+        .borobudurTitle p {
+            font-size: 40px;}
+        
+        .line {
+            width: 100%;
+            height: 50px;
+            margin-bottom: -12.5px;}
+
+        #numbers {
+            padding: 0px 8px;
+            height: 25px;
+            font-size: 20px;}
+
+        .description p {
+            font-size: 11px;}}
+
+    @media only screen and (max-width: 330px) {
+
+        .titlePotrait h1 {
+            font-size: 25px;}
+
+        .borobudurTitle p {
+            font-size: 35px;}}
+
+    @media only screen and (max-width: 300px) {
+
+        .borobudurTitle p {
+            font-size: 30px;}}
+

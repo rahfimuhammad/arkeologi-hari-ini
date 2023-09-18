@@ -1,0 +1,47 @@
+.footer-container {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25px;}
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;}
+
+.socmed {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    width: fit-content;
+    height: 30px;
+    border: none;
+    border-radius: 7px;
+    align-items: center;}
+
+.say-hi h3 {
+    font-weight: lighter;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+    
+.socmed h5 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    font-weight: lighter;}
+
+.socmed img {
+    width: 25px;}
+
+a {
+    text-decoration: none;}
+
+a:visited {
+    color: black;}
+        

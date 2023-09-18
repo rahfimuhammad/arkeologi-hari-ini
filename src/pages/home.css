@@ -1,0 +1,69 @@
+* {-webkit-tap-highlight-color: transparent;}
+
+.main {
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;}
+
+.home-container {
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+
+.content-wrapper {
+    position: relative;
+    margin-top: 12vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    justify-content: center;}
+    
+.content {
+    border: 1px solid rgb(209, 203, 203);
+    position: relative;
+    width: 30vw;
+    height: 15vw;
+    border-radius: 10px;
+    object-fit: cover;
+    background-size: 100% auto;
+    background-position: center center;
+    transition: all .3s ease-in-out;}
+
+.content:hover {
+    transform: scale(1.02);}
+
+#prehistoricOfIndonesia {
+    background-image: url(./homeContentCover/prehistoricOfIndonesia.png);}
+
+#borobudurInNumbers {
+    background-image: url(./homeContentCover/test.png);}
+
+#litografiBatavia {
+    background-image: url(./homeContentCover/litografiBatavia.png);}
+
+    @media only screen and (max-width: 900px) {
+        
+        .content-wrapper {
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 13px;}
+            
+        .content {
+            width: 45vw;
+            height: 22.5vw;}}
+
+    @media only screen and (max-width: 600px) {
+
+        .content-wrapper {
+            margin-top: 10vh;
+            grid-template-columns: repeat(1,1fr)}
+        
+        .content {
+            width: 90vw;
+            height: 45vw;
+        }}

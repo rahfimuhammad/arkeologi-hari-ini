@@ -1,0 +1,49 @@
+.litografiBataviaMain {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+    /* background-color: #121f26; */
+}
+
+.litografiBataviaContainer {
+    position: relative;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    justify-content: center;
+    /* background-color: #121f26; */
+    top: 11vh;}
+
+.litografiBataviaContainer {
+    position: relative;}
+
+.litografiImage {
+    width: 30vw;
+    height: 20vw;
+    border: 2px solid #d9b866;}
+
+.litografiOverlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(54, 54, 54, .7);
+    scale: 0;}
+
+    @media only screen and (max-width: 900px) {
+        .litografiBataviaContainer {
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 13px;;
+            top: 11vh;}
+
+        .litografiImage {
+            width: 45vw;
+            height: 30vw;
+            border: 1px solid #d9b866;}} 
