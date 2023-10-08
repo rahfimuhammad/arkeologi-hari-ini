@@ -17,7 +17,7 @@ const Home = () => {
             <div className="main">
             <div className="home-container">
                 <div className="content-wrapper">
-                    {/* <Link className="content" id="litografiBatavia" to= "litografiBatavia"></Link> */}
+                    <Link className="content" id="litografiBatavia" to= "litografiBatavia"></Link>
                     <Link className="content" id="borobudurInNumbers" to= "borobudurInNumbers"></Link>
                     <Link className="content" id="prehistoricOfIndonesia" to= "prehistoricOfIndonesia"></Link>
                 </div>

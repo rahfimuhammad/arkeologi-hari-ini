@@ -14,10 +14,6 @@ const PrehistoricOfIndonesia = () => {
     const [button, setButton] = useState([])
     const [modal, setModal] = useState(false)
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [])
-
     // Parallax Scroll Handle and useEffect
     
     const handleScroll = () => setOffSetY(window.scrollY) 
@@ -45,6 +41,7 @@ const PrehistoricOfIndonesia = () => {
 
     useEffect(() => {
         onGetData()
+        window.scrollTo(0, 0)
     }, [])
 
     // Filtering data from by index
