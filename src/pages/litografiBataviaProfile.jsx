@@ -84,7 +84,8 @@ const LitografiBataviaProfile = () => {
                     <div className={orientation? "feedThumbnailImage" : "landscapeFeedThumbnailImage"}
                          style={{backgroundImage: `url(${a.thumbnail})`,
                                  backgroundPosition: "center center",
-                                 backgroundSize: "150% auto"}} 
+                                 backgroundSize: "150% auto",
+                                 cursor: "pointer"}} 
                          key={a.id}
                          onClick={() => getModal(b)}>
                     </div>
@@ -109,10 +110,6 @@ const LitografiBataviaProfile = () => {
 
     return (
         <>
-            {/* <h1 onClick={() => console.log(passing)}>{id}</h1>
-            <h1 onClick={() => console.log(state)}>click</h1>
-            <h1 onClick={() => setActive(true)}>click</h1>
-            <h1 onClick={() => setActive(false)}>click</h1> */}
             <div className={orientation? "profileContainer" : "landscapeProfileContainer"}>
                 <div className={orientation? "profileHeader" : "landscapeProfileHeader"}>
                     <Link to="/litografiBatavia" className={orientation? "backButton" : "landscapeBackButton"}>
@@ -142,11 +139,11 @@ const LitografiBataviaProfile = () => {
 
                 <div className={orientation? "authorWork" : "landscapeAuthorWork"} style={{display: "flex", flexDirection: "column"}}>
                     <div className={orientation? "workPanel" : "landscapeWorkPanel"}>
-                        <div className={orientation? "bataviaPanel" : "landscapeBataviaPanel"} onClick={() => setActive(true)}>
+                        <div className={orientation? "bataviaPanel" : "landscapeBataviaPanel"} onClick={() => setActive(true)} style={{cursor: "pointer"}}>
                             <div className={orientation? "activeBar" : "landscapeActiveBar"} id={active == true || active == null? "selected" : "notSelected" }></div>
                             <img src={Post} alt="post"/>
                         </div>
-                        <div className={orientation? "nonBataviaPanel" : "landscapeNonBataviaPanel"} onClick={() => setActive(false)}>
+                        <div className={orientation? "nonBataviaPanel" : "landscapeNonBataviaPanel"} onClick={() => setActive(false)} style={{cursor: "pointer"}}>
                             <div className={orientation? "activeBar" : "landscapeActiveBar"} id={active == true || active == null? "notSelected" : "selected" }></div>
                             <img src={NonBatavia}/>
                         </div>
@@ -185,9 +182,11 @@ const LitografiBataviaProfile = () => {
                         scale: 1
                     }}>
                     <div className={orientation? "modalTitle" : "landscapeModalTitle"}>
+                        <div className="modalTitleWrapper">
                             <h1>{modal.title}</h1>
-                            <img onClick={closeModal} src={closeButton}/>
                         </div>
+                        <img onClick={closeModal} src={closeButton} style={{cursor: "pointer"}}/>
+                    </div>
                     <div className={orientation? "test" : "landscapeTest"}>
                         <div className={orientation? "modalImageContainer" : "landscapeModalImageContainer"}>
                             <img src={modal.thumbnail}/>

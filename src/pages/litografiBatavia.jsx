@@ -88,7 +88,7 @@ const LitografiBatavia = () => {
 
                 <div className="litografiImageWrapper" key={index + i} style={{padding: "0 0 1vw 0"}}>
                     <div className= {orientation? "litografiImage" : "landscapeLitografiImage"} 
-                         style={{ borderRadius: "1%", backgroundImage: `url(${v.thumbnail})`, backgroundSize: "150% auto", backgroundPosition: "center center"}}
+                         style={{ borderRadius: "1%", backgroundImage: `url(${v.thumbnail})`, backgroundSize: "150% auto", backgroundPosition: "center center", cursor: "pointer"}}
                          onClick={() => getModal(index, i)}></div>
                     <div className={orientation? "caption" : "landscapeCaption"} style={{padding: "1vw 0 0 0", display: "flex", flexDirection: "column"}}>
                             <Link to={`profile/${data[index].category}`} className="litografiAuthor"><h1>{value.author}</h1></Link>
@@ -134,7 +134,7 @@ const LitografiBatavia = () => {
         <>
             <Navbar/>
             <div className="litografiBataviaMain">
-                <div className={orientation? "story" : "landscapeStory"} style={{position: "relative", width: "90%", height: "fit-content", overflowX: "auto", overflowY: "hidden", zIndex: "11", scrollbarWidth: "none"}}>
+                <div className={orientation? "story" : "landscapeStory"} style={{position: "relative", width: "95%", height: "fit-content", overflowX: "auto", overflowY: "hidden", zIndex: "11", scrollbarWidth: "none"}}>
                     <div style={{position: "relative", width: "fit-content", height: "fit-content", display: "flex", flexDirection: "row", scrollbarWidth: "2px", whiteSpace: "nowrap" }}>
                         {mapStory()}
                     </div>
@@ -177,9 +177,11 @@ const LitografiBatavia = () => {
                         scale: 1
                     }}>
                     <div className={orientation? "modalTitle" : "landscapeModalTitle"}>
+                        <div className="modalTitleWrapper">
                             <h1>{modal.title}</h1>
-                            <img onClick={closeModal} src={closeButton}/>
                         </div>
+                        <img onClick={closeModal} src={closeButton} style={{cursor: "pointer"}}/>
+                    </div>
                     <div className={orientation? "test" : "landscapeTest"}>
                         <div className={orientation? "modalImageContainer" : "landscapeModalImageContainer"}>
                             <img src={modal.thumbnail}/>
