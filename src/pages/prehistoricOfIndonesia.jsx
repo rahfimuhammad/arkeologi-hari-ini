@@ -13,7 +13,7 @@ const PrehistoricOfIndonesia = () => {
     const [description, setDescription] = useState([])
     const [button, setButton] = useState([])
     const [modal, setModal] = useState(false)
-    const [orientation, setOrientation] = useState(null)
+    // const [orientation, setOrientation] = useState(null)
 
     // Parallax Scroll Handle and useEffect
     
@@ -59,21 +59,21 @@ const PrehistoricOfIndonesia = () => {
         }
     }
 
-    const detectOrientation = () => {
+    // const detectOrientation = () => {
     
-        if (window.innerHeight > window.innerWidth) {
-            setOrientation(true)}
-        else {
-            setOrientation(false)}}
+    //     if (window.innerHeight > window.innerWidth) {
+    //         setOrientation(true)}
+    //     else {
+    //         setOrientation(false)}}
     
     
-            useEffect(() => {
-                detectOrientation()
+    //         useEffect(() => {
+    //             detectOrientation()
     
-                // console.log(orientation)
-            })
+    //             // console.log(orientation)
+    //         })
     
-            window.addEventListener('resize', detectOrientation)
+    //         window.addEventListener('resize', detectOrientation)
 
     // Modal Handle Button
 
