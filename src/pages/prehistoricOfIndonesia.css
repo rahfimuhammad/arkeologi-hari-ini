@@ -19,7 +19,7 @@ a:visited {
     height: 115vh;
     background-color: #b7b7b7;}
 
-.parallaxImage, .landscapeParallaxImage {
+.parallaxImage {
     height: 115vh;
     background-position: center bottom;
     background-size: auto 115vh;
@@ -63,7 +63,7 @@ a:visited {
     opacity: 0.5;
     width: 100%;
     position: absolute;
-    top: calc(87.5vh - 53.5vw);
+    top: 80vh;
     z-index: 14;
     display: flex;
     flex-direction: column;
@@ -351,7 +351,7 @@ a:visited {
 
     @media only screen and (max-width: 990px) {
 
-        .parallaxImage {
+        /* .parallaxImage {
             height: calc(100vh - 53.5vw);;
             top: 0;
             background-size: auto calc(100vh - 54vw);;}
@@ -362,9 +362,9 @@ a:visited {
         .prehistoricMainContainer {
             height: 428vw;
             padding: 5vw 3vw 0% 3vw;
-            top: calc(100vh - 54vw);}
+            top: calc(100vh - 54vw);} */
 
-        /* .parallaxImage {
+        .parallaxImage {
             height: 80vh;
             top: 30vh;
             background-size: auto 80vh;}
@@ -375,7 +375,7 @@ a:visited {
         .prehistoricMainContainer {
             height: 428vw;
             padding: 3vw 3vw 0% 3vw;
-            top: 109.5vh;} */
+            top: 109.5vh;}
 
         .prehistoricLineContainer {
             margin-top: 0;
@@ -464,8 +464,8 @@ a:visited {
 
             @media only screen and (max-width: 600px) {
 
-                /* .parallaxImage {
-                    top: 0vh;
+                .parallaxImage {
+                    top: 30vh;
                     height: 70vh;
                     background-size: auto 70vh;}
 
@@ -474,7 +474,7 @@ a:visited {
                 
                 .prehistoricMainContainer {
                     padding: 5% 3% 0% 3%;
-                    top: 69vh;} */
+                    top: 99vh;}
                 
                 #logoland {
                     background-position: right bottom;}
@@ -516,7 +516,7 @@ a:visited {
                     font-size: 13px;}}
         
                     @media only screen and (max-width: 376px) {
-/* 
+
                         .parallaxImage {
                             top: 25vh;
                             height: 75vh;
@@ -524,7 +524,7 @@ a:visited {
                         
                         .prehistoricMainContainer {
                             padding: 5% 3% 0% 3%;
-                            top: 99vh;} */
+                            top: 99vh;}
 
                         #years {
                             font-size: 8px;}

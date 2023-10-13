@@ -119,34 +119,34 @@ const PrehistoricOfIndonesia = () => {
 <Navbar/>
                 
                 <div className="prehistoricParallaxContainer">
-                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"} id="background" 
-                    style={{transform: `translateY(${offSetY * 0.4}px)`, top: orientation? "3vh" : "0" }}
+                    <div className="parallaxImage" id="background" 
+                    style={{transform: `translateY(${offSetY * 0.4}px)` }}
                     ></div>
-                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"} id="mountain" 
-                    style={{transform: `translateY(${offSetY * 0.4}px)`, top: orientation? "3vh" : "0" }}
+                    <div className="parallaxImage"  id="mountain" 
+                    style={{transform: `translateY(${offSetY * 0.4}px)` }}
                     ></div>
-                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"} id="logoland" 
-                    style={{transform: `translateY(${offSetY * 0.4}px)`, top: orientation? "5vh" : "0" }}
+                    <div className="parallaxImage"  id="logoland" 
+                    style={{transform: `translateY(${offSetY * 0.4}px)` }}
                     ></div>
-                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"} id="jungle0" 
-                    style={{transform: `translateY(${offSetY * 0.35}px)`, bottom: orientation? "" : "0" }}
+                    <div className="parallaxImage"  id="jungle0" 
+                    style={{transform: `translateY(${offSetY * 0.35}px)` }}
                     ></div>
-                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"} id="jungle1" 
-                    style={{transform: `translateY(${offSetY * 0.3}px)`, bottom: orientation? "" : "0" }}
+                    <div className="parallaxImage"  id="jungle1" 
+                    style={{transform: `translateY(${offSetY * 0.3}px)` }}
                     ></div>
-                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"} id="jungle2" 
-                    style={{transform: `translateY(${offSetY * 0.25}px)`, bottom: orientation? "" : "0" }}
+                    <div className="parallaxImage"  id="jungle2" 
+                    style={{transform: `translateY(${offSetY * 0.25}px)` }}
                     ></div>
-                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"} id="jungle3" 
-                    style={{transform: `translateY(${offSetY * 0.2}px)`, bottom: orientation? "" : "0" }}
+                    <div className="parallaxImage"  id="jungle3" 
+                    style={{transform: `translateY(${offSetY * 0.2}px)` }}
                     ></div>
-                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"} id="jungle4" 
-                    style={{transform: `translateY(${offSetY * 0.15}px)`, bottom: orientation? "" : "0" }}
+                    <div className="parallaxImage"  id="jungle4" 
+                    style={{transform: `translateY(${offSetY * 0.15}px)` }}
                     ></div>
-                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"} id="jungle5" 
-                    style={{transform: `translateY(${offSetY * 0.1}px)`, bottom: orientation? "" : "0" }}
+                    <div className="parallaxImage"  id="jungle5" 
+                    style={{transform: `translateY(${offSetY * 0.1}px)` }}
                     ></div>
-                      <div className={orientation? "parallaxImage" : "landscapeParallaxImage"} id="prehistoricMan"  
+                      <div className="parallaxImage"  id="prehistoricMan"  
                     ></div>
                     <div className={offSetY > 0? "displayNone" : "prehistoricInstruction"}>
                         <img className="scrollIcon" src={ScrollIcon}/>
@@ -154,7 +154,7 @@ const PrehistoricOfIndonesia = () => {
                 </div>
                     
 
-                <div className="prehistoricMainContainer" style={{top: orientation?  "calc(100vh - 54vw)" : "114vh"}}>
+                <div className="prehistoricMainContainer" /*style={{top: orientation?  "calc(100vh - 54vw)" : "114vh"}}*/>
                             {/* Line */}
                             <div className="prehistoricLineContainer" >
                                     <div className="middle-line-first">
