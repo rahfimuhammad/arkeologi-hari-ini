@@ -34,7 +34,7 @@ const detectOrientation = () => {
         useEffect(() => {
             detectOrientation()
 
-            console.log(orientation)
+            // console.log(orientation)
         })
 
         window.addEventListener('resize', detectOrientation)

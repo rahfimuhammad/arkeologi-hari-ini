@@ -19,7 +19,7 @@ a:visited {
     height: 115vh;
     background-color: #b7b7b7;}
 
-.parallaxImage {
+.parallaxImage, .landscapeParallaxImage {
     height: 115vh;
     background-position: center bottom;
     background-size: auto 115vh;
@@ -28,6 +28,8 @@ a:visited {
     position: absolute;
     top: 0;
     z-index: 1;}
+
+
 
 #background {
     background-image: url(./assetsPrehistoricOfIndonesia/Background.png);}
@@ -264,12 +266,13 @@ a:visited {
     bottom: 0;
     right: 0;
     left: 0;
-    z-index: 3;}
+    z-index: 13;}
 
 .overlay {
     background-color: rgb(0, 0, 0, 0.5);}
 
 .modal-content {
+    z-index: 14;
     position: absolute;
     top: 0;
     right: 0;
@@ -284,8 +287,7 @@ a:visited {
     flex-direction: column;
     align-items: center;
     padding: 3%;
-    opacity: 1;
-    z-index: 4;}
+    opacity: 1;}
 
 .modal-button {
     display: flex;
@@ -352,6 +354,19 @@ a:visited {
     @media only screen and (max-width: 990px) {
 
         .parallaxImage {
+            height: calc(100vh - 53.5vw);;
+            top: 0;
+            background-size: auto calc(100vh - 54vw);;}
+
+        .scrollIcon {
+            width: 15vw;}
+        
+        .prehistoricMainContainer {
+            height: 428vw;
+            padding: 5vw 3vw 0% 3vw;
+            top: calc(100vh - 54vw);}
+
+        /* .parallaxImage {
             height: 80vh;
             top: 30vh;
             background-size: auto 80vh;}
@@ -362,7 +377,7 @@ a:visited {
         .prehistoricMainContainer {
             height: 428vw;
             padding: 3vw 3vw 0% 3vw;
-            top: 109.5vh;}
+            top: 109.5vh;} */
 
         .prehistoricLineContainer {
             margin-top: 0;
@@ -451,17 +466,17 @@ a:visited {
 
             @media only screen and (max-width: 600px) {
 
-                .parallaxImage {
-                    top: 25vh;
-                    height: 75vh;
-                    background-size: auto 75vh;}
+                /* .parallaxImage {
+                    top: 0vh;
+                    height: 70vh;
+                    background-size: auto 70vh;}
 
                 .scrollIcon {
                     width: 20vw;}
                 
                 .prehistoricMainContainer {
                     padding: 5% 3% 0% 3%;
-                    top: 99vh;}
+                    top: 69vh;} */
                 
                 #logoland {
                     background-position: right bottom;}
@@ -503,7 +518,7 @@ a:visited {
                     font-size: 13px;}}
         
                     @media only screen and (max-width: 376px) {
-
+/* 
                         .parallaxImage {
                             top: 25vh;
                             height: 75vh;
@@ -511,7 +526,7 @@ a:visited {
                         
                         .prehistoricMainContainer {
                             padding: 5% 3% 0% 3%;
-                            top: 99vh;}
+                            top: 99vh;} */
 
                         #years {
                             font-size: 8px;}
