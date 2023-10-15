@@ -13,11 +13,11 @@ const PrehistoricOfIndonesia = () => {
     const [description, setDescription] = useState([])
     const [button, setButton] = useState([])
     const [modal, setModal] = useState(false)
-    // const [orientation, setOrientation] = useState(null)
+    const [orientation, setOrientation] = useState(null)
 
     // Parallax Scroll Handle and useEffect
     
-    const handleScroll = () => setOffSetY(window.scrollY) 
+    const handleScroll = () => setOffSetY(window.scrollY)
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll)
@@ -50,8 +50,7 @@ const PrehistoricOfIndonesia = () => {
     let onFiltering = async(index) => {
         try {
             let responseDescription = await axios.get(
-                `https://prehistoric.cyclic.app/prehistoric?category=${index}`
-                )
+                `https://prehistoric.cyclic.app/prehistoric?category=${index}`)
             setDescription(responseDescription.data)
             setModal(!modal)
         } catch (error) {
@@ -59,21 +58,21 @@ const PrehistoricOfIndonesia = () => {
         }
     }
 
-    // const detectOrientation = () => {
+    const detectOrientation = () => {
     
-    //     if (window.innerHeight > window.innerWidth) {
-    //         setOrientation(true)}
-    //     else {
-    //         setOrientation(false)}}
+        if (window.innerHeight > window.innerWidth) {
+            setOrientation(true)}
+        else {
+            setOrientation(false)}}
     
     
-    //         useEffect(() => {
-    //             detectOrientation()
+            useEffect(() => {
+                detectOrientation()
     
-    //             // console.log(orientation)
-    //         })
+                console.log(orientation)
+            })
     
-    //         window.addEventListener('resize', detectOrientation)
+            window.addEventListener('resize', detectOrientation)
 
     // Modal Handle Button
 
@@ -119,42 +118,46 @@ const PrehistoricOfIndonesia = () => {
 <Navbar/>
                 
                 <div className="prehistoricParallaxContainer">
-                    <div className="parallaxImage" id="background" 
+                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"} id="background" 
+                    style={{transform: `translateY(${offSetY * 0.4}px)`, zIndex: "0" }}
+                    ></div>
+                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"}  id="mountain" 
                     style={{transform: `translateY(${offSetY * 0.4}px)` }}
                     ></div>
-                    <div className="parallaxImage"  id="mountain" 
-                    style={{transform: `translateY(${offSetY * 0.4}px)` }}
+                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"}  id="logoland" 
+                    style={{transform: `translateY(${offSetY * 0.4}px)`}}
                     ></div>
-                    <div className="parallaxImage"  id="logoland" 
-                    style={{transform: `translateY(${offSetY * 0.4}px)` }}
-                    ></div>
-                    <div className="parallaxImage"  id="jungle0" 
+                    {/* <div className={orientation? "parallaxImage" : "landscapeParallaxImage"}  id="jungle0" 
                     style={{transform: `translateY(${offSetY * 0.35}px)` }}
-                    ></div>
-                    <div className="parallaxImage"  id="jungle1" 
+                    ></div> */}
+                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"}  id="jungle1" 
                     style={{transform: `translateY(${offSetY * 0.3}px)` }}
                     ></div>
-                    <div className="parallaxImage"  id="jungle2" 
+                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"}  id="jungle2" 
                     style={{transform: `translateY(${offSetY * 0.25}px)` }}
                     ></div>
-                    <div className="parallaxImage"  id="jungle3" 
+                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"}  id="jungle3" 
                     style={{transform: `translateY(${offSetY * 0.2}px)` }}
                     ></div>
-                    <div className="parallaxImage"  id="jungle4" 
+                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"}  id="jungle4" 
                     style={{transform: `translateY(${offSetY * 0.15}px)` }}
                     ></div>
-                    <div className="parallaxImage"  id="jungle5" 
+                    <div className={orientation? "parallaxImage" : "landscapeParallaxImage"}  id="prehistoricMan" 
                     style={{transform: `translateY(${offSetY * 0.1}px)` }}
                     ></div>
-                      <div className="parallaxImage"  id="prehistoricMan"  
+                      <div className={orientation? "parallaxImage" : "landscapeParallaxImage"}  id="jungle5"  
                     ></div>
+                    {/* <div className={orientation? "prehistoricIntroduction" : "landscapePrehistoricIntroduction"} style={{position: "fixed", top: orientation? "10vh" : "0", height: "30vh", width: "100%", zIndex: "1", backgroundColor: "rgba(225, 225, 225, 0)", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
+                        <h1 style={{width: "90%", textAlign: "center"}}>Garis Waktu Prasejarah</h1>
+                        <p style={{width: "90%", margin: "0", textAlign: "center"}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, explicabo? Libero exercitationem saepe maxime, rem alias repellendus quod temporibus quae officiis, est, voluptatibus repudiandae deserunt quaerat labore dolor adipisci ipsa.</p>
+                    </div> */}
                     <div className={offSetY > 0? "displayNone" : "prehistoricInstruction"}>
                         <img className="scrollIcon" src={ScrollIcon}/>
                     </div>
                 </div>
                     
 
-                <div className="prehistoricMainContainer" /*style={{top: orientation?  "calc(100vh - 54vw)" : "114vh"}}*/>
+                <div className="prehistoricMainContainer" /*style={{top: orientation?  "99vh" : "140vh"}}*/>
                             {/* Line */}
                             <div className="prehistoricLineContainer" >
                                     <div className="middle-line-first">
