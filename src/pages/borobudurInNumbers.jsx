@@ -39,14 +39,14 @@ const detectOrientation = () => {
 
         window.addEventListener('resize', detectOrientation)
 
-const changeOpacity = () => {
+        const changeOpacity = () => {
     
-     if(window.scrollY > (window.innerHeight * 0.15) ) {
-         setOpacity(((window.scrollY/window.innerHeight)*1.5))
-     }
-     else {
-        setOpacity(0)
-     }}
+            if(window.scrollY > (window.innerHeight * 0.15) ) {
+                setOpacity(((window.scrollY/window.innerHeight)*1.5))
+            }
+            else {
+               setOpacity(0)
+            }}
    
     useEffect(() => {window.addEventListener("scroll", changeOpacity)
 
@@ -79,7 +79,7 @@ return (
 
 {/* <div className="borobudur-container" style={{zIndex: "0"}}> */}
 
-    <div className="content-borobudur-potrait" style={{backgroundColor: "#ffffff"}}>
+    <div className="content-borobudur-potrait" /*style={{backgroundColor: "#ffffff"}}*/>
     <div className="borobudur-content-container">
         <div className="numbers">
             <div className="line"></div>

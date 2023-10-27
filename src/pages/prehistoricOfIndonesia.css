@@ -3,7 +3,6 @@
 
 * {-webkit-tap-highlight-color: transparent;}
 
-
 a {
     color: black;}
 
@@ -17,12 +16,10 @@ a:visited {
     width: 100%;
     position: relative;
     height: 115vh;
-    background-color: #b7b7b7;}
+    background-color: #8ed6d4;}
 
 .parallaxImage, .landscapeParallaxImage {
-    height: 115vh;
     background-position: center bottom;
-    background-size: auto 115vh;
     background-repeat: repeat-x;
     width: 100%;
     position: absolute;
@@ -34,16 +31,9 @@ a:visited {
     background-size: auto 115vh;}
 
 .parallaxImage {
-    z-index: 2;
     height: 70vh;
     top: 30vh;
     background-size: auto 70vh;}
-
-.landscapePrehistoricIntroduction h1 {
-    font-size: 28px;}
-
-.landscapePrehistoricIntroduction p {
-    font-size: 25px;}
 
 #background {
     background-image: url(./assetsPrehistoricOfIndonesia/Background.png);}
@@ -51,11 +41,8 @@ a:visited {
 #mountain {
     background-image: url(./assetsPrehistoricOfIndonesia/Mountain.png);}
 
-#logoland {
-    background-image: url(./assetsPrehistoricOfIndonesia/Logoland.png);}
-
-/* #jungle0 {
-    background-image: url(./assetsPrehistoricOfIndonesia/Jungle0.png);} */
+#jungle0 {
+    background-image: url(./assetsPrehistoricOfIndonesia/Jungle0.png);}
 
 #jungle1 {
     background-image: url(./assetsPrehistoricOfIndonesia/Jungle1.png);}
@@ -66,12 +53,6 @@ a:visited {
 #jungle3 {
     background-image: url(./assetsPrehistoricOfIndonesia/Jungle3.png);}
 
-#jungle4 {
-    background-image: url(./assetsPrehistoricOfIndonesia/Jungle4.png);}
-
-#jungle5 {
-    background-image: url(./assetsPrehistoricOfIndonesia/Jungle5.png);}
-
 #prehistoricMan{
     background-image: url(./assetsPrehistoricOfIndonesia/PrehistoricMan.png);}
 
@@ -79,7 +60,6 @@ a:visited {
     opacity: 0.5;
     width: 100%;
     position: absolute;
-    top: 80vh;
     z-index: 14;
     display: flex;
     flex-direction: column;
@@ -113,7 +93,6 @@ a:visited {
     position: absolute;
     left: 0;
     right: 0;
-    top: 114vh;
     height: 225.5vw;
     padding: 3vw 8vw 0vw 8vw;
     background-color: rgb(229, 229, 229);
@@ -367,41 +346,6 @@ a:visited {
 
     @media only screen and (max-width: 990px) {
 
-        .prehistoricIntroduction h1 {
-            font-size: 40px;}
-
-        .prehistoricIntroduction p {
-            font-size: 30px;}
-
-        .landscapePrehistoricIntroduction h1 {
-            font-size: 16px;}
-
-        .landscapePrehistoricIntroduction p {
-            font-size: 14px;}
-
-        /* .parallaxImage {
-            height: calc(100vh - 53.5vw);;
-            top: 0;
-            background-size: auto calc(100vh - 54vw);;}
-
-        .scrollIcon {
-            width: 15vw;}
-        
-        .prehistoricMainContainer {
-            height: 428vw;
-            padding: 5vw 3vw 0% 3vw;
-            top: calc(100vh - 54vw);} */
-
-        /* .parallaxImage {
-            height: 70vh;
-            top: 30vh;
-            background-size: auto 70vh;} */
-
-        /* .parallaxImage {
-            top: 0vh;
-            height: 70vh;
-            background-size: auto 70vh;} */
-
         .scrollIcon {
             width: 15vw;}
         
@@ -495,38 +439,13 @@ a:visited {
         .modal-content {
             width: 80%;}}
 
-            @media only screen and (max-width: 700px) {
-                .landscapePrehistoricIntroduction h1 {
-                    font-size: 14px;}
-
-                .landscapePrehistoricIntroduction p {
-                    font-size: 12px;}}
-
             @media only screen and (max-width: 600px) {
-
-                .prehistoricIntroduction h1 {
-                    font-size: 20px;}
-
-                .prehistoricIntroduction p {
-                    font-size: 18px;}
-
-                .parallaxImage {
-                    top: 30vh;
-                    height: 70vh;
-                    background-size: auto 70vh;}
 
                 .scrollIcon {
                     width: 20vw;}
-
-                .landscapePrehistoricIntroduction h1 {
-                    font-size: 13px;}
-
-                .landscapePrehistoricIntroduction p {
-                    font-size: 11px;}
                 
                 .prehistoricMainContainer {
-                    padding: 5% 3% 0% 3%;
-                    top: 100vh;}
+                    padding: 5% 3% 0% 3%;}
                 
                 #years {
                     font-size: 9px;}
@@ -566,21 +485,6 @@ a:visited {
         
                     @media only screen and (max-width: 376px) {
 
-                        .prehistoricIntroduction h1 {
-                            font-size: 17px;}
-
-                        .prehistoricIntroduction p {
-                            font-size: 15px;}
-
-                        /* .parallaxImage {
-                            top: 25vh;
-                            height: 75vh;
-                            background-size: auto 75vh;} */
-                        
-                        .prehistoricMainContainer {
-                            padding: 5% 3% 0% 3%;
-                            top: 99vh;}
-
                         #years {
                             font-size: 8px;}
 
@@ -603,12 +507,6 @@ a:visited {
 
                         @media only screen and (max-width: 330px) {
 
-                            .prehistoricIntroduction h1 {
-                                font-size: 14px;}
-    
-                            .prehistoricIntroduction p {
-                                font-size: 12px;}
-
                             #years {
                                 font-size: 6px;}
 
@@ -626,14 +524,7 @@ a:visited {
                                 font-size: 10px;}} 
                         @media only screen and (max-width: 250px) {
 
-                            .landscapePrehistoricIntroduction h1 {
-                                font-size: 11px;}
-            
-                            .landscapePrehistoricIntroduction p {
-                                font-size: 8px;}
-
                             .modal-content {
-                                height: fit-content;
                                 border-radius: 2px;}
 
                             #years {
