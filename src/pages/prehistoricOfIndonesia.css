@@ -18,22 +18,15 @@ a:visited {
     height: 115vh;
     background-color: #bfbfbf;}
 
-.parallaxImage, .landscapeParallaxImage {
+.parallaxImage {
+    height: 115vh;
+    background-size: auto 115vh;
     background-position: center bottom;
     background-repeat: repeat-x;
     width: 100%;
     position: absolute;
     top: 0;
     z-index: 1;}
-
-.landscapeParallaxImage {
-    height: 115vh;
-    background-size: auto 115vh;}
-
-.parallaxImage {
-    height: 70vh;
-    top: 30vh;
-    background-size: auto 70vh;}
 
 #background {
     background-image: url(./assetsPrehistoricOfIndonesia/Background.png);}
@@ -60,6 +53,7 @@ a:visited {
     opacity: 0.5;
     width: 100%;
     position: absolute;
+    top: 80vh;
     z-index: 14;
     display: flex;
     flex-direction: column;
@@ -91,6 +85,7 @@ a:visited {
 .prehistoricMainContainer {
     scrollbar-width: thin;
     position: absolute;
+    top: 114.5vh;
     left: 0;
     right: 0;
     height: 225.5vw;
@@ -247,7 +242,7 @@ a:visited {
     font-weight: bold;} 
     
 #btn:hover {
-    transform: translateY(-1vw);}
+    transform: translateY(-.5vw);}
 
 /* Modal */
 
@@ -351,8 +346,7 @@ a:visited {
         
         .prehistoricMainContainer {
             height: 428vw;
-            padding: 3vw 3vw 0% 3vw;
-            top: 100vh;}
+            padding: 3vw 3vw 0% 3vw;}
 
         .prehistoricLineContainer {
             margin-top: 0;
@@ -441,10 +435,16 @@ a:visited {
 
             @media only screen and (max-width: 600px) {
 
+                .parallaxImage {
+                    height: 70vh;
+                    top: 30vh;
+                    background-size: auto 70vh;}
+
                 .scrollIcon {
                     width: 20vw;}
                 
                 .prehistoricMainContainer {
+                    top: 99.5vh;
                     padding: 5% 3% 0% 3%;}
                 
                 #years {
