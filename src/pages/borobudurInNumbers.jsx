@@ -12,7 +12,6 @@ import BorobudurFloraFauna from "../components/BorobudurInNumbers/BorobudurFlora
 import Navbar from '../components/Navbar'
 import CoverStupa from '../components/BorobudurInNumbers/CoverStupa.png'
 import CoverArca from '../components/BorobudurInNumbers/CoverArca.png'
-import 'core-js'
 
 const BorobudurInNumbers = () => {
 

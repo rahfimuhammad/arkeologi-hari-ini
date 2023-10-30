@@ -39,13 +39,13 @@
     transform: scale(1.02);}
 
 #prehistoricOfIndonesia {
-    background-image: url(./homeContentCover/prehistoricOfIndonesia.png);}
+    background-image: url(../assets/hmpg-prehistoricOfIndonesia.png);}
 
 #borobudurInNumbers {
-    background-image: url(./homeContentCover/test.png);}
+    background-image: url(../assets/hmpg-borobudurInNumbers.png);}
 
 #litografiBatavia {
-    background-image: url(./homeContentCover/litografiBatavia.png);}
+    background-image: url(../assets/hmpg-litografiBatavia.png);}
 
     @media only screen and (max-width: 900px) {
         

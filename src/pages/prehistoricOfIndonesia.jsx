@@ -3,7 +3,7 @@ import React, { useEffect, useState} from "react";
 import axios from 'axios'
 import {motion} from "framer-motion"
 import Navbar from "../components/Navbar"
-import ScrollIcon from "./assetsPrehistoricOfIndonesia/scrollIcon.png"
+import ScrollIcon from "../assets/icon-scrollIcon.png"
 
 
 const PrehistoricOfIndonesia = () => {

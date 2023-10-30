@@ -1,9 +1,9 @@
 import React from "react";
 import './litografiBatavia.css'
 import Loading from '../components/loading/Loading'
-import closeButton from "./homeContentCover/closeButton.png"
-import MuseumLogo from "./homeContentCover/museumLogo.png"
-import ScrollTopButton from "./homeContentCover/scrollTopButton.png"
+import closeButton from "../assets/icon-closeButton.png"
+import MuseumLogo from "../assets/icon-museumLogo.png"
+import ScrollTopButton from "../assets/icon-scrollTopButton.png"
 import Navbar from "../components/Navbar";
 import axios from 'axios'
 import {useState, useEffect} from "react"

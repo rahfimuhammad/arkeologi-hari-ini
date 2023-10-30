@@ -43,7 +43,7 @@
     .storyTest, .landscapeStoryTest {
         position: relative;
         border: 1px solid black;
-        background-image: url("./homeContentCover/profilePict.png");
+        background-image: url("../assets/icon-profilePict.png");
         background-position: center center;
         background-size: 100% auto;
         border-radius: 50%;

@@ -1,16 +1,18 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import {motion} from "framer-motion"
+import axios from "axios";
 import './litografiBatavia.css'
 import Loading from '../components/loading/Loading'
-import BackButton from "./homeContentCover/backButton.png"
-import axios from "axios";
-import closeButton from "./homeContentCover/closeButton.png"
-import Post from "./homeContentCover/post.png"
-import ProfilePict from "./homeContentCover/profilePict.png"
-import NonBatavia from "./homeContentCover/nonBatavia.png"
-import {motion} from "framer-motion"
-import MuseumLogo from "./homeContentCover/museumLogo.png"
+import BackButton from "../assets/icon-backButton.png"
+import CloseButton from "../assets/icon-closeButton.png"
+import ProfilePict from "../assets/icon-profilePict.png"
+import Post from "../assets/icon-post.png"
+import NonBatavia from "../assets/icon-nonBatavia.png"
+import MuseumLogo from "../assets/icon-museumLogo.png"
+
+
 
 const LitografiBataviaProfile = () => {
 
@@ -148,11 +150,11 @@ const LitografiBataviaProfile = () => {
                 <div className={orientation? "authorWork" : "landscapeAuthorWork"} style={{display: "flex", flexDirection: "column"}}>
                     <div className={orientation? "workPanel" : "landscapeWorkPanel"}>
                         <div className={orientation? "bataviaPanel" : "landscapeBataviaPanel"} onClick={() => setActive(true)} style={{cursor: "pointer"}}>
-                            <div className={orientation? "activeBar" : "landscapeActiveBar"} id={active == true || active == null? "selected" : "notSelected" }></div>
+                            <div className={orientation? "activeBar" : "landscapeActiveBar"} id={active === true || active === null? "selected" : "notSelected" }></div>
                             <img src={Post} alt="post"/>
                         </div>
                         <div className={orientation? "nonBataviaPanel" : "landscapeNonBataviaPanel"} onClick={() => setActive(false)} style={{cursor: "pointer"}}>
-                            <div className={orientation? "activeBar" : "landscapeActiveBar"} id={active == true || active == null? "notSelected" : "selected" }></div>
+                            <div className={orientation? "activeBar" : "landscapeActiveBar"} id={active === true || active === null? "notSelected" : "selected" }></div>
                             <img src={NonBatavia}/>
                         </div>
                     </div>
@@ -193,7 +195,7 @@ const LitografiBataviaProfile = () => {
                         <div className="modalTitleWrapper">
                             <h1>{modal.title}</h1>
                         </div>
-                        <img onClick={closeModal} src={closeButton} style={{cursor: "pointer"}}/>
+                        <img onClick={closeModal} src={CloseButton} style={{cursor: "pointer"}}/>
                     </div>
                     <div className={orientation? "test" : "landscapeTest"}>
                         <div className={orientation? "modalImageContainer" : "landscapeModalImageContainer"}>

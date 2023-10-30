@@ -16,7 +16,7 @@ a:visited {
     width: 100%;
     position: relative;
     height: 115vh;
-    background-color: #bfbfbf;}
+    background-color: #cbcbcb;}
 
 .parallaxImage {
     height: 115vh;
@@ -29,25 +29,25 @@ a:visited {
     z-index: 1;}
 
 #background {
-    background-image: url(./assetsPrehistoricOfIndonesia/Background.png);}
+    background-image: url(../assets/prh-Background.png);}
 
 #mountain {
-    background-image: url(./assetsPrehistoricOfIndonesia/Mountain.png);}
+    background-image: url(../assets/prh-Mountain.png);}
 
 #jungle0 {
-    background-image: url(./assetsPrehistoricOfIndonesia/Jungle0.png);}
+    background-image: url(../assets/prh-Jungle0.png);}
 
 #jungle1 {
-    background-image: url(./assetsPrehistoricOfIndonesia/Jungle1.png);}
+    background-image: url(../assets/prh-Jungle1.png);}
 
 #jungle2 {
-    background-image: url(./assetsPrehistoricOfIndonesia/Jungle2.png);}
+    background-image: url(../assets/prh-Jungle2.png);}
     
 #jungle3 {
-    background-image: url(./assetsPrehistoricOfIndonesia/Jungle3.png);}
+    background-image: url(../assets/prh-Jungle3.png);}
 
 #prehistoricMan{
-    background-image: url(./assetsPrehistoricOfIndonesia/PrehistoricMan.png);}
+    background-image: url(../assets/prh-PrehistoricMan.png);}
 
 .prehistoricInstruction, .displayNone {
     opacity: 0.5;
