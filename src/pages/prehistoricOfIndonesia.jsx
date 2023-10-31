@@ -13,6 +13,23 @@ const PrehistoricOfIndonesia = () => {
     const [description, setDescription] = useState([])
     const [button, setButton] = useState([])
     const [modal, setModal] = useState(false)
+    const [orientation, setOrientation] = useState(null)
+
+    const detectOrientation = () => {
+    
+        if (window.innerHeight > window.innerWidth) {
+            setOrientation(true)}
+        else {
+            setOrientation(false)}}
+    
+    
+            useEffect(() => {
+                detectOrientation()
+    
+                // console.log(orientation)
+            })
+    
+            window.addEventListener('resize', detectOrientation)
 
     // Parallax Scroll Handle and useEffect
     
@@ -100,33 +117,35 @@ const PrehistoricOfIndonesia = () => {
 <Navbar/>
                 
                 <div className="prehistoricParallaxContainer">
-                    <div className="parallaxImage" id="background"
-                    style={{transform: `translateY(${offSetY * 0.4}px)`, zIndex: "0" }}
-                    ></div>
-                    <div className="parallaxImage"  id="mountain"
-                    style={{transform: `translateY(${offSetY * 0.35}px)` }}
-                    ></div>
-                    <div className="parallaxImage"  id="jungle0"
-                    style={{transform: `translateY(${offSetY * 0.3}px)` }}
-                    ></div>
-                    <div className="parallaxImage"  id="jungle1"
-                    style={{transform: `translateY(${offSetY * 0.25}px)` }}
-                    ></div>
-                    <div className="parallaxImage"  id="jungle2"
-                    style={{transform: `translateY(${offSetY * 0.2}px)` }}
-                    ></div>
-                    <div className="parallaxImage"  id="jungle3"
-                    style={{transform: `translateY(${offSetY * 0.15}px)` }}
-                    ></div>
-                      <div className="parallaxImage"  id="prehistoricMan"
-                    ></div>
-                    <div className={offSetY > 0? "displayNone" : "prehistoricInstruction"}>
-                        <img className="scrollIcon" src={ScrollIcon}/>
+                    <div className={orientation? "prehistoricParallaxWrapperPortrait" : "prehistoricParallaxWrapperLandscape"} >
+                        <div className="parallaxImage" id="background"
+                        style={{transform: `translateY(${offSetY * 0.4}px)`, zIndex: "0" }}
+                        ></div>
+                        <div className="parallaxImage"  id="mountain"
+                        style={{transform: `translateY(${offSetY * 0.35}px)` }}
+                        ></div>
+                        <div className="parallaxImage"  id="jungle0"
+                        style={{transform: `translateY(${offSetY * 0.3}px)` }}
+                        ></div>
+                        <div className="parallaxImage"  id="jungle1"
+                        style={{transform: `translateY(${offSetY * 0.25}px)` }}
+                        ></div>
+                        <div className="parallaxImage"  id="jungle2"
+                        style={{transform: `translateY(${offSetY * 0.2}px)` }}
+                        ></div>
+                        <div className="parallaxImage"  id="jungle3"
+                        style={{transform: `translateY(${offSetY * 0.15}px)` }}
+                        ></div>
+                        <div className="parallaxImage"  id="prehistoricMan"
+                        ></div>
+                        <div className={offSetY > 0? "displayNone" : "prehistoricInstruction"} style={{top: orientation? "55vh" : "91vh"}}>
+                            <img className= {orientation? "scrollIcon" : "scrollIconLandscape"} src={ScrollIcon}/>
+                        </div>
                     </div>
                 </div>
                     
 
-                <div className="prehistoricMainContainer">
+                <div className="prehistoricMainContainer" style={{top: orientation? "99.5vh" : "124.5vh"}}>
                             {/* Line */}
                             <div className="prehistoricLineContainer" >
                                     <div className="middle-line-first">
