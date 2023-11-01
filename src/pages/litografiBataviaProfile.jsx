@@ -7,7 +7,7 @@ import './litografiBatavia.css'
 import Loading from '../components/loading/Loading'
 import BackButton from "../assets/icon-backButton.png"
 import CloseButton from "../assets/icon-closeButton.png"
-import ProfilePict from "../assets/icon-profilePict.png"
+// import ProfilePict from "../assets/icon-profilePict.png"
 import Post from "../assets/icon-post.png"
 import NonBatavia from "../assets/icon-nonBatavia.png"
 import MuseumLogo from "../assets/icon-museumLogo.png"
@@ -133,7 +133,7 @@ const LitografiBataviaProfile = () => {
                 <div className={orientation? "bioWrapper" : "landscapeBioWrapper"}>
                 <div className={orientation? "authorBio" : "landscapeAuthorBio"}>
                     <div className={orientation? "bioProfile" : "landscapeBioProfile"}>
-                        <img src={ProfilePict} alt="profilePicture" />
+                        <span style={{backgroundImage: `url(${passing.picture})`, backgroundSize: "105% auto", backgroundPosition: "center center"}}></span>
                         <div className="nameContainer" style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                             <h1 className={orientation? "authorName" : "landscapeAuthorName"} style={{margin: "0 0 2vw 0"}}>{passing.author}</h1>
                             <div className={orientation? "activeYear" : "landscapeActiveYear"}><p>{passing.year}</p></div>

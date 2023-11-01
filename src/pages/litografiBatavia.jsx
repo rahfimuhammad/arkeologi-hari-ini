@@ -60,7 +60,7 @@ const LitografiBatavia = () => {
             
             return (
                         <div className={orientation? "storyWrapper" : "landscapeStoryWrapper"} style={{position: "relative", display: "flex", flexDirection: "column", alignItems: "center"}}>
-                            <Link to={`profile/${data[index].category}`} className={orientation? "storyTest" : "landscapeStoryTest"} /*onClick={() => {navigate("/profile", { state: data[index]})}}*/></Link>
+                            <Link to={`profile/${data[index].category}`} className={orientation? "storyTest" : "landscapeStoryTest"} style={{backgroundImage: `url(${value.picture})`}}></Link>
                             <p>{value.nickName}</p>
                         </div>
             )

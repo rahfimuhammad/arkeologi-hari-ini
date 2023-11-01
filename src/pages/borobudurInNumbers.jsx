@@ -10,12 +10,10 @@ import Measurement from "../components/BorobudurInNumbers/Measurement"
 import StupaBorobudur from "../components/BorobudurInNumbers/StupaBorobudur"
 import BorobudurFloraFauna from "../components/BorobudurInNumbers/BorobudurFloraFauna"
 import Navbar from '../components/Navbar'
-import CoverStupa from '../components/BorobudurInNumbers/CoverStupa.png'
-import CoverArca from '../components/BorobudurInNumbers/CoverArca.png'
+import BorobudurCover from '../assets/brb-BorobudurCover.png'
 
 const BorobudurInNumbers = () => {
 
-const [opacity, setOpacity] = useState(0)
 const [orientation, setOrientation] = useState(null)
 
 useEffect(() => {
@@ -38,47 +36,22 @@ const detectOrientation = () => {
 
         window.addEventListener('resize', detectOrientation)
 
-        const changeOpacity = () => {
-    
-            if(window.scrollY > (window.innerHeight * 0.15) ) {
-                setOpacity(((window.scrollY/window.innerHeight)*1.5))
-            }
-            else {
-               setOpacity(0)
-            }}
-   
-    useEffect(() => {window.addEventListener("scroll", changeOpacity)
-
-    return () => window.removeEventListener("scroll", changeOpacity)}, )
-
 return (
 <>
 
 <div className="borobudurInNumbersContainer">
 <Navbar/>
-    <div className="intro-container" style={{position: "fixed"}}>
-    <div style={{top: "0", position: "absolute", width:"100vw", height: "100vh", backgroundColor: "#363636", zIndex: "3" , opacity: opacity}}></div>
-        <div className={orientation? "coverContainerPotrait" : "coverContainerLandscape"}>
-            <div className= {orientation? "coverTopPotrait" : "coverTopLandscape"}>
-                <div className={orientation? "topImagePotrait" : "topImageLandscape"} style={{backgroundColor: "#e2f4ff"}}>
-                    <img src={CoverArca}/>
-                </div>
-            </div>
-            <div className={orientation? "titlePotrait" : "titleLandscape"}>
-                <h1><span style={{color: "#51827a"}}>Borobudur</span> <span style={{color: "#363636"}}>dalam</span> <span style={{color: "#51827a"}}>Angka</span></h1>
-            </div>
-            <div className= {orientation? "coverBottomPotrait" : "coverBottomLandscape"}>
-                <div className= {orientation? "bottomImagePotrait" : "bottomImageLandscape"} style={{backgroundColor: "#51827a"}}>
-                    <img src={CoverStupa}/>
-                </div>
+
+    <div style={{width: "100%", height: "100vh", position: "relative", display: "flex", justifyContent: "center", alignItems: "center"}}>
+        <div className={orientation? "introPortrait" : "introLandscape"} style={{position: "absolute", right: "2.5%", width: "95%", display: "flex"}}>
+            <div className={orientation? "introContentPortrait" : "introContentLandscape"} style={{backgroundImage: `url(${BorobudurCover})`, backgroundPosition: "center center", backgroundSize: "100% auto" }}></div>
+            <div className={orientation? "introContentPortrait" : "introContentLandscape"} style={{height: "45vw", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <h1 style={{textAlign: "center"}}><span style={{color: "#51827a"}}>Borobudur </span><span style={{color: "#363636"}}>dalam </span><span style={{color: "#51827a"}}>Angka</span></h1>
             </div>
         </div>
     </div>
 
-
-{/* <div className="borobudur-container" style={{zIndex: "0"}}> */}
-
-    <div className="content-borobudur-potrait" /*style={{backgroundColor: "#ffffff"}}*/>
+    <div className="content-borobudur-potrait">
     <div className="borobudur-content-container">
         <div className="numbers">
             <div className="line"></div>
@@ -248,7 +221,6 @@ return (
 </div>           
 <div/>
 
-{/* </div> */}
 </>
     )
 }

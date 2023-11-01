@@ -43,9 +43,8 @@
     .storyTest, .landscapeStoryTest {
         position: relative;
         border: 1px solid black;
-        background-image: url("../assets/icon-profilePict.png");
         background-position: center center;
-        background-size: 100% auto;
+        background-size: 105% auto;
         border-radius: 50%;
         background-color: antiquewhite;}
 
@@ -86,8 +85,6 @@
         min-height: 90vh;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        /* grid-auto-rows: 1fr; */
-        /* grid-template-rows: auto; */
         grid-gap: 10px;}
 
     .litografiBataviaContainer {
@@ -318,7 +315,7 @@
     .bioDescription h2 {
         padding: 0 0 2vw 0;}
 
-    .bioProfile img {
+    .bioProfile span {
         border: 1px solid black;
         width: 20vw;
         height: 20vw;
@@ -411,14 +408,13 @@
         width: 80%;}
 
     .landscapeAuthorBio {
-        /* height: calc(100vh - 10vw - 2px); */
         overflow-y: auto;
         width: 45%;
         padding: 2.5% 2.5% 0 2.5%;
         display: flex;
         flex-direction: column;}
 
-    .landscapeBioProfile img {
+    .landscapeBioProfile span {
         width: 10vw;
         height: 10vw;
         border: 2px solid black;
