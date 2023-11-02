@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.cdnfonts.com/css/gagalin');
 @import url('https://fonts.cdnfonts.com/css/komika-axis');
 /* Animation */
 
@@ -109,8 +108,8 @@
     transform: rotateZ(30deg);}
 
 .introPortrait {
-    height: calc(50vw + 95vw);
-    bottom: 5vh;
+    height: fit-content;
+    bottom: 10vh;
     flex-direction: column;
     justify-content: space-between;}
 
@@ -121,6 +120,9 @@
 .introContentPortrait {
     width: 95vw;
     height: 95vw;}
+
+#introContentPortrait {
+    height: 30vw;}
 
 .introContentLandscape {
     width: 47.5vw;
@@ -143,7 +145,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 10vh;}
+    padding-bottom: 5vh;}
 
 .borobudurInNumbersContainer {
     width: 100vw;}
@@ -155,13 +157,13 @@
     width: 50vw;}
 
 .borobudur-content-container {
-    padding-top: 4vw;
     position: relative;
     width: 50vw;
     height: fit-content;
     display: flex;
     flex-direction: column;
-    align-items: center;}
+    align-items: center;
+    padding-bottom: 5vw;}
 
 .numbers {
     position: relative;
@@ -178,6 +180,7 @@
     position: relative;
     color: #3f424f;
     background-color: white;
+    margin-top: -20px;
     padding: 0px 15px;
     height: 40px;
     width: fit-content;
@@ -189,9 +192,8 @@
 
 .line {
     position: relative;
-    margin-bottom: -20px;
     width: 100%;
-    height: 40px;
+    height: 10px;
     border-bottom: 2px solid #363636;
     align-self: flex-end;}
 
@@ -248,7 +250,6 @@
         height: 4vw;
         --tranx: 0.3vw;}
     
-    
     .left-wing::after {
         right: 0.06vw;
         height: 1.4vw;
@@ -285,17 +286,17 @@
         width: 100vw;}
 
     .numbers {
-        width: 95%;}
+        width: 95%;;}
         
     #numbers {
         padding: 0px 8px;
         height: 38px;
+        margin-top: -19px;
         font-size: 30px;}
     
     .line {
         width: 100%;
-        height: 50px;
-        margin-bottom: -19px;}
+        height: 10px;}
     
     .image {
         width: 100%;}
@@ -323,6 +324,9 @@
         .introPortrait {
             height: calc(50vw + 95vw);}
 
+        #introContentPortrait {
+            height: 50vw;}
+
         .introContentPortrait {
             width: 95vw;
             height: 95vw;}
@@ -339,12 +343,12 @@
 
         .line {
             width: 100%;
-            height: 50px;
-            margin-bottom: -15px;}
+            height: 10px;}
 
         #numbers {
             padding: 0px 8px;
             height: 30px;
+            margin-bottom: -15px;
             font-size: 25px;}
 
         .description p {
@@ -360,12 +364,12 @@
         
         .line {
             width: 100%;
-            height: 50px;
-            margin-bottom: -12.5px;}
+            height: 12.5px;}
 
         #numbers {
             padding: 0px 8px;
             height: 25px;
+            margin-top: -12.5px;
             font-size: 20px;}
 
         .description p {
@@ -375,4 +379,9 @@
         
         .introContentPortrait h1 {
             font-size: 32px;}}
+
+    @media screen and (max-width: 330px), screen and (max-height: 481px) {
+       
+                .introPortrait {
+                    bottom: 5vh;}}
 
