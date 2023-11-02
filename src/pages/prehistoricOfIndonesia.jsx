@@ -17,16 +17,13 @@ const PrehistoricOfIndonesia = () => {
 
     const detectOrientation = () => {
     
-        if (window.innerHeight > window.innerWidth) {
-            setOrientation(true)}
-        else {
-            setOrientation(false)}}
+        window.innerHeight > window.innerWidth?
+            
+        setOrientation(true) : setOrientation(false)}
     
     
             useEffect(() => {
                 detectOrientation()
-    
-                // console.log(orientation)
             })
     
             window.addEventListener('resize', detectOrientation)
@@ -65,9 +62,7 @@ const PrehistoricOfIndonesia = () => {
 
     let onFiltering = async(index) => {
         try {
-            let responseDescription = await axios.get(
-                `https://prehistoric.cyclic.app/prehistoric?category=${index}`)
-            setDescription(responseDescription.data)
+            setDescription(data[index])
             setModal(!modal)
         } catch (error) {
             
@@ -83,10 +78,7 @@ const PrehistoricOfIndonesia = () => {
 
     useEffect(() => {
         
-        if (modal) {
-          document.body.style.overflow = 'hidden'}
-        else {
-            document.body.style.overflow = 'unset'}
+        modal? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset'
       }, [modal])
 
     // Set Button by Image ftom API
@@ -334,11 +326,11 @@ const PrehistoricOfIndonesia = () => {
                             }}>
                             <motion.div className="modal-header">
                                 <motion.div className="modal-image">
-                                    <img id="modal-animation"src={description[0].button} alt={description[0].name}></img>
+                                    <img id="modal-animation"src={description.button} alt={description.name}></img>
                                 </motion.div>
                                 <motion.div className="modal-title">
-                                    <h1>{description[0].name}</h1>
-                                    <h3>Periode: {description[0].age}</h3>
+                                    <h1>{description.name}</h1>
+                                    <h3>Periode: {description.age}</h3>
                                 </motion.div>
                                 <motion.div className="modal-button" onClick={toggleModal}>
                                 
@@ -350,10 +342,10 @@ const PrehistoricOfIndonesia = () => {
                                 </motion.div>
                             </motion.div>
                                 <div className="modal-summary">
-                                    <p>{description[0].description} </p>
+                                    <p>{description.description} </p>
                                 </div>
                                 <div className="modal-summary" style={{ width: "100%", display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
-                                    <p><i><b>assets:</b> <a href={description[0].link}>{description[0].assets}</a></i></p>
+                                    <p><i><b>assets:</b> <a href={description.link}>{description.assets}</a></i></p>
                                 </div>
                         </motion.div>
                 </motion.div>}
