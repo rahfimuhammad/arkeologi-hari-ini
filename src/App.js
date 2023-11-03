@@ -1,15 +1,16 @@
+import React, {lazy, Suspense} from "react";
 import Home from "./pages/home"
-import {/*BrowserRouter,*/ Route, Routes} from 'react-router-dom'
-// import { HashRouter } from "react-router-dom";
-import PrehistoricOfIndonesia from "./pages/prehistoricOfIndonesia"
-import LitografiBatavia from "./pages/litografiBatavia";
-import BorobudurInNumbers from "./pages/borobudurInNumbers";
+import {Route, Routes} from 'react-router-dom'
 import LitografiBataviaProfile from "./pages/litografiBataviaProfile";
+
+const PrehistoricOfIndonesia = lazy(() => import ("./pages/prehistoricOfIndonesia"))
+const BorobudurInNumbers = lazy(() => import ("./pages/borobudurInNumbers"))
+const LitografiBatavia = lazy(() => import ("./pages/litografiBatavia"))
 
 function App() {
   return (
     <div>
-      {/* <HashRouter> */}
+      <Suspense fallback={<h1>...</h1>}>
         <Routes>
             <Route  path="/" element={ <Home/> }/>
               <Route  path="prehistoricOfIndonesia" element= {<PrehistoricOfIndonesia />} />
@@ -17,9 +18,8 @@ function App() {
               <Route  path= "litografiBatavia/profile/:id" element= {<LitografiBataviaProfile />}/>
               <Route  path="borobudurInNumbers" element= {<BorobudurInNumbers />} />
             <Route/>
-            
         </Routes>
-      {/* </HashRouter> */}
+      </Suspense>
     </div>
   );
 }

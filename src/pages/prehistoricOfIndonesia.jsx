@@ -125,7 +125,7 @@ const PrehistoricOfIndonesia = () => {
                 </div>
                     
 
-                <div className="prehistoricMainContainer" style={{top: orientation? "99.5vh" : "124.5vh"}}>
+                <div className="prehistoricMainContainer" id= {orientation? "portraitContainer" : "landscapeContainer"}>
                             {/* Line */}
                             <div className="prehistoricLineContainer" >
                                     <div className="middle-line-first">
