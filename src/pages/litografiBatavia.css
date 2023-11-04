@@ -45,8 +45,7 @@
         border: 1px solid black;
         background-position: center center;
         background-size: 105% auto;
-        border-radius: 50%;
-        background-color: antiquewhite;}
+        border-radius: 50%;}
 
     .storyTest {
         width: 10vw;
@@ -121,7 +120,7 @@
         align-items: center;
         width: 95%;
         height: fit-content;
-        border-radius: 3vw;
+        /* border-radius: 3vw; */
         background-color: white;}
 
     .test2 {
@@ -155,12 +154,11 @@
     .modalTitleWrapper h1 {
         scrollbar-width: thin;
         overflow-x: auto;
-        width: fit-content;
-        padding: 0 0 5px 0;}
+        width: fit-content;}
 
     .modalTitle img {
-        width: 7vw;
-        height: 7vw;}
+        width: 5vw;
+        height: 5vw;}
 
     .litografiSource {
         width: 95%;}
@@ -486,8 +484,11 @@
         
             .landscapeStoryWrapper p {
                 font-size: 11px;}
+
+            .modalTitle h1 {
+                font-size: 25px}
             
-            .modalTitle h1, .bioDescription h1, .authorName {
+            .bioDescription h1, .authorName {
                 font-size: 35px;}
 
             .litografiSource p {
@@ -537,9 +538,6 @@
 
             .landscapeStoryWrapper p {
                 font-size: 9px;}
-
-            .modalTitle h1 {
-                font-size: 30px;}
                     
             .litografiAuthor h1 {
                 font-size: 13px;}
@@ -596,6 +594,10 @@
                     
             .caption {
                 width: 94vw;}
+
+            .modalTitle img {
+                width: 6vw;
+                height: 6vw;}
                     
             .modalTitle h1, .bioDescription h1, .authorName, .authorNickName h1 {
                 font-size: 15px;}
