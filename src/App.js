@@ -1,11 +1,11 @@
 import React, {lazy, Suspense} from "react";
 import Home from "./pages/home"
 import {Route, Routes} from 'react-router-dom'
-import LitografiBataviaProfile from "./pages/litografiBataviaProfile";
 
 const PrehistoricOfIndonesia = lazy(() => import ("./pages/prehistoricOfIndonesia"))
 const BorobudurInNumbers = lazy(() => import ("./pages/borobudurInNumbers"))
 const LitografiBatavia = lazy(() => import ("./pages/litografiBatavia"))
+const LitografiBataviaProfile = lazy(() => import ("./pages/litografiBataviaProfile"))
 
 function App() {
   return (
