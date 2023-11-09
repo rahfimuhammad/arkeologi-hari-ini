@@ -26,12 +26,6 @@
             opacity: 1;
             scale: 1;}}
 
-    div::-webkit-scrollbar {
-        display: none;}
-
-    ::-webkit-scrollbar {
-        display: none;}
-
     .story {
         top: 10vh;
         padding: 10px 0 20px 0;}

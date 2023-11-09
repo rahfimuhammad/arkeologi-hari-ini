@@ -1,5 +1,11 @@
 * {-webkit-tap-highlight-color: transparent;}
 
+div::-webkit-scrollbar {
+    display: none;}
+
+::-webkit-scrollbar {
+    display: none;}
+
 a {
     color: black;}
 
