@@ -6,6 +6,7 @@ const PrehistoricOfIndonesia = lazy(() => import ("./pages/prehistoricOfIndonesi
 const BorobudurInNumbers = lazy(() => import ("./pages/borobudurInNumbers"))
 const LitografiBatavia = lazy(() => import ("./pages/litografiBatavia"))
 const LitografiBataviaProfile = lazy(() => import ("./pages/litografiBataviaProfile"))
+const TraditionalBoatsOfIndonesia = lazy(() => import ("./pages/traditionalBoatsOfIndonesia"))
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Route  path="litografiBatavia" element= {<LitografiBatavia />}/>
               <Route  path= "litografiBatavia/profile/:id" element= {<LitografiBataviaProfile />}/>
               <Route  path="borobudurInNumbers" element= {<BorobudurInNumbers />} />
+              <Route  path="traditionalBoatsOfIndonesia" element= {<TraditionalBoatsOfIndonesia />} />
             <Route/>
         </Routes>
       </Suspense>

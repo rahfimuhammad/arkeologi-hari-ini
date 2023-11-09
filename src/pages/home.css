@@ -1,5 +1,11 @@
 * {-webkit-tap-highlight-color: transparent;}
 
+a {
+    color: black;}
+
+a:visited {
+    color: black;}
+
 .main {
     width: 100vw;
     min-height: 100vh;
@@ -46,6 +52,9 @@
 
 #litografiBatavia {
     background-image: url(../assets/hmpg-litografiBatavia.png);}
+
+#traditionalBoatsOfIndonesia {
+    background-image: url(../assets/hmpg-traditionalBoatsOfIndonesia.png);}
 
     @media only screen and (max-width: 900px) {
         
