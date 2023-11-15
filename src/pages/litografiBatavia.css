@@ -114,7 +114,6 @@
         align-items: center;
         width: 95%;
         height: fit-content;
-        /* border-radius: 3vw; */
         background-color: white;}
 
     .test2 {
@@ -163,7 +162,7 @@
         height: auto;}
 
     .litografiSource p {
-        font-size: 12px;
+        font-size: 25px;
         margin: 0;}
 
     .modalContent {
@@ -172,7 +171,7 @@
 
     .modalContent p {
         margin: 0;
-        font-size: 14px;}
+        font-size: 25px;}
 
 /* Modal Landscape */
 
@@ -185,12 +184,15 @@
         background-color: white;}
 
     .landscapeTest {
+        height: 70vh;
         display: flex;
-        flex-direction: row;}
+        flex-direction: row;
+        align-items: center;}
 
     .landscapeTest2 {
         width: 45%;
-        padding: 0 2.5%;
+        height: 100%;
+        padding: 15% 2.5% 0 2.5%;
         display: flex;
         margin: 5vw 0;
         flex-direction: column;}
@@ -199,8 +201,7 @@
         width: 50%;
         height: 75vh;
         display: flex;
-        align-items: center;
-        border-right: 1px solid black ;}
+        align-items: center;}
 
     .landscapeModalImageContainer img {
         width: 100%;
@@ -217,7 +218,7 @@
         align-items: center;}
 
     .landscapeModalTitle h1 {
-        font-size: 16px;
+        font-size: 18px;
         width: 100%;}
 
     .landscapeModalTitle img {
@@ -238,16 +239,16 @@
         padding: 0 .5vw 0 0;}
 
     .landscapeLitografiSource p {
-        font-size: 12px;
+        font-size: 18px;
         margin: 0;}
 
-    .landscaoeModalContent {
+    .landscapeModalContent {
         width: 95%;
-        padding: 0 0 4vw 0;}
+        padding: 1vw 0 4vw 0;}
 
     .landscapeModalContent p {
         margin: 0;
-        font-size: 14px;}
+        font-size: 18px;}
 
 /* Profile Portrait */
 
@@ -486,7 +487,7 @@
                 font-size: 35px;}
 
             .litografiSource p {
-                font-size: 18px;}
+                font-size: 20px;}
     
             .modalContent p {
                 font-size: 22px;}
@@ -526,7 +527,23 @@
                 font-size: 13px;}
 
             .litografiTitle p {
-                font-size: 11px;}}
+                font-size: 11px;}
+
+            .landscapeTest {
+                height: 80vh;}
+            
+            .landscapeModalTitle h1 {
+                    font-size: 16px;}
+            
+            .landscapeModalTitle img {
+                width: 3.5vw;
+                height: 3.5vw;}
+            
+            .landscapeLitografiSource p {
+                font-size: 15px;}
+            
+            .landscapeModalContent p {
+                font-size: 15px;}}
 
         @media only screen and (max-width: 800px) {
 
@@ -548,7 +565,26 @@
                 font-size: 14px;}
 
             .landscapeBioDescription p {
-                font-size: 14px;}}
+                font-size: 14px;}
+
+            .litografiSource p {
+                font-size: 16px;}
+        
+            .modalContent p {
+                font-size: 18px;}
+                
+            .landscapeModalTitle h1 {
+                font-size: 14px;}
+            
+            .landscapeModalTitle img {
+                width: 3.5vw;
+                height: 3.5vw;}
+            
+            .landscapeLitografiSource p {
+                font-size: 13px;}
+            
+            .landscapeModalContent p {
+                font-size: 13px;}}
                     
         @media only screen and (max-width: 500px) {
 

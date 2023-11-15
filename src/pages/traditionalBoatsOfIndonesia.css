@@ -8,6 +8,9 @@ h2, p {
     margin: 0;}
 
 .scroller {
+    background-size: 100px auto;
+    --_spacer: 1.5rem;
+    --_spacerLandscape: .5rem;
     height: 100vh;
     display: grid;
     grid-auto-flow: column;
@@ -17,13 +20,35 @@ h2, p {
     overscroll-behavior-inline: contain;}
 
 .boatsContentContainer {
-    height: 100svh;
+    position: relative;
     height: 100vh;
+    height: 100svh;
+    display: flex;}
+
+.boatsTitle {
+    width: 90%;
     display: flex;
     justify-content: center;
-    align-items: center;}
+    align-items: center;
+    border-bottom: 1px solid #31445b;}
+
+.boatsLine {
+    width: 90%;
+    padding: 0 3vw;
+    height: 3px;
+    border-bottom: 1px solid #31445b;}
+
+.boatsTitle h2, .boatsSummary p {
+    color: #31445b;
+    font-size: var(--_spacer);}
+
+.boatsTitleLandscape, .boatsSummaryLandscape {
+    font-size: var(--_space);}
 
 .boatsContentWrapperPortrait {
+    position: absolute;
+    bottom: 5vh;
+    right: 5%;
     padding: 5vh 0 0 0;
     height: fit-content;
     display: flex;
@@ -31,10 +56,17 @@ h2, p {
     align-items: center;}
 
 .boatsContentWrapperLandscape {
+    position: absolute;
+    top: 15vh;
+    right: 5%;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
-    align-items: center;}
+    align-items: flex-start;}
+
+.boatsImageLandscape {
+    position: relative;
+    width: 48%;}
 
 .snapsInline {
     scroll-snap-type: inline mandatory;}
@@ -44,23 +76,76 @@ h2, p {
 
 .boatsImagePortrait {
     position: relative;
-    width: 100%;
+    width: 90vw;
     height: 80vw;
-    margin-bottom: 2vh;
-    background-color: white;
+    background-color: rgba(255, 255, 255, .8);
     box-shadow: 5px 5px 2.5px 0px rgba(0,0,0,0.3);}
+
+.boatsImage {
+    width: 90%;
+    height: 70%;
+    top: 4.5vw; 
+    right: 4.5vw; }
+
+.descriptionWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #31445b;}
 
 .boatsDescriptionPortrait {
+    padding: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    width: 100%;
-    height: 40vw;
-    background-color: #abc0dd;
+    width: calc(90vw - 4vw);
+    height: fit-content;
+    margin-bottom: 2vh;
+    background-color:  rgba(255, 255, 255, .8);
     box-shadow: 5px 5px 2.5px 0px rgba(0,0,0,0.3);}
 
-.boatsImageLandscape, .boatsDescriptionLandscape {
-    width: 45%;
+.boatsImageLandscape {
+    width: 48%;
     height: 80vh;
-    background-color: white;}
+    background-color:  rgba(255, 255, 255, .8);}
+
+.boatsDescriptionLandscape {
+    width: 48%;
+    height: fit-content;
+    background-color:  rgba(255, 255, 255, .8);}
 
 .boatsTitle, .boatsSummary {
-    padding: 1vw 1vw;}
+    padding: 1vw 3vw;}
+
+
+@media only screen and (max-width: 900px) {
+    .scroller {
+        --_space: .8rem }}
+
+@media only screen and (max-width: 700px) {
+    .scroller {
+        --_space: .6rem;
+        --_spacer: 1rem  }}
+    
+@media only screen and (max-width: 500px) {
+
+    .scroller {
+        background-size: 75px auto;
+        --_spacer: 1.2rem;
+        --_space: .5rem }
+    
+    .boatsImagePortrait {
+        width: 100%;
+        height: 80vw;
+        margin-bottom: 2vh;}} 
+
+    @media only screen and (max-width: 376px) {
+
+        .scroller {
+            --_spacer: 1rem}}
+
+    @media only screen and (max-width: 330px) {
+
+        .scroller {
+            --_spacer: .8rem}}

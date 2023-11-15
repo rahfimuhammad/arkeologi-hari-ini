@@ -60,7 +60,8 @@ a:visited {
     background-image: url(../assets/hmpg-litografiBatavia.png);}
 
 #traditionalBoatsOfIndonesia {
-    background-image: url(../assets/hmpg-traditionalBoatsOfIndonesia.png);}
+    background-image: url(../assets/hmpg-traditionalBoatsOfIndonesia.svg);
+    background-size: auto 100%;}
 
     @media only screen and (max-width: 900px) {
         
