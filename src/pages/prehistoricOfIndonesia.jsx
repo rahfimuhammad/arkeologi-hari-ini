@@ -279,7 +279,7 @@ const PrehistoricOfIndonesia = () => {
                                         <input onClick={() => onFiltering(17)} id="btn" type="image" src= {button[17]} style={{backgroundColor: "#bdb8ad"}} alt="Homo Sapiens"></input>
                                         <span id="years-container">
                                             <div id="years">
-                                                <p>4.000 tahun yang lalu</p>
+                                                <p>3.600 tahun yang lalu</p>
                                             </div>
                                         </span>
                                     </div>

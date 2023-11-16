@@ -63,8 +63,8 @@ return (
         <div className="description">
             <p>
             Keberadaan <span className="places">Borobudur </span> terungkap pada tahun <span className="digits">1814 </span> 
-            dari laporan penemuan reruntuhan batu di daerah Jawa Tengah. Gubernur Jenderal Inggris di Jawa saat itu, 
-            Sir Thomas Stanford Raffles kemudian menindaklanjuti laporan itu dengan melakukan pembersihan dan penelitian.
+            dari laporan penemuan reruntuhan batu di daerah Jawa Tengah. Gubernur Jenderal saat itu, 
+            Sir Thomas Stanford Raffles kemudian menindaklanjuti laporan tersebut dengan melakukan pembersihan dan penelitian awal.
             </p>
         </div>
     </div>
@@ -136,7 +136,7 @@ return (
                 meter, dihitung dari dasar candi hingga puncak stupa induk.
                 Tinggi tersebut tidak termasuk <span className="places"><i>chattra </i></span> 
                 pada stupa induk yang dilepas 
-                karena diragukan keasliannya oleh para arkeolog.
+                karena keakuratan hasil rekonsturksinya diragukan oleh para arkeolog.
             </p>
         </div>
     </div>

@@ -1,10 +1,12 @@
+@import url('https://fonts.cdnfonts.com/css/komika-axis');
+
 div::-webkit-scrollbar {
     display: none;}
 
 ::-webkit-scrollbar {
     display: none;}
 
-h2, p {
+h2, p, h3 {
     margin: 0;}
 
 .scroller {
@@ -30,19 +32,42 @@ h2, p {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid #31445b;}
+    border-bottom: 2px solid #31445b;}
+
+.boatsImageSourcePortrait {
+    position: absolute;
+    bottom: 4.5vw;
+    left: 4.5vw;
+    font-family: 'Komika Axis', sans-serif;
+    font-size: 18px;
+    color: #31445b;}
+
+.boatsImageSourceLandscape {
+    position: absolute;
+    bottom: 2.25vw;
+    left: 2.25vw;
+    font-family: 'Komika Axis', sans-serif;
+    font-size: 15px;
+    color: #31445b;}
 
 .boatsLine {
     width: 90%;
-    padding: 0 3vw;
     height: 3px;
-    border-bottom: 1px solid #31445b;}
+    border-bottom: 2px solid #31445b;}
 
 .boatsTitle h2, .boatsSummary p {
     color: #31445b;
     font-size: var(--_spacer);}
 
+.boatsTitleLandscape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    border-bottom: 2px solid #31445b;}
+
 .boatsTitleLandscape, .boatsSummaryLandscape {
+    color: #31445b;
     font-size: var(--_space);}
 
 .boatsContentWrapperPortrait {
@@ -64,10 +89,6 @@ h2, p {
     justify-content: space-between;
     align-items: flex-start;}
 
-.boatsImageLandscape {
-    position: relative;
-    width: 48%;}
-
 .snapsInline {
     scroll-snap-type: inline mandatory;}
 
@@ -85,13 +106,19 @@ h2, p {
     width: 90%;
     height: 70%;
     top: 4.5vw; 
-    right: 4.5vw; }
+    right: 4.5vw;}
+
+.boatsImageLand {
+    width: 90%;
+    height: 70%;
+    top: 2.25vw; 
+    right: 2.25vw;}
 
 .descriptionWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #31445b;}
+    border: 2px solid #31445b;}
 
 .boatsDescriptionPortrait {
     padding: 2vw;
@@ -106,27 +133,47 @@ h2, p {
     box-shadow: 5px 5px 2.5px 0px rgba(0,0,0,0.3);}
 
 .boatsImageLandscape {
-    width: 48%;
-    height: 80vh;
+    position: relative;
+    width: 50%;
+    height: 70vh;
     background-color:  rgba(255, 255, 255, .8);}
 
 .boatsDescriptionLandscape {
-    width: 48%;
+    padding: 1vw;
+    width: 46%;
     height: fit-content;
     background-color:  rgba(255, 255, 255, .8);}
 
 .boatsTitle, .boatsSummary {
     padding: 1vw 3vw;}
 
+.boatsTitleLandscape {
+    padding: 0 1vw;}
 
-@media only screen and (max-width: 900px) {
+.boatsSummaryLandscape {
+    padding: 1vw 1vw;}
+
+
+@media only screen and (max-width: 990px) {
     .scroller {
-        --_space: .8rem }}
+        --_space: .6rem }
+
+    .boatsImageLandscape {
+        height: 80vh;}
+        
+    .boatsImageSourceLandscape {
+        font-size: 13px;}}
 
 @media only screen and (max-width: 700px) {
     .scroller {
         --_space: .6rem;
-        --_spacer: 1rem  }}
+        --_spacer: 1rem  }
+    
+    .boatsImageSourcePortrait {
+        font-size: 12px;}
+    
+    .boatsImageSourceLandscape {
+        font-size: 13px;}}
     
 @media only screen and (max-width: 500px) {
 
@@ -134,6 +181,12 @@ h2, p {
         background-size: 75px auto;
         --_spacer: 1.2rem;
         --_space: .5rem }
+
+    .descriptionWrapper {
+        border: 1px solid #31445b;}
+        
+    .boatsTitle, .boatsLine {
+        border-bottom: 1px solid #31445b;}
     
     .boatsImagePortrait {
         width: 100%;
@@ -148,4 +201,7 @@ h2, p {
     @media only screen and (max-width: 330px) {
 
         .scroller {
-            --_spacer: .8rem}}
+            --_spacer: .8rem}
+        
+        .boatsImageSource {
+            font-size: 10px;}}
