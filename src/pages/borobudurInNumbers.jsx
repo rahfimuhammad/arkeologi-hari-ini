@@ -1,5 +1,6 @@
 import "./borobudurInNumbers.css"
-import { useState, useEffect} from "react"
+import { useEffect} from "react"
+import { useDetect } from "../hooks/hooks"
 import BorobudurFounded from "../components/BorobudurInNumbers/BorobudurFounded"
 import BorobudurReconstruction from "../components/BorobudurInNumbers/BorobudurReconstruction"
 import BorobudurYear from "../components/BorobudurInNumbers/BorobudurYear"
@@ -14,27 +15,11 @@ import BorobudurCover from '../assets/brb-BorobudurCover.png'
 
 const BorobudurInNumbers = () => {
 
-const [orientation, setOrientation] = useState(null)
+    const orientation = useDetect()
 
 useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-
-const detectOrientation = () => {
-    
-    if (window.innerHeight > window.innerWidth) {
-        setOrientation(true)}
-    else {
-        setOrientation(false)}}
-
-
-        useEffect(() => {
-            detectOrientation()
-
-            // console.log(orientation)
-        })
-
-        window.addEventListener('resize', detectOrientation)
 
 return (
 <>

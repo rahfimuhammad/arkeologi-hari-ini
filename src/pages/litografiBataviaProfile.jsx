@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
+import { useDetect } from "../hooks/hooks";
 import { useEffect, useState } from "react";
 import {motion} from "framer-motion"
 import axios from "axios";
@@ -7,7 +8,6 @@ import './litografiBatavia.css'
 import Loading from '../components/loading/Loading'
 import BackButton from "../assets/icon-backButton.png"
 import CloseButton from "../assets/icon-closeButton.png"
-// import ProfilePict from "../assets/icon-profilePict.png"
 import Post from "../assets/icon-post.png"
 import NonBatavia from "../assets/icon-nonBatavia.png"
 import MuseumLogo from "../assets/icon-museumLogo.png"
@@ -22,7 +22,7 @@ const LitografiBataviaProfile = () => {
     const [passing, setPassing] = useState([])
     const [modal, setModal] = useState([])
     const [toggle, setToggle] = useState(false)
-    const [orientation, setOrientation] = useState(null)
+    const orientation = useDetect()
     const [active, setActive] = useState(null)
     const [state, setState] = useState(passing)
 
@@ -104,19 +104,6 @@ const LitografiBataviaProfile = () => {
                                     })
                 
             }
-            
-        const detectOrientation = () => {
-    
-            if (window.innerHeight > window.innerWidth) {
-                setOrientation(true)}
-            else {
-                setOrientation(false)}}
-
-        useEffect(() => {
-            detectOrientation()})
-            
-        window.addEventListener('resize', detectOrientation)
-
 
     return (
         <>

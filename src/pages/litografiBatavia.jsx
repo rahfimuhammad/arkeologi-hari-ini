@@ -9,6 +9,7 @@ import axios from 'axios'
 import {useState, useEffect} from "react"
 import { Link } from "react-router-dom";
 import {motion} from "framer-motion"
+import { useDetect } from "../hooks/hooks"
 
 
 
@@ -17,7 +18,7 @@ const LitografiBatavia = () => {
     const [data, setData] = useState([])
     const [modal, setModal] = useState([])
     const [toggle, setToggle] = useState(false)
-    const [orientation, setOrientation] = useState(null)
+    const orientation = useDetect()
     const [offSetY, setOffSetY] = useState(0)
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */ 
@@ -103,18 +104,6 @@ const LitografiBatavia = () => {
     }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-
-    const detectOrientation = () => {
-        
-        if (window.innerHeight > window.innerWidth) {
-            setOrientation(true)}
-        else {
-            setOrientation(false)}}
-
-    useEffect(() => {
-        detectOrientation()})
-        
-    window.addEventListener('resize', detectOrientation)
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 

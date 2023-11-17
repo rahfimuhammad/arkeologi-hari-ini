@@ -1,13 +1,14 @@
 import React from "react"
-import { useFetch } from "../hooks/useFetch"
+import { useFetch } from "../hooks/hooks"
 import "./traditionalBoatsOfIndonesia.css"
 import Navbar from "../components/Navbar"
 import { useEffect, useState, useRef } from "react"
 import Grid from "../assets/trb-Grid.svg"
+import { useDetect } from "../hooks/hooks"
 
 const TraditionalBoatsOfIndonesia = () => {
 
-    const [orientation, setOrientation] = useState(null)
+    const orientation = useDetect()
     const data = useFetch("https://prehistoric.cyclic.app//traditionalBoats")
     const [currentIndex, setCurrentIndex] = useState(0);
     const sliderRef = useRef(null);
@@ -31,20 +32,6 @@ const TraditionalBoatsOfIndonesia = () => {
             behavior: 'smooth',
           });
         };
-    
-
-    const detectOrientation = () => {
-    
-        window.innerHeight > window.innerWidth?
-            
-        setOrientation(true) : setOrientation(false)}
-    
-    
-            useEffect(() => {
-                detectOrientation()
-            })
-    
-            window.addEventListener('resize', detectOrientation)
 
             useEffect(() => {
                 window.scrollTo(0, 0)

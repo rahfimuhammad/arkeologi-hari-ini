@@ -22,5 +22,22 @@ export const useFetch = (url) => {
     }, [url]);
     
     return data;
-  };
+    };
+
+export const useDetect = () => {
+    const [orientation, setOrientation] = useState(null)
+
+    useEffect(() => {
+        const detectOrientation = () => {
+            
+            window.innerHeight > window.innerWidth?
+                
+            setOrientation(true) : setOrientation(false)
+            window.addEventListener('resize', detectOrientation)
+            }
+            detectOrientation()
+        }, []);
+
+    return orientation       
+    };
 

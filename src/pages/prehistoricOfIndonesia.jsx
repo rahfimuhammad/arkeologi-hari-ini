@@ -3,7 +3,7 @@ import React, { useEffect, useState} from "react";
 import {motion} from "framer-motion"
 import Navbar from "../components/Navbar"
 import ScrollIcon from "../assets/icon-scrollIcon.png"
-import { useFetch } from "../hooks/useFetch";
+import { useFetch, useDetect } from "../hooks/hooks";
 
 
 const PrehistoricOfIndonesia = () => {
@@ -13,20 +13,7 @@ const PrehistoricOfIndonesia = () => {
     const [description, setDescription] = useState([])
     const [button, setButton] = useState([])
     const [modal, setModal] = useState(false)
-    const [orientation, setOrientation] = useState(null)
-
-    const detectOrientation = () => {
-    
-        window.innerHeight > window.innerWidth?
-            
-        setOrientation(true) : setOrientation(false)}
-    
-    
-            useEffect(() => {
-                detectOrientation()
-            })
-    
-            window.addEventListener('resize', detectOrientation)
+    const orientation = useDetect()
 
     // Parallax Scroll Handle and useEffect
     
