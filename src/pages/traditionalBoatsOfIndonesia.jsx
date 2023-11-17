@@ -1,18 +1,14 @@
 import React from "react"
+import { useFetch } from "../hooks/useFetch"
 import "./traditionalBoatsOfIndonesia.css"
 import Navbar from "../components/Navbar"
 import { useEffect, useState, useRef } from "react"
 import Grid from "../assets/trb-Grid.svg"
-// import Pinisi from "../assets/trb-Pinisi.png"
-// import Padewakang from "../assets/trb-Padewakang.png"
-// import Sandeq from "../assets/trb-Sandeq.png"
-// import Palari from "../assets/trb-Palari.png"
-import axios from "axios"
 
 const TraditionalBoatsOfIndonesia = () => {
 
     const [orientation, setOrientation] = useState(null)
-    const [data, setData] = useState([])
+    const data = useFetch("http://192.168.1.102:3000/traditionalBoats")
     const [currentIndex, setCurrentIndex] = useState(0);
     const sliderRef = useRef(null);
       
@@ -50,22 +46,9 @@ const TraditionalBoatsOfIndonesia = () => {
     
             window.addEventListener('resize', detectOrientation)
 
-
-            const onGetData = async() => {
-
-                try {
-                    let response = await axios.get(
-                        "http://192.168.1.101:3000/traditionalBoats"
-                        )
-                    setData(response.data)
-                } 
-                catch (error) {
-                }
-            }
-
             useEffect(() => {
                 window.scrollTo(0, 0)
-                onGetData()
+                alert("Database masih dalam pengembangan")
             },[])
         
             const mapContent = () => {
@@ -102,12 +85,12 @@ const TraditionalBoatsOfIndonesia = () => {
                     <Navbar/>
                 </div>
                 <div className="buttonContainer" style={{display: orientation? "none":"flex", flexDirection: "row",justifyContent: "space-between", position: "absolute", zIndex:"12", bottom: "5vh", right: "5%", width: "30vw", height: "5vw"}}>
-                    <div onClick={currentIndex > 0? handlePrev : ""} className="prevButtonContainer" style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "rgba(255, 255, 255, .8)", width: "14vw", height: "100%", cursor: "pointer"}}>
+                    <div onClick={currentIndex > 0? handlePrev : ""} className="prevButtonContainer" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "14vw", height: "100%", cursor: "pointer"}}>
                         <div className="prevButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "2px solid #31445b"}}>
                             <h3 className="boatsImageSourceLandscape" style={{position: "static"}}>prev</h3>
                         </div>
                     </div>
-                    <div onClick={currentIndex < data.length - 1? handleNext : ""} type="button" className="nextButtonContainer" style={{display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "rgba(255, 255, 255, .8)", width: "14vw", height: "100%", cursor: "pointer"}}>
+                    <div onClick={currentIndex < data.length - 1? handleNext : ""} type="button" className="nextButtonContainer" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "14vw", height: "100%", cursor: "pointer"}}>
                         <div className="nextButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "2px solid #31445b"}}>
                             <h3 className="boatsImageSourceLandscape" style={{position: "static"}}>next</h3>
                         </div>

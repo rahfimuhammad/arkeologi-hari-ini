@@ -1,15 +1,15 @@
 import "./prehistoricOfIndonesia.css"
 import React, { useEffect, useState} from "react";
-import axios from 'axios'
 import {motion} from "framer-motion"
 import Navbar from "../components/Navbar"
 import ScrollIcon from "../assets/icon-scrollIcon.png"
+import { useFetch } from "../hooks/useFetch";
 
 
 const PrehistoricOfIndonesia = () => {
 
     const [offSetY, setOffSetY] = useState(0)
-    const [data, setData] = useState([])
+    const data = useFetch("https://prehistoric.cyclic.app/prehistoric")
     const [description, setDescription] = useState([])
     const [button, setButton] = useState([])
     const [modal, setModal] = useState(false)
@@ -39,22 +39,7 @@ const PrehistoricOfIndonesia = () => {
         
     }, [])
 
-    // Fetch data from API to useState
-    
-    const onGetData = async() => {
-
-        try {
-            let response = await axios.get(
-                "https://prehistoric.cyclic.app/prehistoric"
-                )
-            setData(response.data)
-        } 
-        catch (error) {
-        }
-    }
-
     useEffect(() => {
-        onGetData()
         window.scrollTo(0, 0)
     }, [])
 
