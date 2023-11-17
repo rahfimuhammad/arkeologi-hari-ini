@@ -8,7 +8,7 @@ import Grid from "../assets/trb-Grid.svg"
 const TraditionalBoatsOfIndonesia = () => {
 
     const [orientation, setOrientation] = useState(null)
-    const data = useFetch("http://192.168.1.102:3000/traditionalBoats")
+    const data = useFetch("https://prehistoric.cyclic.app//traditionalBoats")
     const [currentIndex, setCurrentIndex] = useState(0);
     const sliderRef = useRef(null);
       
