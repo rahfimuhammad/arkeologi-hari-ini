@@ -2,7 +2,7 @@
 
 /* Main Page */
 
-    .landscapeStoryWrapper p, .storyWrapper p, .landscapeModalTitle h1, .modalTitle h1, .litografiAuthor h1, .litografiTitle p, .bioDescription h1, .bioDescription h2, .bioDescription p, .authorName,  .authorNickName h1, .activeYear p, .landscapeBioDescription h1, .landscapeBioDescription h2, .landscapeBioDescription p, .landscapeBioProfile p  {
+    .landscapeStoryWrapper p, .storyWrapper p, .landscapeModalTitle h1, .modalTitle h1, .litografiAuthor h1, .litografiTitle p, .bioDescription h1, .bioDescription h2, .bioDescription p, .authorName,  .authorNickName h1, .activeYear, .landscapeBioDescription h1, .landscapeBioDescription h2, .landscapeBioDescription p, .landscapeBioProfile p  {
     font-family: 'Arimo', sans-serif;
     margin: 0;}
 
@@ -316,17 +316,20 @@
         margin: 0 4vw 0 0;}
 
     .activeYear, .landscapeActiveYear {
-        width: fit-content;
-        height: fit-content;
-        background-color: rgba(55, 55, 55, .5);
         border-radius: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;}
-
-    .activeYear p {
-        padding: 2vw;
         font-weight: bold;}
+
+    .authorName {
+        margin: 0 0 2vw 0}
+
+    .bioDescription h1, .authorName {
+        font-size: 35px;}
+
+    .bioDescription h2, .activeYear {
+        font-size: 28px;}
+
+    .bioDescription p {
+        font-size: 26px;}
 
     .bioDescription {
         padding: 0 0 4vw 0;}
@@ -401,11 +404,19 @@
         width: 80%;}
 
     .landscapeAuthorBio {
-        overflow-y: auto;
+        height: calc(100vh - 8vw);
+        overflow-y: scroll;
         width: 45%;
         padding: 2.5% 2.5% 0 2.5%;
         display: flex;
         flex-direction: column;}
+
+    .landscapeAuthorName {
+        margin: 0 0 .5vw;}
+
+    .landscapeBioDescription p {
+        overflow-y: scroll;
+        margin: 1vw 0 0 0;}
 
     .landscapeBioProfile span {
         width: 10vw;
@@ -413,10 +424,6 @@
         border: 2px solid black;
         border-radius: 50%;
         margin: 0 2vw 2vw 0;}
-
-    .landscapeActiveYear p {
-        padding: 1vw;
-        font-weight: bold;}
 
     .landscapeAuthorWork {
         right: 0;
@@ -481,22 +488,7 @@
                 font-size: 11px;}
 
             .modalTitle h1 {
-                font-size: 25px}
-            
-            .bioDescription h1, .authorName {
-                font-size: 35px;}
-
-            .litografiSource p {
-                font-size: 20px;}
-    
-            .modalContent p {
-                font-size: 22px;}
-    
-            .bioDescription h2 {
-                font-size: 28px;}
-    
-            .bioDescription p {
-                font-size: 26px;}}
+                font-size: 25px}}
 
     
         @media only screen and (max-width: 916px) {
@@ -504,14 +496,8 @@
             .landscapeAuthorNickname h1, .landscapeAuthorName {
                 font-size: 22px;}
 
-            .landscapeActiveYear p{
+            .landscapeActiveYear {
                 font-size: 15px;}
-            
-            .activeYear p {
-                font-size: 25px;}
-
-            .bioDescription h2 {
-                font-size: 25px;} 
 
             .landscapeBioDescription h1 {
                 font-size: 22px;}
@@ -629,20 +615,14 @@
                 width: 6vw;
                 height: 6vw;}
                     
-            .modalTitle h1, .bioDescription h1, .authorName, .authorNickName h1 {
+            .modalTitle h1, .bioDescription h1, .authorNickName h1, .activeYear {
                 font-size: 15px;}
 
-            .authorNickName h1 {
-                font-size: 19px;}
+            .authorName {
+                font-size: 20px;}
                         
-            .bioDescription h2 {
-                font-size: 13px;}
-                        
-            .bioDescription p {
-                font-size: 12px;}
-                    
-            .activeYear p {
-                font-size: 12px;}
+            .bioDescription h2, .bioDescription p {
+                font-size: 14px;}
                     
             .litografiAuthor h1 {
                 font-size: 15px;}
@@ -683,10 +663,6 @@
             .activeYear {
                 border-radius: 20px;}
                 
-            .activeYear p {
-                padding: 2vw;
-                font-weight: bold;}
-                
             .bioDescription {
                 padding: 0 0 4vw 0;}
                 
@@ -718,15 +694,18 @@
 
             .landscapeStoryWrapper p {
                 font-size: 8px;}
+            
+            .bioDescription h1, .authorNickName h1, .activeYear {
+                font-size: 15px;}
+    
+            .authorName {
+                font-size: 18px;}
+                            
+            .bioDescription h2, .bioDescription p {
+                font-size: 14px;}
                     
-            .modalTitle h1, .bioDescription h1, .authorName, .authorNickName h1 {
+            .modalTitle h1 {
                 font-size: 13px;}
-                            
-            .bioDescription h2 {
-                font-size: 11px;}
-                            
-            .bioDescription p {
-                font-size: 10px;}
                     
             .litografiAuthor h1 {
                 font-size: 13px;}
@@ -745,6 +724,15 @@
                 font-size: 13px;}}
                     
         @media only screen and (max-width: 330px) {
+
+            .bioDescription h1, .authorNickName h1, .activeYear {
+                font-size: 12px;}
+    
+            .authorName {
+                font-size: 14px;}
+                            
+            .bioDescription h2, .bioDescription p {
+                font-size: 11px;}
 
             .story {
                 padding: 7.5px 0 15px 0;}
