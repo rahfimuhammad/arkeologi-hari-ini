@@ -12,15 +12,16 @@ const TraditionalBoatsOfIndonesia = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const sliderRef = useRef(null);
     const [toggle, setToggle] = useState(false)
+    const [modal, setModal] = useState([])
 
-    const getModal = () => {
+    const getModal = (index) => {
 
-        // setModal(data[parent].workBatavia[child])
+        setModal(data[index])
         setToggle(!toggle)
         }
 
     let closeModal = () => {
-        // setModal([])
+        setModal([])
         setToggle(!toggle)
         }
       
@@ -60,7 +61,7 @@ const TraditionalBoatsOfIndonesia = () => {
                                     <div className={orientation? "boatsTitle" : "boatsTitleLandscape"}><h2>{value.name}</h2></div>
                                     <div className="boatsLine" style={{padding: orientation? "0 3vw" : "0 1vw"}}></div>
                                     <div className={orientation? "boatsSummary" : "boatsSummaryLandscape"}>
-                                        <p style={{textAlign: "justify", display: orientation? "" : "none"}}>{value.summary}<span style={{cursor: "pointer"}} onClick={() => getModal()}><b><u> selengkapnya...</u></b></span></p>
+                                        <p style={{textAlign: "justify", display: orientation? "" : "none"}}>{value.summary}<span style={{cursor: "pointer"}} onClick={() => getModal(index)}><b><u> selengkapnya...</u></b></span></p>
                                         <p style={{textAlign: "justify", display: orientation? "none" : ""}}>{value.description}</p>
                                     </div>
                                 </div>
@@ -99,7 +100,7 @@ const TraditionalBoatsOfIndonesia = () => {
                 </div>
                 {toggle && <div className="boatsModalContainer" onClick={closeModal} style={{display: orientation? "flex" : "none", position: "absolute", zIndex: "14", top: "0", left: "0", width: "100%", height: "100vh", backgroundColor: "rgb(0, 0, 0, 0.8)"}}>
                     <div className="boatsModal">
-                        <p style={{textAlign: "justify", padding: "3vw 3vw"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem esse expedita, odit dolorum enim voluptate labore animi repellendus adipisci iste repellat amet autem doloribus sint, nam veritatis porro. Eos magnam velit odio omnis. Labore nobis error distinctio minima, aspernatur, corrupti eligendi tenetur porro saepe quas deleniti doloremque asperiores? Ad blanditiis consectetur, repudiandae maiores necessitatibus enim at! Deserunt molestiae aspernatur, itaque quidem consequatur repellendus quibusdam dolorem sit ut veritatis atque? Quo maiores neque, quidem id quasi deserunt atque quis rerum illo in, debitis qui. Corrupti aperiam suscipit corporis quibusdam. Eos unde repellendus eum veritatis minus sint obcaecati beatae consectetur odit dolores.</p>
+                        <p style={{textAlign: "justify", padding: "3vw 3vw"}}>{modal.description}</p>
                     </div>
                 </div>}
             </div>
