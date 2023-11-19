@@ -24,7 +24,6 @@ h2, p, h3 {
 .boatsContentContainer {
     position: relative;
     height: 100vh;
-    height: 100svh;
     display: flex;}
 
 .boatsTitle {
@@ -55,9 +54,39 @@ h2, p, h3 {
     height: 3px;
     border-bottom: 2px solid #31445b;}
 
-.boatsTitle h2, .boatsSummary p {
+.boatsTitle h2, .boatsSummary p, .boatsModal p {
     color: #31445b;
     font-size: var(--_spacer);}
+
+.boatsModal p {
+    font-size: 1.5rem;}
+
+.boatsModalContainer {
+    opacity: 0;
+    animation: opacity 500ms ease;
+    animation-fill-mode: forwards;}
+
+    @keyframes opacity {
+        0% {
+            opacity: 0;}
+        100% {
+            opacity: 1;}}
+
+.boatsModal {
+    position: absolute; 
+    top: -100vh; 
+    left: 0; 
+    width: 100%; 
+    height: fit-content;
+    background-color: rgba(255, 255, 255, .8);
+    animation: translate 500ms ease-in-out;
+    animation-fill-mode: forwards;}
+
+    @keyframes translate {
+        0% {
+            top: -100vh;}
+        100% {
+            top: 0;}}
 
 .boatsTitleLandscape {
     display: flex;
@@ -72,7 +101,7 @@ h2, p, h3 {
 
 .boatsContentWrapperPortrait {
     position: absolute;
-    bottom: 5vh;
+    bottom: calc(5vh + 2vw);
     right: 5%;
     padding: 5vh 0 0 0;
     height: fit-content;
@@ -174,6 +203,9 @@ h2, p, h3 {
     .scroller {
         --_space: .6rem;
         --_spacer: 1rem  }
+
+    .boatsModal p {
+        font-size: 1rem;}
     
     .boatsImageSourcePortrait {
         font-size: 12px;}
@@ -187,6 +219,9 @@ h2, p, h3 {
         background-size: 75px auto;
         --_spacer: 1.2rem;
         --_space: .5rem }
+
+    .boatsModal p {
+        font-size: 1.2rem;}
 
     .descriptionWrapper {
         border: 1px solid #31445b;}
@@ -202,12 +237,18 @@ h2, p, h3 {
     @media only screen and (max-width: 376px) {
 
         .scroller {
-            --_spacer: 1rem}}
+            --_spacer: 1rem}
+            
+        .boatsModal p {
+            font-size: 1rem;}}
 
     @media only screen and (max-width: 330px) {
 
         .scroller {
             --_spacer: .8rem}
+
+        .boatsModal p {
+            font-size: .8rem;}
         
         .boatsImageSource {
             font-size: 10px;}}

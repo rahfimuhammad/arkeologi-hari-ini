@@ -320,6 +320,8 @@
         font-weight: bold;}
 
     .authorName {
+        text-align: center;
+        width: calc(100vw - (58vw + 4px));
         margin: 0 0 2vw 0}
 
     .bioDescription h1, .authorName {
@@ -650,8 +652,6 @@
                 width: 70%;}
                 
             .bioProfile {
-                display: flex;
-                flex-direction: row;
                 padding: 4vw 0;}
                 
             .bioProfile img {

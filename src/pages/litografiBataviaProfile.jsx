@@ -122,12 +122,12 @@ const LitografiBataviaProfile = () => {
                     <div className={orientation? "bioProfile" : "landscapeBioProfile"}>
                         <span style={{backgroundImage: `url(${passing.picture})`, backgroundSize: "105% auto", backgroundPosition: "center center"}}></span>
                         <div className="nameContainer" style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
-                            <h1 className={orientation? "authorName" : "landscapeAuthorName"}>{passing.author}</h1>
+                            <h1 className={orientation? "authorName" : "landscapeAuthorName"}>{passing.nickName}</h1>
                             <h2 className={orientation? "activeYear" : "landscapeActiveYear"} style={{margin: "0", color: "rgb(107, 108, 109)"}}>{passing.year}</h2>
                         </div>
                     </div>
                     <div className={orientation? "bioDescription" : "landscapeBioDescription"}>
-                        <h1>{passing.nickName}</h1>
+                        <h1>{passing.author}</h1>
                         <h2 style={{color: "#6b6c6d"}}>{passing.employment}</h2>
                         <p>{passing.story}</p>
                     </div>
