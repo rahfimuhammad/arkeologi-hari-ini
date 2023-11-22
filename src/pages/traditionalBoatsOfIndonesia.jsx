@@ -13,6 +13,43 @@ const TraditionalBoatsOfIndonesia = () => {
     const sliderRef = useRef(null);
     const [toggle, setToggle] = useState(false)
     const [modal, setModal] = useState([])
+    const [trigger, setTrigger] = useState(0)
+
+    useEffect(() => {
+
+        const handleScroll = () => {
+                   
+            const scrollXValue = sliderRef.current.scrollLeft;
+                return  setTrigger(scrollXValue)};
+                
+                sliderRef.current.addEventListener('scroll', handleScroll);}, []);
+
+    const handleNext = () => {
+            
+            const newIndex = sliderRef.current.scrollLeft + sliderRef.current.offsetWidth ;
+            setCurrentIndex(newIndex);
+            snapToSlide(newIndex);
+                         };
+                      
+    const handlePrev = () => {
+                        
+            const newIndex = sliderRef.current.scrollLeft - sliderRef.current.offsetWidth ;
+            setCurrentIndex(newIndex);
+            snapToSlide(newIndex);
+                         };
+                      
+    const snapToSlide = (key) => {
+                           
+            sliderRef.current.scrollTo({
+                left: key,
+                behavior: 'smooth'});
+                };
+
+    useEffect(() => {
+            
+        setTrigger(sliderRef.current.scrollLeft)
+                                    
+                },[])
 
     const getModal = (index) => {
 
@@ -24,37 +61,18 @@ const TraditionalBoatsOfIndonesia = () => {
         setModal([])
         setToggle(!toggle)
         }
-      
-        const handleNext = () => {
-          const newIndex = currentIndex + 1 >= data.length ? 0 : currentIndex + 1;
-          setCurrentIndex(newIndex);
-          snapToSlide(newIndex);
-        };
-      
-        const handlePrev = () => {
-          const newIndex = currentIndex - 1 < 0 ? data.length - 1 : currentIndex - 1;
-          setCurrentIndex(newIndex);
-          snapToSlide(newIndex);
-        };
-      
-        const snapToSlide = (index) => {
-          const sliderWidth = sliderRef.current.offsetWidth;
-          sliderRef.current.scrollTo({
-            left: index * sliderWidth,
-            behavior: 'smooth',
-          });
-        };
 
-            useEffect(() => {
-                window.scrollTo(0, 0)
-                alert("Database masih dalam pengembangan")
+    useEffect(() => {
+        
+        window.scrollTo(0, 0)
+        alert("Database masih dalam pengembangan")
             },[])
         
-            const mapContent = () => {
+    const mapContent = () => {
                 
-                return data.map((value, index) => {
-                    return (
-                        <div className="boatsContentContainer" key={index}>
+        return data.map((value, index) => {
+                return (
+                    <div className="boatsContentContainer" key={index}>
                         <div className={orientation? "boatsContentWrapperPortrait": "boatsContentWrapperLandscape"} style={{width: "90%"}}>
                             <div className={orientation? "boatsDescriptionPortrait" : "boatsDescriptionLandscape"}>
                                 <div className="descriptionWrapper">
@@ -68,7 +86,7 @@ const TraditionalBoatsOfIndonesia = () => {
                             </div>
                             <div className={orientation? "boatsImagePortrait" : "boatsImageLandscape"}>
                                 <h3 className={orientation? "boatsImageSourcePortrait" : "boatsImageSourceLandscape"}>{value.source}</h3>
-                                <div className={orientation? "boatsImage" : "boatsImageLand"}  style={{position: "absolute", backgroundColor: "#31445b", backgroundSize: "120px 120px", backgroundRepeat: "repeat", backgroundImage: `url(${Grid})`}}></div>
+                                <div className={orientation? "boatsImage" : "boatsImageLand"}  style={{position: "absolute", backgroundColor: "#2c363b", backgroundSize: "120px 120px", backgroundRepeat: "repeat", backgroundImage: `url(${Grid})`}}></div>
                                 <div className={orientation? "boatsImage" : "boatsImageLand"} style={{position: "absolute", backgroundSize: "100% auto", backgroundPosition: "center bottom", backgroundRepeat: "no-repeat", backgroundImage: `url(${value.image})`}}></div>
                             </div>
                         </div>
@@ -83,19 +101,24 @@ const TraditionalBoatsOfIndonesia = () => {
                 <div style={{position: "fixed", zIndex: "13"}}>
                     <Navbar/>
                 </div>
-                <div className="buttonContainer" style={{display: orientation? "none":"flex", flexDirection: "row",justifyContent: "space-between", position: "absolute", zIndex:"12", bottom: "5vh", right: "5%", width: "30vw", height: "5vw"}}>
-                    <div onClick={currentIndex > 0? handlePrev : ""} className="prevButtonContainer" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "14vw", height: "100%", cursor: "pointer"}}>
-                        <div className="prevButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "2px solid #31445b"}}>
-                            <h3 className="boatsImageSourceLandscape" style={{position: "static"}}>prev</h3>
-                        </div>
-                    </div>
-                    <div onClick={currentIndex < data.length - 1? handleNext : ""} type="button" className="nextButtonContainer" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "14vw", height: "100%", cursor: "pointer"}}>
-                        <div className="nextButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "2px solid #31445b"}}>
-                            <h3 className="boatsImageSourceLandscape" style={{position: "static"}}>next</h3>
-                        </div>
-                    </div>
-                </div>
-                <div className="scroller snapsInline" style={{backgroundColor: "#31445b", backgroundImage: `url(${Grid})`, backgroundRepeat: "repeat"}} ref={sliderRef}>
+                <div className="buttonContainer" style={{display:"flex", flexDirection: "row",justifyContent: "space-between", position: "absolute", zIndex:"12", bottom: "5vh", right: "5%", width: "30vw", height: "5vw"}}>
+                    <div onClick={handlePrev} className="prevButtonContainer"  id={orientation || trigger < window.innerWidth? "buttonContainerFalse" : "buttonContainerTrue"} style={{display:"flex", justifyContent: "center", alignItems: "center", width: "14vw", height: "100%", cursor: "pointer", border: "2px solid rgb(48, 67, 89)"}}>
+                         <div className="prevButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "2px solid rgb(48, 67, 89)"}}>
+                             <h3 className="boatsImageSourceLandscape" style={{position: "static", color: "rgb(48, 67, 89)"}}>prev</h3>
+                         </div>
+                     </div>
+                     <div onClick={handleNext} type="button" className="nextButtonContainer" id={orientation || trigger < window.innerWidth? "buttonContainerFalse" : "buttonContainerTrue"} style={{display: currentIndex < 0? "none" : "flex", justifyContent: "center", alignItems: "center", width: "14vw", height: "100%", cursor: "pointer", border: "2px solid rgb(48, 67, 89)"}}>
+                         <div className="nextButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "2px solid rgb(48, 67, 89)"}}>
+                             <h3 className="boatsImageSourceLandscape" style={{position: "static", color: "rgb(48, 67, 89)"}}>next</h3>
+                         </div>
+                     </div>
+                 </div>
+                <div className="scroller snapsInline" style={{backgroundColor: "#2c363b", backgroundImage: `url(${Grid})`, backgroundRepeat: "repeat"}} ref={sliderRef}>
+                    <div className="boatsContentContainer">
+                        <div className={orientation? "coverWrapper" : "landscapeCoverWrapper"} style={{width: "100vw", height: "100vh", zIndex: "14", position: "absolute"}}>
+                            <div onClick={handleNext} className={orientation? "enter" : "enterLandscape"} style={{border: "none", position: "absolute"}}><h2>Test</h2></div>
+                         </div>
+                     </div>       
                     {mapContent()}      
                 </div>
                 {toggle && <div className="boatsModalContainer" onClick={closeModal} style={{display: orientation? "flex" : "none", position: "absolute", zIndex: "14", top: "0", left: "0", width: "100%", height: "100vh", backgroundColor: "rgb(0, 0, 0, 0.8)"}}>

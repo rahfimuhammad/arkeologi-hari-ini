@@ -1,260 +1,286 @@
 @import url('https://fonts.cdnfonts.com/css/komika-axis');
 
-div::-webkit-scrollbar {
-    display: none;}
-
-::-webkit-scrollbar {
-    display: none;}
-
-h2, p, h3 {
-    -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-    margin: 0;}
-
-.scroller {
-    background-size: 100px auto;
-    --_spacer: 1.5rem;
-    --_spacerLandscape: .5rem;
-    height: 100vh;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 100%;
-    gap: 50px;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;}
-
-.boatsContentContainer {
-    position: relative;
-    height: 100vh;
-    display: flex;}
-
-.boatsTitle {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 2px solid #31445b;}
-
-.boatsImageSourcePortrait {
-    position: absolute;
-    bottom: 4.5vw;
-    left: 4.5vw;
-    font-family: 'Komika Axis', sans-serif;
-    font-size: 18px;
-    color: #31445b;}
-
-.boatsImageSourceLandscape {
-    position: absolute;
-    bottom: 2.25vw;
-    left: 2.25vw;
-    font-family: 'Komika Axis', sans-serif;
-    font-size: 15px;
-    color: #31445b;}
-
-.boatsLine {
-    width: 90%;
-    height: 3px;
-    border-bottom: 2px solid #31445b;}
-
-.boatsTitle h2, .boatsSummary p, .boatsModal p {
-    color: #31445b;
-    font-size: var(--_spacer);}
-
-.boatsModal p {
-    font-size: 1.5rem;}
-
-.boatsModalContainer {
-    opacity: 0;
-    animation: opacity 400ms ease;
-    animation-fill-mode: forwards;}
-
-    @keyframes opacity {
-        0% {
-            opacity: 0;}
-        100% {
-            opacity: 1;}}
-
-.boatsModal {
-    position: absolute; 
-    top: -100vh; 
-    left: 0; 
-    width: 100%; 
-    height: fit-content;
-    background-color: rgba(255, 255, 255, .8);
-    animation: translate 400ms ease-in-out;
-    animation-fill-mode: forwards;}
-
-    @keyframes translate {
-        0% {
-            top: -100vh;}
-        100% {
-            top: 0;}}
-
-.boatsTitleLandscape {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    border-bottom: 2px solid #31445b;}
-
-.boatsTitleLandscape, .boatsSummaryLandscape {
-    color: #31445b;
-    font-size: var(--_space);}
-
-.boatsContentWrapperPortrait {
-    position: absolute;
-    bottom: calc(5vh + 2vw);
-    right: 5%;
-    padding: 5vh 0 0 0;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;}
-
-.boatsContentWrapperLandscape {
-    position: absolute;
-    top: 15vh;
-    right: 5%;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: flex-start;}
-
-.snapsInline {
-    scroll-snap-type: inline mandatory;}
-
-.snapsInline > * {
-    scroll-snap-align: start;}
-
-.boatsImagePortrait {
-    position: relative;
-    width: 90vw;
-    height: 80vw;
-    background-color: rgba(255, 255, 255, .8);
-    box-shadow: 5px 5px 2.5px 0px rgba(0,0,0,0.3);}
-
-.boatsImage {
-    width: 90%;
-    height: 70%;
-    top: 4.5vw; 
-    right: 4.5vw;}
-
-.boatsImageLand {
-    width: 90%;
-    height: 70%;
-    top: 2.25vw; 
-    right: 2.25vw;}
-
-.descriptionWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px solid #31445b;}
-
-.boatsDescriptionPortrait {
-    padding: 2vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: calc(90vw - 4vw);
-    height: fit-content;
-    margin-bottom: 2vh;
-    background-color:  rgba(255, 255, 255, .8);
-    box-shadow: 5px 5px 2.5px 0px rgba(0,0,0,0.3);}
-
-.boatsImageLandscape {
-    position: relative;
-    width: 50%;
-    height: 70vh;
-    background-color:  rgba(255, 255, 255, .8);}
-
-.boatsDescriptionLandscape {
-    padding: 1vw;
-    width: 46%;
-    height: fit-content;
-    background-color:  rgba(255, 255, 255, .8);}
-
-.boatsTitle, .boatsSummary {
-    padding: 1vw 3vw;}
-
-.boatsTitleLandscape {
-    padding: 0 1vw;}
-
-.boatsSummaryLandscape {
-    padding: 1vw 1vw;}
-
-.prevButtonContainer, .nextButtonContainer {
-    background-color: rgba(255, 255, 255, .8);
-    transition: background-color 400ms ease;}
-
-.prevButtonContainer:hover, .nextButtonContainer:hover {
-    background-color: rgba(255, 255, 255, 1)}
-
-@media only screen and (max-width: 990px) {
+    div::-webkit-scrollbar {
+        display: none;}
+    
+    ::-webkit-scrollbar {
+        display: none;}
+    
+    h2, p, h3 {
+        -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+        margin: 0;}
+    
     .scroller {
-        --_space: .6rem }
-
-    .boatsImageLandscape {
-        height: 80vh;}
-        
-    .boatsImageSourceLandscape {
-        font-size: 13px;}}
-
-@media only screen and (max-width: 700px) {
-    .scroller {
-        --_space: .6rem;
-        --_spacer: 1rem  }
-
-    .boatsModal p {
-        font-size: 1rem;}
+        background-size: 100px auto;
+        --_spacer: 1.5rem;
+        --_spacerLandscape: .5rem;
+        height: 100vh;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 100%;
+        gap: 50px;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;}
+    
+    .boatsContentContainer {
+        position: relative;
+        height: 100vh;
+        display: flex;}
+    
+    .boatsTitle {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 2px solid #2c363b;}
     
     .boatsImageSourcePortrait {
-        font-size: 12px;}
+        position: absolute;
+        bottom: 4.5vw;
+        left: 4.5vw;
+        font-family: 'Komika Axis', sans-serif;
+        font-size: 18px;
+        color: #2c363b;}
     
     .boatsImageSourceLandscape {
-        font-size: 13px;}}
+        position: absolute;
+        bottom: 2.25vw;
+        left: 2.25vw;
+        font-family: 'Komika Axis', sans-serif;
+        font-size: 15px;
+        color: #2c363b;}
     
-@media only screen and (max-width: 500px) {
-
-    .scroller {
-        background-size: 75px auto;
-        --_spacer: 1.2rem;
-        --_space: .5rem }
-
+    .boatsLine {
+        width: 90%;
+        height: 3px;
+        border-bottom: 2px solid #2c363b;}
+    
+    .boatsTitle h2, .boatsSummary p, .boatsModal p {
+        color: #2c363b;
+        font-size: var(--_spacer);}
+    
     .boatsModal p {
-        font-size: 1.2rem;}
-
-    .descriptionWrapper {
-        border: 1px solid #31445b;}
-        
-    .boatsTitle, .boatsLine {
-        border-bottom: 1px solid #31445b;}
+        font-size: 1.5rem;}
+    
+    .boatsModalContainer {
+        opacity: 0;
+        animation: opacity 400ms ease;
+        animation-fill-mode: forwards;}
+    
+        @keyframes opacity {
+            0% {
+                opacity: 0;}
+            100% {
+                opacity: 1;}}
+    
+    .boatsModal {
+        position: absolute; 
+        top: -100vh; 
+        left: 0; 
+        width: 100%; 
+        height: fit-content;
+        background-color: rgba(255, 255, 255, .8);
+        animation: translate 400ms ease-in-out;
+        animation-fill-mode: forwards;}
+    
+        @keyframes translate {
+            0% {
+                top: -100vh;}
+            100% {
+                top: 0;}}
+    
+    .boatsTitleLandscape {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        border-bottom: 2px solid #2c363b;}
+    
+    .boatsTitleLandscape, .boatsSummaryLandscape {
+        color: #2c363b;
+        font-size: var(--_space);}
+    
+    .boatsContentWrapperPortrait {
+        position: absolute;
+        bottom: calc(5vh + 2vw);
+        right: 5%;
+        padding: 5vh 0 0 0;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;}
+    
+    .boatsContentWrapperLandscape {
+        position: absolute;
+        top: 15vh;
+        right: 5%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-start;}
+    
+    .snapsInline {
+        scroll-snap-type: inline mandatory;}
+    
+    .snapsInline > * {
+        scroll-snap-align: start;}
     
     .boatsImagePortrait {
-        width: 100%;
+        position: relative;
+        width: 90vw;
         height: 80vw;
-        margin-bottom: 2vh;}} 
-
-    @media only screen and (max-width: 376px) {
-
+        background-color: rgba(255, 255, 255, .8);
+        box-shadow: 5px 5px 2.5px 0px rgba(0,0,0,0.3);}
+    
+    .boatsImage {
+        width: 90%;
+        height: 70%;
+        top: 4.5vw; 
+        right: 4.5vw;}
+    
+    .boatsImageLand {
+        width: 90%;
+        height: 70%;
+        top: 2.25vw; 
+        right: 2.25vw;}
+    
+    .descriptionWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid #2c363b;}
+    
+    .boatsDescriptionPortrait {
+        padding: 2vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: calc(90vw - 4vw);
+        height: fit-content;
+        margin-bottom: 2vh;
+        background-color:  rgba(255, 255, 255, .8);
+        box-shadow: 5px 5px 2.5px 0px rgba(0,0,0,0.3);}
+    
+    .boatsImageLandscape {
+        position: relative;
+        width: 50%;
+        height: 70vh;
+        background-color:  rgba(255, 255, 255, .8);}
+    
+    .boatsDescriptionLandscape {
+        padding: 1vw;
+        width: 46%;
+        height: fit-content;
+        background-color:  rgba(255, 255, 255, .8);}
+    
+    .boatsTitle, .boatsSummary {
+        padding: 1vw 3vw;}
+    
+    .boatsTitleLandscape {
+        padding: 0 1vw;}
+    
+    .boatsSummaryLandscape {
+        padding: 1vw 1vw;}
+    
+    .prevButtonContainer, .nextButtonContainer {
+        background-color: rgba(255, 255, 255, .8);
+        transition: background-color 400ms ease;}
+    
+    .prevButtonContainer:hover, .nextButtonContainer:hover {
+        background-color: rgba(255, 255, 255, 1)}
+    
+    @media only screen and (max-width: 990px) {
         .scroller {
-            --_spacer: 1rem}
+            --_space: .6rem }
+    
+        .boatsImageLandscape {
+            height: 80vh;}
             
-        .boatsModal p {
-            font-size: 1rem;}}
-
-    @media only screen and (max-width: 330px) {
-
+        .boatsImageSourceLandscape {
+            font-size: 13px;}}
+    
+    @media only screen and (max-width: 700px) {
         .scroller {
-            --_spacer: .8rem}
-
+            --_space: .6rem;
+            --_spacer: 1rem  }
+    
         .boatsModal p {
-            font-size: .8rem;}
+            font-size: 1rem;}
         
-        .boatsImageSource {
-            font-size: 10px;}}
+        .boatsImageSourcePortrait {
+            font-size: 12px;}
+        
+        .boatsImageSourceLandscape {
+            font-size: 13px;}}
+        
+    @media only screen and (max-width: 500px) {
+    
+        .scroller {
+            background-size: 75px auto;
+            --_spacer: 1.2rem;
+            --_space: .5rem }
+    
+        .boatsModal p {
+            font-size: 1.2rem;}
+    
+        .descriptionWrapper {
+            border: 1px solid #2c363b;}
+            
+        .boatsTitle, .boatsLine {
+            border-bottom: 1px solid #2c363b;}
+        
+        .boatsImagePortrait {
+            width: 100%;
+            height: 80vw;
+            margin-bottom: 2vh;}} 
+    
+        @media only screen and (max-width: 376px) {
+    
+            .scroller {
+                --_spacer: 1rem}
+                
+            .boatsModal p {
+                font-size: 1rem;}}
+    
+        @media only screen and (max-width: 330px) {
+    
+            .scroller {
+                --_spacer: .8rem}
+    
+            .boatsModal p {
+                font-size: .8rem;}
+            
+            .boatsImageSource {
+                font-size: 10px;}}
+
+            #buttonContainerTrue {
+                opacity: 0;
+                scale: 0;
+                animation: displayButton .5s ease-in forwards;}
+                
+            @keyframes displayButton {
+                0% {
+                    opacity: 0;
+                    scale: 0;}
+                100% {
+                    opacity: 1;
+                    scale: 1;}}
+                
+            #buttonContainerFalse {
+                opacity: 1;
+                scale: 1;
+                animation: hiddenButton 50ms ease-in forwards;}
+                
+            @keyframes hiddenButton {
+                0% {
+                    opacity: 1;
+                    scale: 1;}
+                100% {
+                    opacity: 0;
+                    scale: 0;}}
