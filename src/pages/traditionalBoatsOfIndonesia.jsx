@@ -4,6 +4,7 @@ import "./traditionalBoatsOfIndonesia.css"
 import Navbar from "../components/Navbar"
 import { useEffect, useState, useRef } from "react"
 import Grid from "../assets/trb-Grid.svg"
+// import Intro from "../assets/introCover.svg"
 
 const TraditionalBoatsOfIndonesia = () => {
 
@@ -98,7 +99,7 @@ const TraditionalBoatsOfIndonesia = () => {
     return (
         <>
             <div className="mainBoatsContainer">
-                <div style={{position: "fixed", zIndex: "13"}}>
+                <div style={{position: "fixed", zIndex: "15"}}>
                     <Navbar/>
                 </div>
                 <div className="buttonContainer" style={{display:"flex", flexDirection: "row",justifyContent: "space-between", position: "absolute", zIndex:"12", bottom: "5vh", right: "5%", width: "30vw", height: "5vw"}}>
@@ -117,9 +118,10 @@ const TraditionalBoatsOfIndonesia = () => {
                     <div className="boatsContentContainer">
                         <div className="coverWrapper" style={{width: "100vw", height: "100vh", zIndex: "14", position: "absolute"}}>
                             <div className={orientation? "enter" : "enterLandscape"} style={{border: "none", position: "absolute"}}>
-                                <div className="introWrapper">
+                                <div className={orientation? "introWrapper" : "introWrapperLandscape"}>
                                     <h2 id={orientation? "title" : "titleLandscape"}>Perahu Nusantara</h2>
-                                    <div onClick={handleNext} className="introButton">
+                                    <div className={orientation? "introImage" : "introImageLandscape"} style={{position: "absolute", backgroundPosition: "center center", backgroundSize: "100% auto"}}></div>
+                                    <div onClick={handleNext} className={orientation? "introButton" : "introButtonLandscape"} style={{cursor: "pointer"}}>
                                         <h3 id={orientation? "start" : "startLandscape"} style={{margin: "0", padding: "0"}}>Enter</h3>
                                     </div>
                                 </div>
@@ -128,7 +130,7 @@ const TraditionalBoatsOfIndonesia = () => {
                      </div>       
                     {mapContent()}      
                 </div>
-                {toggle && <div className="boatsModalContainer" onClick={closeModal} style={{display: orientation? "flex" : "none", position: "absolute", zIndex: "14", top: "0", left: "0", width: "100%", height: "100vh", backgroundColor: "rgb(0, 0, 0, 0.8)"}}>
+                {toggle && <div className="boatsModalContainer" onClick={closeModal} style={{display: orientation? "flex" : "none", position: "absolute", zIndex: "16", top: "0", left: "0", width: "100%", height: "100vh", backgroundColor: "rgb(0, 0, 0, 0.8)"}}>
                     <div className="boatsModal">
                         <p style={{textAlign: "justify", padding: "3vw 3vw"}}>{modal.description}</p>
                     </div>
