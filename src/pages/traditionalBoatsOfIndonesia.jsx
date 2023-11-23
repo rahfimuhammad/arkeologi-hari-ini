@@ -103,20 +103,27 @@ const TraditionalBoatsOfIndonesia = () => {
                 </div>
                 <div className="buttonContainer" style={{display:"flex", flexDirection: "row",justifyContent: "space-between", position: "absolute", zIndex:"12", bottom: "5vh", right: "5%", width: "30vw", height: "5vw"}}>
                     <div onClick={handlePrev} className="prevButtonContainer"  id={orientation || trigger < window.innerWidth? "buttonContainerFalse" : "buttonContainerTrue"} style={{display:"flex", justifyContent: "center", alignItems: "center", width: "14vw", height: "100%", cursor: "pointer", border: "2px solid rgb(48, 67, 89)"}}>
-                         <div className="prevButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "2px solid rgb(48, 67, 89)"}}>
-                             <h3 className="boatsImageSourceLandscape" style={{position: "static", color: "rgb(48, 67, 89)"}}>prev</h3>
+                         <div className="prevButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "1px solid #2c363b"}}>
+                             <h3 className="boatsImageSourceLandscape" style={{position: "static", color: "#2c363b"}}>prev</h3>
                          </div>
                      </div>
                      <div onClick={handleNext} type="button" className="nextButtonContainer" id={orientation || trigger < window.innerWidth? "buttonContainerFalse" : "buttonContainerTrue"} style={{display: currentIndex < 0? "none" : "flex", justifyContent: "center", alignItems: "center", width: "14vw", height: "100%", cursor: "pointer", border: "2px solid rgb(48, 67, 89)"}}>
-                         <div className="nextButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "2px solid rgb(48, 67, 89)"}}>
-                             <h3 className="boatsImageSourceLandscape" style={{position: "static", color: "rgb(48, 67, 89)"}}>next</h3>
+                         <div className="nextButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "1px solid #2c363b"}}>
+                             <h3 className="boatsImageSourceLandscape" style={{position: "static", color: "#2c363b"}}>next</h3>
                          </div>
                      </div>
                  </div>
                 <div className="scroller snapsInline" style={{backgroundColor: "#2c363b", backgroundImage: `url(${Grid})`, backgroundRepeat: "repeat"}} ref={sliderRef}>
                     <div className="boatsContentContainer">
-                        <div className={orientation? "coverWrapper" : "landscapeCoverWrapper"} style={{width: "100vw", height: "100vh", zIndex: "14", position: "absolute"}}>
-                            <div onClick={handleNext} className={orientation? "enter" : "enterLandscape"} style={{border: "none", position: "absolute"}}><h2>Test</h2></div>
+                        <div className="coverWrapper" style={{width: "100vw", height: "100vh", zIndex: "14", position: "absolute"}}>
+                            <div className={orientation? "enter" : "enterLandscape"} style={{border: "none", position: "absolute"}}>
+                                <div className="introWrapper">
+                                    <h2 id={orientation? "title" : "titleLandscape"}>Perahu Nusantara</h2>
+                                    <div onClick={handleNext} className="introButton">
+                                        <h3 id={orientation? "start" : "startLandscape"} style={{margin: "0", padding: "0"}}>Enter</h3>
+                                    </div>
+                                </div>
+                            </div>
                          </div>
                      </div>       
                     {mapContent()}      
