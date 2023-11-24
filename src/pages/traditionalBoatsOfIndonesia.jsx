@@ -4,7 +4,9 @@ import "./traditionalBoatsOfIndonesia.css"
 import Navbar from "../components/Navbar"
 import { useEffect, useState, useRef } from "react"
 import Grid from "../assets/trb-Grid.svg"
-// import Intro from "../assets/introCover.svg"
+import Glosarium from "../assets/Glosarium.svg"
+import JsonDisplay from "../components/JsonDisplay";
+import JsonData from "../database/db.json"
 
 const TraditionalBoatsOfIndonesia = () => {
 
@@ -13,6 +15,7 @@ const TraditionalBoatsOfIndonesia = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const sliderRef = useRef(null);
     const [toggle, setToggle] = useState(false)
+    const [glosariumToggle, setGlosariumToggle] = useState(false)
     const [modal, setModal] = useState([])
     const [trigger, setTrigger] = useState(0)
 
@@ -63,6 +66,15 @@ const TraditionalBoatsOfIndonesia = () => {
         setToggle(!toggle)
         }
 
+    const getGlosarium = () => {
+        
+        setGlosariumToggle(!glosariumToggle)
+        }
+
+    let closeGlosarium = () => {
+        setGlosariumToggle(!glosariumToggle)
+        }
+
     useEffect(() => {
         
         window.scrollTo(0, 0)
@@ -102,6 +114,8 @@ const TraditionalBoatsOfIndonesia = () => {
                 <div style={{position: "fixed", zIndex: "15"}}>
                     <Navbar/>
                 </div>
+                <img onClick={getGlosarium} src={Glosarium} alt="glosarium" className={trigger < window.innerHeight/2? "glosariumBefore" : "glosariumAfter"}/>
+                {glosariumToggle && <div onClick={closeGlosarium} style={{position: "absolute", width: "100vw", height: "100vh", zIndex: "16", top: "0", left: "0", backgroundColor: "rgb(0, 0, 0, 0.8)"}}><div  className="glosariumContainer"><JsonDisplay data={JsonData}/></div></div>}
                 <div className="buttonContainer" style={{display:"flex", flexDirection: "row",justifyContent: "space-between", position: "absolute", zIndex:"12", bottom: "5vh", right: "5%", width: "30vw", height: "5vw"}}>
                     <div onClick={handlePrev} className="prevButtonContainer"  id={orientation || trigger < window.innerWidth? "buttonContainerFalse" : "buttonContainerTrue"} style={{display:"flex", justifyContent: "center", alignItems: "center", width: "14vw", height: "100%", cursor: "pointer", border: "2px solid rgb(48, 67, 89)"}}>
                          <div className="prevButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "1px solid #2c363b"}}>

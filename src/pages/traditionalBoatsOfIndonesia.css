@@ -1,3 +1,21 @@
+.glosariumAfter, .glosariumBefore {
+    z-index: 15;
+    position: absolute;
+    height: 5vh;
+    top: 2vh;
+    right: 2vh;
+    cursor: pointer;}
+
+.glosariumAfter {
+    scale: 0;
+    opacity: 0;
+    animation: displayButton .5s ease-in forwards;}
+
+.glosariumBefore {
+    scale: 1;
+    opacity: 1;
+    animation: hiddenButton .5s ease-in forwards;}
+
 .coverWrapper {
     --_reft : 2.2rem;
     --_reftl : 1.9rem;
@@ -164,11 +182,11 @@
         height: 3px;
         border-bottom: 2px solid #2c363b;}
     
-    .boatsTitle h2, .boatsSummary p, .boatsModal p {
+    .boatsTitle h2, .boatsSummary p, .boatsModal p, .glosariumData {
         color: #2c363b;
         font-size: var(--_spacer);}
     
-    .boatsModal p {
+    .boatsModal p, .glosariumData {
         font-size: 1.5rem;}
     
     .boatsModalContainer {
@@ -182,7 +200,7 @@
             100% {
                 opacity: 1;}}
     
-    .boatsModal {
+    .boatsModal, .glosariumContainer {
         position: absolute; 
         top: -100vh; 
         left: 0; 
@@ -324,7 +342,7 @@
             --_space: .6rem;
             --_spacer: 1rem  }
     
-        .boatsModal p {
+        .boatsModal p, .glosariumData {
             font-size: 1rem;}
         
         .boatsImageSourcePortrait {
@@ -346,7 +364,7 @@
             --_spacer: 1.2rem;
             --_space: .5rem }
     
-        .boatsModal p {
+        .boatsModal p, .glosariumData {
             font-size: 1.2rem;}
     
         .descriptionWrapper {
@@ -365,6 +383,11 @@
     
         @media only screen and (max-width: 376px) {
 
+            .glosarium {
+                height: 3vh;
+                top: 1vh;
+                right: 1vh;}
+
             .coverWrapper {
                 --_reft : 1.4rem;
                 --_refs : 1.2rem;}
@@ -372,7 +395,7 @@
             .scroller {
                 --_spacer: 1rem}
                 
-            .boatsModal p {
+            .boatsModal p, .glosariumData {
                 font-size: 1rem;}}
     
         @media only screen and (max-width: 330px) {
@@ -384,7 +407,7 @@
             .scroller {
                 --_spacer: .8rem}
     
-            .boatsModal p {
+            .boatsModal p, .glosariumData {
                 font-size: .8rem;}
             
             .boatsImageSource {
