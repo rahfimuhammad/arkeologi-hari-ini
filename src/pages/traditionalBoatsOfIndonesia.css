@@ -1,5 +1,5 @@
 .glosariumAfter, .glosariumBefore {
-    z-index: 15;
+    z-index: 12;
     position: absolute;
     height: 5vh;
     top: 2vh;
@@ -14,7 +14,7 @@
 .glosariumBefore {
     scale: 1;
     opacity: 1;
-    animation: hiddenButton .5s ease-in forwards;}
+    animation: hiddenButton 50ms ease-in forwards;}
 
 .coverWrapper {
     --_reft : 2.2rem;
@@ -180,7 +180,7 @@
     .boatsLine {
         width: 90%;
         height: 3px;
-        border-bottom: 2px solid #2c363b;}
+        border-bottom: 1px solid #2c363b ;}
     
     .boatsTitle h2, .boatsSummary p, .boatsModal p, .glosariumData {
         color: #2c363b;
@@ -275,7 +275,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 2px solid #2c363b;}
+        border: 1px solid #2c363b;}
     
     .boatsDescriptionPortrait {
         padding: 2vw;
@@ -330,7 +330,10 @@
             height: 80vh;}
             
         .boatsImageSourceLandscape {
-            font-size: 13px;}}
+            font-size: 13px;}
+        
+        .boatsLineLandscape {
+            border-bottom: 1px solid #2c363b;}}
     
     @media only screen and (max-width: 700px) {
 
@@ -366,9 +369,6 @@
     
         .boatsModal p, .glosariumData {
             font-size: 1.2rem;}
-    
-        .descriptionWrapper {
-            border: 1px solid #2c363b;}
             
         .boatsTitle, .boatsLine {
             border-bottom: 1px solid #2c363b;}

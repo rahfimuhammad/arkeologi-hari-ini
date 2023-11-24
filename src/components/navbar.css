@@ -1,10 +1,11 @@
 .navbar-container {
-    width: 100%;
+    width: fit-content;
     height: 11vh;
     background-color: rgba(240, 240, 240, 0);
     display: flex;
     flex-direction: row;
     align-items: center;
+    left: 0;
     top: 0;
     position: absolute;
     z-index: 11;}

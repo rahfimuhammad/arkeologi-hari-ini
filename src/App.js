@@ -1,6 +1,7 @@
 import React, {lazy, Suspense} from "react";
 import Home from "./pages/home"
 import {Route, Routes} from 'react-router-dom'
+import LoadingBar from "./components/loading/LoadingBar.jsx";
 
 const PrehistoricOfIndonesia = lazy(() => import ("./pages/prehistoricOfIndonesia"))
 const BorobudurInNumbers = lazy(() => import ("./pages/borobudurInNumbers"))
@@ -11,7 +12,7 @@ const TraditionalBoatsOfIndonesia = lazy(() => import ("./pages/traditionalBoats
 function App() {
   return (
     <div>
-      <Suspense fallback={<h1>...</h1>}>
+      <Suspense fallback={<LoadingBar/>}>
         <Routes>
             <Route  path="/" element={ <Home/> }/>
               <Route  path="prehistoricOfIndonesia" element= {<PrehistoricOfIndonesia />} />

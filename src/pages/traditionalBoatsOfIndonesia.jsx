@@ -78,7 +78,7 @@ const TraditionalBoatsOfIndonesia = () => {
     useEffect(() => {
         
         window.scrollTo(0, 0)
-        alert("Database masih dalam pengembangan")
+        // alert("Database masih dalam pengembangan")
             },[])
         
     const mapContent = () => {
@@ -92,7 +92,7 @@ const TraditionalBoatsOfIndonesia = () => {
                                     <div className={orientation? "boatsTitle" : "boatsTitleLandscape"}><h2>{value.name}</h2></div>
                                     <div className="boatsLine" style={{padding: orientation? "0 3vw" : "0 1vw"}}></div>
                                     <div className={orientation? "boatsSummary" : "boatsSummaryLandscape"}>
-                                        <p style={{textAlign: "justify", display: orientation? "" : "none"}}>{value.summary}<span style={{cursor: "pointer"}} onClick={() => getModal(index)}><b><u> selengkapnya...</u></b></span></p>
+                                        <p style={{textAlign: "justify", display: orientation? "" : "none"}}>{value.summary} <span style={{cursor: "pointer"}} onClick={() => getModal(index)}><b><u>selengkapnya...</u></b></span></p>
                                         <p style={{textAlign: "justify", display: orientation? "none" : ""}}>{value.description}</p>
                                     </div>
                                 </div>
