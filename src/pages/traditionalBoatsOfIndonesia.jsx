@@ -115,7 +115,7 @@ const TraditionalBoatsOfIndonesia = () => {
                     <Navbar/>
                 </div>
                 <img onClick={getGlosarium} src={Glosarium} alt="glosarium" className={trigger < window.innerHeight/2? "glosariumBefore" : "glosariumAfter"}/>
-                {glosariumToggle && <div onClick={closeGlosarium} style={{position: "absolute", width: "100vw", height: "100vh", zIndex: "16", top: "0", left: "0", backgroundColor: "rgb(0, 0, 0, 0.8)"}}><div  className="glosariumContainer"><JsonDisplay data={JsonData}/></div></div>}
+                {glosariumToggle && <div onClick={closeGlosarium} style={{position: "absolute", width: "100vw", height: "100vh", zIndex: "16", top: "0", left: "0", backgroundColor: "rgb(0, 0, 0, 0.8)", overflow: "hidden"}}><div className="glosariumContainer" style={{backgroundColor: "rgba(255, 255, 255, .8)", padding: "3vw 0", overflowY: "auto", height: "50vh", overflowX: "hidden"}}><JsonDisplay data={JsonData}/></div></div>}
                 <div className="buttonContainer" style={{display:"flex", flexDirection: "row",justifyContent: "space-between", position: "absolute", zIndex:"12", bottom: "5vh", right: "5%", width: "30vw", height: "5vw"}}>
                     <div onClick={handlePrev} className="prevButtonContainer"  id={orientation || trigger < window.innerWidth? "buttonContainerFalse" : "buttonContainerTrue"} style={{display:"flex", justifyContent: "center", alignItems: "center", width: "14vw", height: "100%", cursor: "pointer", border: "2px solid rgb(48, 67, 89)"}}>
                          <div className="prevButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "1px solid #2c363b"}}>

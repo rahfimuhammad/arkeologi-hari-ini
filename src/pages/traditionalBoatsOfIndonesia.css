@@ -1,3 +1,9 @@
+div::-webkit-scrollbar {
+    display: flex;}
+
+::-webkit-scrollbar {
+    display: none;}
+
 .glosariumAfter, .glosariumBefore {
     z-index: 12;
     position: absolute;

@@ -80,30 +80,22 @@ const LitografiBataviaProfile = () => {
     const feedsMap = () => {
 
         return state === undefined? 
-        
-        <div style={{zIndex: "10", position: "absolute", top: "0", right:"0", width: "100%", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center"}}>
-            <div style={{position: "absolute", width: orientation? "30vw" : "15vw", height: "auto"}}>
-                <Loading/>
-            </div>
-        </div> : 
-
-            state.map((a, b ) => {
-
-                return (
-                    <div className={orientation? "feedThumbnail" : "landscapeFeedThumbnail"}>
-                    <div className={orientation? "feedThumbnailImage" : "landscapeFeedThumbnailImage"}
-                         style={{backgroundImage: `url(${a.thumbnail})`,
-                                 backgroundPosition: "center center",
-                                 backgroundSize: "150% auto",
-                                 cursor: "pointer"}} 
-                         key={a.id}
-                         onClick={() => getModal(b)}>
-                    </div>
-                </div> 
-                )   
-                                    })
                 
-            }
+            "" :    state.map((a, b ) => {
+
+                        return (
+                            <div className={orientation? "feedThumbnail" : "landscapeFeedThumbnail"}>
+                            <div className={orientation? "feedThumbnailImage" : "landscapeFeedThumbnailImage"}
+                                style={{backgroundImage: `url(${a.thumbnail})`,
+                                        backgroundPosition: "center center",
+                                        backgroundSize: "150% auto",
+                                        cursor: "pointer"}} 
+                                key={a.id}
+                                onClick={() => getModal(b)}>
+                            </div>
+                        </div> 
+                        )})
+                    }
 
     return (
         <>
