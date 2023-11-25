@@ -44,7 +44,7 @@ a:visited {
     height: 15vw;
     border-radius: 10px;
     object-fit: cover;
-    background-size: 100% auto;
+    background-size: 101% auto;
     background-position: center center;
     transition: all .3s ease-in-out;}
 
@@ -62,7 +62,7 @@ a:visited {
 
 #traditionalBoatsOfIndonesia {
     background-image: url(../assets/hmpg-traditionalBoatsOfIndonesia.svg);
-    background-size: auto 100%;}
+    background-size: auto 101%;}
 
     @media only screen and (max-width: 900px) {
         
