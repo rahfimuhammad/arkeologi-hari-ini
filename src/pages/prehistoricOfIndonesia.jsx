@@ -144,7 +144,7 @@ const PrehistoricOfIndonesia = () => {
                                     <div className="btn-container"style={{justifyContent: "flex-end"}}>
                                         <span id="years-container">
                                             <div id="years">
-                                                <p>1.8 juta tahun yang lalu</p>
+                                                <p>1,8 juta tahun yang lalu</p>
                                             </div>
                                         </span>
                                     </div>
@@ -158,7 +158,7 @@ const PrehistoricOfIndonesia = () => {
                                     <div className="btn-container"style={{justifyContent: "flex-end"}}>
                                         <span id="years-container">
                                             <div id="years">
-                                                <p>0.75 juta tahun yang lalu</p>
+                                                <p>0,75 juta tahun yang lalu</p>
                                             </div>
                                         </span>
                                     </div>
@@ -172,7 +172,7 @@ const PrehistoricOfIndonesia = () => {
                                     <div className="btn-container"style={{justifyContent: "flex-end"}}>
                                         <span id="years-container">
                                             <div id="years">
-                                                <p>0.25 juta tahun yang lalu</p>
+                                                <p>0,25 juta tahun yang lalu</p>
                                             </div>
                                         </span>
                                     </div>
