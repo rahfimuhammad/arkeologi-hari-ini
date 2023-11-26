@@ -15,11 +15,11 @@ function App() {
       <Suspense fallback={<LoadingBar/>}>
         <Routes>
             <Route  path="/" element={ <Home/> }/>
-              <Route  path="prehistoricOfIndonesia" element= {<PrehistoricOfIndonesia />} />
-              <Route  path="litografiBatavia" element= {<LitografiBatavia />}/>
-              <Route  path= "litografiBatavia/profile/:id" element= {<LitografiBataviaProfile />}/>
-              <Route  path="borobudurInNumbers" element= {<BorobudurInNumbers />} />
-              <Route  path="traditionalBoatsOfIndonesia" element= {<TraditionalBoatsOfIndonesia />} />
+              <Route  path="prasejarah-indonesia" element= {<PrehistoricOfIndonesia />} />
+              <Route  path="litografi-batavia" element= {<LitografiBatavia />}/>
+              <Route  path= "litografi-batavia/profile/:id" element= {<LitografiBataviaProfile />}/>
+              <Route  path="borobudur-dalam-angka" element= {<BorobudurInNumbers />} />
+              <Route  path="perahu-nusantara" element= {<TraditionalBoatsOfIndonesia />} />
             <Route/>
         </Routes>
       </Suspense>

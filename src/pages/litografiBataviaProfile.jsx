@@ -101,7 +101,7 @@ const LitografiBataviaProfile = () => {
         <>
             <div className={orientation? "profileContainer" : "landscapeProfileContainer"}>
                 <div className={orientation? "profileHeader" : "landscapeProfileHeader"}>
-                    <Link to="/litografiBatavia" className={orientation? "backButton" : "landscapeBackButton"}>
+                    <Link to="/litografi-batavia" className={orientation? "backButton" : "landscapeBackButton"}>
                         <img src={BackButton}/>
                     </Link>
                     <div className={orientation? "authorNickName" : "landscapeAuthorNickname"}>
