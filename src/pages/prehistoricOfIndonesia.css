@@ -469,10 +469,11 @@ a:visited {
                     padding: 5% 3% 0% 3%;}
                 
                 #years {
-                    font-size: 9px;}
+                    font-size: 10px;}
                 
                 .modal-content {
-                    width:85%;
+                    border-radius: 10px;
+                    width: 90%;
                     margin-top: 10%;}
                     
                 #mdiv {
@@ -496,35 +497,18 @@ a:visited {
                     width: 100%;}
             
                 .modal-title h1 {
-                    font-size: 17px;}
+                    font-size: 18px;}
             
                 .modal-title h3 {
-                    font-size: 12px;}
+                    font-size: 13px;}
             
                 .modal-summary p {
-                    font-size: 13px;}}
+                    font-size: 14px;}}
         
                     @media only screen and (max-width: 376px) {
 
                         #years {
-                            font-size: 8px;}
-
-                        .md {
-                            height: 15px;
-                            width: 2px;}
-                            
-                        .modal-image img {
-                            width: 50px;
-                            height: 50px;}
-                        
-                        .modal-title h1 {
-                            font-size: 15px;}
-                        
-                        .modal-title h3 {
-                            font-size: 10px;}
-                        
-                        .modal-summary p {
-                            font-size: 12px;}}
+                            font-size: 9px;}}
 
                         @media only screen and (max-width: 330px) {
 
