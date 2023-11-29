@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import {motion} from "framer-motion"
 import axios from "axios";
 import './litografiBatavia.css'
-import Loading from '../components/loading/Loading'
 import BackButton from "../assets/icon-backButton.png"
 import CloseButton from "../assets/icon-closeButton.png"
 import Post from "../assets/icon-post.png"

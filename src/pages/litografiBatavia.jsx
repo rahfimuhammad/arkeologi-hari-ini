@@ -1,6 +1,5 @@
 import React from "react";
 import './litografiBatavia.css'
-import Loading from '../components/loading/Loading'
 import closeButton from "../assets/icon-closeButton.png"
 import MuseumLogo from "../assets/icon-museumLogo.png"
 import ScrollTopButton from "../assets/icon-scrollTopButton.png"
@@ -51,7 +50,6 @@ const LitografiBatavia = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
         onGetData()
-        // alert("Database masih dalam pengembangan")
     },[])
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
