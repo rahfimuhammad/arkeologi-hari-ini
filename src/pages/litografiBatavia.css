@@ -87,6 +87,7 @@
         padding: 13vh 0 0 0;}
     
     .litografiImage, .landscapeLitografiImage {
+        border: 1px solid rgb(41, 41, 41);
         width: 23vw;
         height: 17vw;}
     

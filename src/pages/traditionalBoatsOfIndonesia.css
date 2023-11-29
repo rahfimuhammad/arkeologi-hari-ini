@@ -1,8 +1,11 @@
-div::-webkit-scrollbar {
-    display: flex;}
-
-::-webkit-scrollbar {
-    display: none;}
+h2, p, h3 {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;}
 
 .glosariumAfter, .glosariumBefore {
     z-index: 12;
@@ -133,15 +136,6 @@ div::-webkit-scrollbar {
     
     ::-webkit-scrollbar {
         display: none;}
-    
-    h2, p, h3 {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        margin: 0;}
     
     .scroller {
         background-size: 100px auto;

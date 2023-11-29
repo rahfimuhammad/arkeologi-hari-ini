@@ -125,7 +125,7 @@ const LitografiBatavia = () => {
     return (
         <>
             <Navbar/>
-            <div className="litografiBataviaMain">
+            <div className="litografiBataviaMain" style={{padding: "0 0 20px 0"}}>
                 <div className={orientation? "story" : "landscapeStory"} style={{position: "relative", width: "95%", height: "fit-content", overflowX: "auto", overflowY: "hidden", zIndex: "11", scrollbarWidth: "none"}}>
                     <div style={{position: "relative", width: "fit-content", height: "fit-content", display: "flex", flexDirection: "row", scrollbarWidth: "2px", whiteSpace: "nowrap" }}>
                         {mapStory()}
@@ -136,6 +136,7 @@ const LitografiBatavia = () => {
                 </div>
                 <div className={offSetY > 120? orientation? "scrollTopButton" : "landscapeScrollTopButton" : ""} 
                      style={{position: "fixed",
+                             cursor: "pointer",
                              opacity: "0",
                              scale: "0", 
                              backgroundImage: `url(${ScrollTopButton})`, 
