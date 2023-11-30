@@ -7,7 +7,7 @@ const ReviewMuseumPage = () => {
 
   const {id} = useParams()
   const index = parseInt(id)
-  const museumData = useFetch(`https://prehistoric.cyclic.app/museum/${index}`)
+  const museumData = useFetch(`https://museumreview.onrender.com/museum/${index}`)
   const data = museumData.reviews
 
   // const museumIndex = match.params.index;
@@ -28,7 +28,7 @@ const ReviewMuseumPage = () => {
 
   const handleAddReview = async () => {
     try {
-      const response = await axios.post(`https://prehistoric.cyclic.app/museum/${index}/reviews`, {
+      const response = await axios.post(`https://museumreview.onrender.com/museum/${index}/reviews`, {
         user: formData.user,
         rating: parseInt(formData.rating),
         review: formData.review,

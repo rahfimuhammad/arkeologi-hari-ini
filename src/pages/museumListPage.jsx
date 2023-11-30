@@ -12,7 +12,7 @@ const MuseumListPage = () => {
 
     try {
         let response = await axios.get(
-            "https://prehistoric.cyclic.app/museum"
+            "https://museumreview.onrender.com/museum"
             )
         setData(response.data)
     } 
