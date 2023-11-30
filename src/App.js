@@ -8,8 +8,11 @@ const BorobudurInNumbers = lazy(() => import ("./pages/borobudurInNumbers"))
 const LitografiBatavia = lazy(() => import ("./pages/litografiBatavia"))
 const LitografiBataviaProfile = lazy(() => import ("./pages/litografiBataviaProfile"))
 const TraditionalBoatsOfIndonesia = lazy(() => import ("./pages/traditionalBoatsOfIndonesia"))
+const MuseumListPage = lazy(() => import ("./pages/museumListPage.jsx"))
+const ReviewMuseumPage = lazy(() => import ("./pages/reviewMuseumPage.jsx"))
 
 function App() {
+
   return (
     <div>
       <Suspense fallback={<LoadingBar/>}>
@@ -20,6 +23,8 @@ function App() {
               <Route  path= "litografi-batavia/profile/:id" element= {<LitografiBataviaProfile />}/>
               <Route  path="borobudur-dalam-angka" element= {<BorobudurInNumbers />} />
               <Route  path="perahu-nusantara" element= {<TraditionalBoatsOfIndonesia />} />
+              <Route  path="museum-list" element= {<MuseumListPage />} />
+              <Route path="museum-list/review-museum/:id" element= {<ReviewMuseumPage />} />
             <Route/>
         </Routes>
       </Suspense>
