@@ -1,41 +1,56 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useEffect } from 'react';
+import { useFetch } from '../hooks/hooks'
+import "./museumReview.css"
+import Navbar from "../components/Navbar"
+import { FaStar } from 'react-icons/fa'
 
 const MuseumListPage = () => {
-
-  const [data, setData] = useState([])
-
   
-  const onGetData = async() => {
+    const data = useFetch("https://museumreview.onrender.com/museum")
 
-    try {
-        let response = await axios.get(
-            "https://museumreview.onrender.com/museum"
-            )
-        setData(response.data)
-    } 
-    catch (error) {
-    }
-}
-
-useEffect(() => {
-  window.scrollTo(0, 0)
-  onGetData()
-},[])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  },[])
 
   return (
     <div>
-      <h1>Daftar Museum</h1>
-      <ul>
-        {data === undefined? "" : data.map((value, index) => (
-          <li key={index}>
-            <Link to={`review-museum/${data[index].id}`}>{value.name}</Link>
-          </li>
-        ))}
-      </ul>
-      <div onClick={() => console.log(data)} style={{backgroundColor: "black", width: "50px", height: "50px"}}></div>
+      <Navbar/>
+      <div className="museum-main">
+        <div className="card-container">
+          {data === undefined? "" : data.map((value, index) => (
+              <Link to={`review-museum/${data[index].id}`}>
+                <div key={index} className="card-museum">
+                  <div className="card-image" style={{width: "100%", backgroundImage: `url(${value.image})`, backgroundPosition: "center center", backgroundSize: "100% auto"}}></div>
+                  <div className="card-content" style={{padding: "2%"}}>
+                    <h1 className='title-museum' style={{color: "#101626"}}>{value.name}</h1>
+                    <h2 className='location-museum'>Jakarta, Indonesia</h2>
+                    <div
+                        style={{
+                          display: "flex",
+                          gap: "5px",
+                        }}
+                      >
+                        {[1, 2, 3, 4, 5].map((ratingValue, i) => (
+                          <label key={ratingValue}>
+                            <input
+                              type="radio"
+                              name="rating"
+                              value={ratingValue}
+                              checked={4}
+                              style={{ height: "20%" }}
+                            />
+                            <FaStar className='stars-user' color={4 <= i? "#101626" : "#ffc107" }/>
+                          </label>
+                        ))}
+                      </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+        </div>
+      </div>
     </div>
   );
 };

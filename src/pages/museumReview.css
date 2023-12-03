@@ -1,0 +1,248 @@
+h1, h2, p {
+    margin: 0;}
+
+h1 {
+    font-size: 25px;
+    color: #101626;}
+
+h2 {
+    font-size: 18px;
+    color: #444343;}
+
+p {
+    font-size: 18px;
+    color: #101626;}
+
+.title-museum {
+    color: #101626;
+    font-size: 22px;}
+
+.location-museum {
+    color: #101626;
+    font-size: 18px;
+    color: #444343;}
+
+.museum-main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 90vh;}
+
+.card-container {
+    padding: 12vh 0 2vh 0;
+    width: fit-content;
+    /* min-height: 90vh; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;}
+
+.card-museum {
+    border: .5px solid #101626;
+    width: 23vw;
+    border-radius: 5px;
+    height: fit-content;}
+
+.card-image {
+    height: 10vw;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;}
+
+.museum-pict {
+    width: 12vw;
+    height: 12vw;}
+
+.desc-museum {
+    width: calc(100% - 16vw - 20px);}
+
+.review-wrapper {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    /* gap: 10px; */
+    margin-top: 10px;}
+
+.review-container {
+    width: 90%;
+    height: fit-content;
+    padding: 1vw;}
+
+.reviews-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5vw;
+    padding: 12vh 0 0 0;
+    width: 45%;}
+
+.user-review {
+    padding: 3px;
+    border: 1px solid #101626 ;
+    width: 45%;}
+
+.modal-review {
+    border: 2px solid #101626;
+    border-radius: 10px;
+    background-color: #e0e5ec;
+    width: 30vw;
+    height: 30vw;}
+
+#mr-portrait {
+    width: 30vw;
+    height: 30vw;
+}
+
+    .modal-review {
+        border: 2px solid #101626;
+        display: flex;
+        justify-content: center;
+        align-items: center;}
+
+    .modal-review form {
+        width: 95%;
+        height: 95%;}
+
+    button {
+        color: white;
+        border: 1px solid black;
+        font-weight: bold;
+        border-radius: 5px;
+        background-color: #101626;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    input, textarea {
+        padding: 4px;
+        border: 2px solid black;
+        border-radius: 2px;
+    }
+
+    input[type=radio] {
+        display: none;
+    }
+
+    .stars {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: color 200ms;
+    }
+
+    @media only screen and (max-width: 990px) {
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            grid-gap: 10px}
+        
+        .card-museum {
+            width: 32vw;}
+
+        .card-image {
+            height: 14.5vw;}
+
+        .reviews-container, .user-review {
+            width: 70%;}
+
+        .museum-pict {
+            width: 20vw;
+            height: 20vw;}
+
+        .desc-museum {
+            width: calc(100% - 22vw - 20px);}
+
+        .modal-review, #mr-portrait, #mr-landscape {
+            width: 40vw;
+            height: 40vw;}}
+
+    @media only screen and (max-width: 700px) {
+        
+        #mr-landscape {
+            width: 50vw;
+            height: 50vw;
+        }}
+
+    @media only screen and (max-width: 600px) {
+
+        .card-container {
+            padding: 10vh 0 2vh 0;
+            width: 94vw;
+            position: relative;
+            display: flex;
+            flex-direction: column;}
+        
+        .card-museum {
+            width: 94vw;}
+
+        .card-image {
+            height: 45vw;}
+        
+        .reviews-container, .user-review {
+            width: 90%;}
+
+        .museum-pict {
+            width: 30vw;
+            height: 30vw;}
+
+        .desc-museum {
+            width: 100%;
+            align-items: center;}
+
+        .desc-museum p {
+            text-align: center;}
+
+        .review-container {
+            width: 85vw;
+            padding: 2vw;}
+
+        .reviews-container {
+            flex-direction: column;
+            align-items: center;}
+
+        #mr-landscape {
+            width: 60vw;
+            height: 60vw;}
+            
+        h1 {
+            font-size: 25px;}
+            
+        h2 {
+            font-size: 22px;
+            color: #444343;}
+            
+        p {
+            font-size: 20px;}
+        
+        .modal-review, #mr-portrait {
+            width: 90vw;
+            height: 90vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;}
+
+        input, textarea {
+            padding: 4px;
+            border: none;
+        }
+
+        
+    }
+
+@media only screen and (max-width: 330px) {
+
+    .title-museum {
+        font-size: 18px;}
+    
+    .location-museum {
+        font-size: 15px;}
+    
+    .stars {
+        width: 30px;
+        height: 30px;
+    }}
