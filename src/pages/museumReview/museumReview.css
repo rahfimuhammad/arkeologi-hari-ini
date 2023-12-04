@@ -33,25 +33,36 @@ p {
 .card-container {
     padding: 12vh 0 2vh 0;
     width: fit-content;
-    /* min-height: 90vh; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;}
 
 .card-museum {
     border: .5px solid #101626;
+    background-color: white;
     width: 23vw;
     border-radius: 5px;
-    height: fit-content;}
+    height: fit-content;
+    transition: scale 200ms ease;}
+
+.card-museum:hover {
+    scale: 1.01;}
 
 .card-image {
     height: 10vw;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;}
 
+.logo-main-museum {
+    transition: scale 200ms ease;}
+
+.logo-main-museum:hover {
+    scale: 1.02}
+
 .museum-pict {
-    width: 12vw;
-    height: 12vw;}
+    border: 3px solid #101626;
+    width: calc(12vw - 6px);
+    height: calc(12vw - 6px)}
 
 .desc-museum {
     width: calc(100% - 16vw - 20px);}
@@ -63,7 +74,6 @@ p {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    /* gap: 10px; */
     margin-top: 10px;}
 
 .review-container {
@@ -75,7 +85,6 @@ p {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 5vw;
     padding: 12vh 0 0 0;
     width: 45%;}
 
@@ -86,52 +95,59 @@ p {
 
 .modal-review {
     border: 2px solid #101626;
-    border-radius: 10px;
     background-color: #e0e5ec;
     width: 30vw;
     height: 30vw;}
 
 #mr-portrait {
     width: 30vw;
-    height: 30vw;
-}
+    height: 30vw;}
 
-    .modal-review {
-        border: 2px solid #101626;
-        display: flex;
-        justify-content: center;
-        align-items: center;}
+.review-button, .submit-button {
+    cursor: pointer;
+    border: 2px solid #101626 ;
+    font-weight: bolder;
+    color: white;
+    background-color: #101626;
+    transition: background-color 600ms ease-out;
+    transition: color 600ms ease-in;}
+
+.review-button:hover, .submit-button:hover {
+    background-color: white;
+    color: #101626;}
+
+.modal-review {
+    border: 2px solid #101626;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
 
     .modal-review form {
         width: 95%;
         height: 95%;}
 
-    button {
-        color: white;
-        border: 1px solid black;
-        font-weight: bold;
-        border-radius: 5px;
-        background-color: #101626;
-        font-weight: bold;
-        font-size: 18px;
-    }
+button {
+    color: white;
+    border: 1px solid black;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #101626;
+    font-weight: bold;
+    font-size: 18px;}
 
-    input, textarea {
-        padding: 4px;
-        border: 2px solid black;
-        border-radius: 2px;
-    }
+.input, .text-area {
+    padding: 4px;
+    border: 2px solid black;
+    border-radius: 2px;}
 
-    input[type=radio] {
-        display: none;
-    }
+input[type=radio] {
+    display: none;}
 
-    .stars {
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        transition: color 200ms;
-    }
+.stars {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: color 200ms;}
 
     @media only screen and (max-width: 990px) {
 
@@ -151,8 +167,8 @@ p {
             width: 70%;}
 
         .museum-pict {
-            width: 20vw;
-            height: 20vw;}
+            width: calc(20vw - 6px);
+            height: calc(20vw - 6px);}
 
         .desc-museum {
             width: calc(100% - 22vw - 20px);}
@@ -165,8 +181,7 @@ p {
         
         #mr-landscape {
             width: 50vw;
-            height: 50vw;
-        }}
+            height: 50vw;}}
 
     @media only screen and (max-width: 600px) {
 
@@ -202,6 +217,7 @@ p {
             padding: 2vw;}
 
         .reviews-container {
+            gap: 5vw;
             flex-direction: column;
             align-items: center;}
 
@@ -226,13 +242,9 @@ p {
             justify-content: center;
             align-items: center;}
 
-        input, textarea {
+        .input, .text-area {
             padding: 4px;
-            border: none;
-        }
-
-        
-    }
+            border: none;}}
 
 @media only screen and (max-width: 330px) {
 
@@ -244,5 +256,4 @@ p {
     
     .stars {
         width: 30px;
-        height: 30px;
-    }}
+        height: 30px;}}

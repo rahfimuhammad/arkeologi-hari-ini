@@ -1,15 +1,15 @@
 import React, {lazy, Suspense} from "react";
-import Home from "./pages/home"
+import Home from "./pages/home/home.jsx"
 import {Route, Routes} from 'react-router-dom'
 import LoadingBar from "./components/loading/LoadingBar.jsx";
 
-const PrehistoricOfIndonesia = lazy(() => import ("./pages/prehistoricOfIndonesia"))
-const BorobudurInNumbers = lazy(() => import ("./pages/borobudurInNumbers"))
-const LitografiBatavia = lazy(() => import ("./pages/litografiBatavia"))
-const LitografiBataviaProfile = lazy(() => import ("./pages/litografiBataviaProfile"))
-const TraditionalBoatsOfIndonesia = lazy(() => import ("./pages/traditionalBoatsOfIndonesia"))
-const MuseumListPage = lazy(() => import ("./pages/museumListPage.jsx"))
-const ReviewMuseumPage = lazy(() => import ("./pages/reviewMuseumPage.jsx"))
+const PrehistoricOfIndonesia = lazy(() => import ("./pages/prehistoricOfIndonesia/prehistoricOfIndonesia"))
+const BorobudurInNumbers = lazy(() => import ("./pages/borobudurInNumbers/borobudurInNumbers"))
+const LitografiBatavia = lazy(() => import ("./pages/litografiBatavia/litografiBatavia.jsx"))
+const LitografiBataviaProfile = lazy(() => import ("./pages/litografiBatavia/litografiBataviaProfile.jsx"))
+const TraditionalBoatsOfIndonesia = lazy(() => import ("./pages/traditionalBoatsOfIndonesia/traditionalBoatsOfIndonesia.jsx"))
+const MuseumListPage = lazy(() => import ("./pages/museumReview/museumListPage.jsx"))
+const ReviewMuseumPage = lazy(() => import ("./pages/museumReview/reviewMuseumPage.jsx"))
 
 function App() {
 

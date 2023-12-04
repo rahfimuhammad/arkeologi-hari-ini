@@ -51,20 +51,20 @@ a:visited {
     transform: scale(1.02);}
 
 #prehistoricOfIndonesia {
-    background-image: url(../assets/hmpg-prehistoricOfIndonesia.png);}
+    background-image: url(../../assets/hmpg-prehistoricOfIndonesia.png);}
 
 #borobudurInNumbers {
-    background-image: url(../assets/hmpg-borobudurInNumbers.png);}
+    background-image: url(../../assets/hmpg-borobudurInNumbers.png);}
 
 #litografiBatavia {
-    background-image: url(../assets/hmpg-litografiBatavia.png);}
+    background-image: url(../../assets/hmpg-litografiBatavia.png);}
 
 #traditionalBoatsOfIndonesia {
-    background-image: url(../assets/hmpg-traditionalBoatsOfIndonesia.svg);
+    background-image: url(../../assets/hmpg-traditionalBoatsOfIndonesia.svg);
     background-size: auto 101%;}
 
 #museumReview {
-    background-image: url(../assets/hmpg-museumReview.svg);}
+    background-image: url(../../assets/hmpg-museumReview.svg);}
 
     @media only screen and (max-width: 900px) {
         

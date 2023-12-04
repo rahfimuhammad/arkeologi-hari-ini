@@ -1,12 +1,12 @@
 import React from "react"
-import { useFetch, useDetect } from "../hooks/hooks"
+import { useFetch, useDetect } from "../../hooks/hooks"
 import "./traditionalBoatsOfIndonesia.css"
-import Navbar from "../components/Navbar"
+import Navbar from "../../components/Navbar"
 import { useEffect, useState, useRef } from "react"
-import Grid from "../assets/trb-Grid.svg"
-import Glosarium from "../assets/Glosarium.svg"
-import JsonDisplay from "../components/JsonDisplay";
-import JsonData from "../database/db.json"
+import Grid from "../../assets/trb-Grid.svg"
+import Glosarium from "../../assets/Glosarium.svg"
+import JsonDisplay from "../../components/JsonDisplay";
+import JsonData from "../../database/db.json"
 
 const TraditionalBoatsOfIndonesia = () => {
 

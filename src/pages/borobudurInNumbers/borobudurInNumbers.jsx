@@ -1,17 +1,17 @@
 import "./borobudurInNumbers.css"
 import { useEffect} from "react"
-import { useDetect } from "../hooks/hooks"
-import BorobudurFounded from "../components/BorobudurInNumbers/BorobudurFounded"
-import BorobudurReconstruction from "../components/BorobudurInNumbers/BorobudurReconstruction"
-import BorobudurYear from "../components/BorobudurInNumbers/BorobudurYear"
-import HeightMeasurement from "../components/BorobudurInNumbers/HeightMeasurement"
-import Stone from "../components/BorobudurInNumbers/Stone"
-import Arca from "../components/BorobudurInNumbers/Arca"
-import Measurement from "../components/BorobudurInNumbers/Measurement"
-import StupaBorobudur from "../components/BorobudurInNumbers/StupaBorobudur"
-import BorobudurFloraFauna from "../components/BorobudurInNumbers/BorobudurFloraFauna"
-import Navbar from '../components/Navbar'
-import BorobudurCover from '../assets/brb-BorobudurCover.png'
+import { useDetect } from "../../hooks/hooks"
+import BorobudurFounded from "../../components/BorobudurInNumbers/BorobudurFounded"
+import BorobudurReconstruction from "../../components/BorobudurInNumbers/BorobudurReconstruction"
+import BorobudurYear from "../../components/BorobudurInNumbers/BorobudurYear"
+import HeightMeasurement from "../../components/BorobudurInNumbers/HeightMeasurement"
+import Stone from "../../components/BorobudurInNumbers/Stone"
+import Arca from "../../components/BorobudurInNumbers/Arca"
+import Measurement from "../../components/BorobudurInNumbers/Measurement"
+import StupaBorobudur from "../../components/BorobudurInNumbers/StupaBorobudur"
+import BorobudurFloraFauna from "../../components/BorobudurInNumbers/BorobudurFloraFauna"
+import Navbar from '../../components/Navbar'
+import BorobudurCover from '../../assets/brb-BorobudurCover.png'
 
 const BorobudurInNumbers = () => {
 

@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
 import {motion} from "framer-motion"
-import { useFetch, useDetect } from '../hooks/hooks';
+import { useFetch, useDetect } from '../../hooks/hooks';
 import "./museumReview.css"
 import { FaStar } from 'react-icons/fa'
-import CloseButton from "../assets/icon-closeButton.svg"
-import MuseumLogo from "../assets/museum-logo.svg"
+import CloseButton from "../../assets/icon-closeButton.svg"
+import MuseumLogo from "../../assets/museum-logo.svg"
+import Grid from "../../assets/grid.svg"
 
 const ReviewMuseumPage = () => {
   const { id } = useParams()
@@ -35,7 +36,7 @@ const ReviewMuseumPage = () => {
     try {
       let postData = {};
 
-      // Jika ada ulasan
+      // Ulasan
       if (formData.review && formData.user && formData.rating) {
         postData = {
           user: formData.user,
@@ -43,31 +44,28 @@ const ReviewMuseumPage = () => {
           rating: parseInt(formData.rating),
         };
 
-        // Lakukan post untuk ulasan
         const reviewResponse = await axios.post(`https://museumreview.onrender.com/museum/${index}/reviews`, postData);
 
-        // Di sini, Anda mungkin ingin menangani respons dari server untuk ulasan
-        // console.log('Ulasan berhasil ditambahkan:', reviewResponse.data);
-        // alert("Succesed")
         setToggle(!toggle)
       }
 
       // Jika hanya ada rating
-      if ((formData.rating && (!formData.review && !formData.user)) || formData.review && formData.user && formData.rating ) {
+      if ((formData.rating && (!formData.review && !formData.user)) || (formData.review && formData.user && formData.rating) ) {
         const rateData = {
           rating: parseInt(formData.rating),
         };
 
-        // Lakukan post untuk rating
         const rateResponse = await axios.post(`https://museumreview.onrender.com/museum/${index}/rate`, rateData);
 
-        // Di sini, Anda mungkin ingin menangani respons dari server untuk rating
         setToggle(!toggle)
         // console.log('Rating berhasil ditambahkan:', rateResponse.data);
-        alert("Succesed")
+        
       }
+      alert("Succesed")
+
     } catch (error) {
-      console.error('Error adding review/rating:', error);
+      // console.error('Error adding review/rating:', error);
+      alert("server tidak merespon, coba lagi nanti")
     }
   };
 
@@ -104,16 +102,16 @@ const ReviewMuseumPage = () => {
       )
   }
 
-  // useEffect(() => {
-  //   mapReview()
-  // }, [data])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [data])
 
   return (
     <>
-      <Link to="/museum-list"><img src={`${MuseumLogo}`} style={{height: orientation? "6vh" : "10vh", width: "auto", position: "absolute", top: "1vh", left: "1vh"}}/></Link>
-      <div className="reviews-content-container" style={{display: "flex", flexDirection: "column", alignItems: "center", width: "100%", gap: "20px", padding: "0 0 20px 0"}}>
+      <Link to="/museum-list"><img className='logo-main-museum' src={`${MuseumLogo}`} alt='museum-logo' style={{height: orientation? "6vh" : "10vh", width: "auto", position: "absolute", top: "1vh", left: "1vh"}}/></Link>
+      <div className="reviews-content-container" style={{minHeight: "100vh", backgroundImage: `url(${Grid})`, backgroundRepeat: "repeat", backgroundSize: "100px auto", display: "flex", flexDirection: "column", alignItems: "center", width: "100%", gap: "20px", padding: "0 0 20px 0"}}>
         <div className='reviews-container' style={{display: "flex"}}>
-            <div className='museum-pict' style={{backgroundColor: "black", borderRadius: "50%"}}></div>
+            <img src={museumData.logo} alt={museumData.name} className='museum-pict' style={{borderRadius: "50%"}}/>
             <div className="desc-museum" style={{display: "flex", flexDirection: "column"}}>
               <h1 style={{width: "fit-content"}}>{museumData.name}</h1>
               <h2 onClick={() => console.log(museumData.reviews.length)}>{museumData.location}</h2>
@@ -144,7 +142,7 @@ const ReviewMuseumPage = () => {
               </div>
               <p>{museumData.rate?.length} rating</p>
                 </div>
-                <div style={{height: "fit-content", display: "flex", justifyContent: "center", padding: "15px 45px", backgroundColor: "#101626"}}><h2 style={{color: "white"}} onClick={() => setToggle(!toggle)}>REVIEW</h2></div>
+                <div onClick={() => setToggle(!toggle)} className='review-button' style={{height: "fit-content", display: "flex", justifyContent: "center", padding: "15px 45px"}}>REVIEW</div>
               </div>
         <div className='user-review' style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
           <h2>{museumData.reviews?.length} Ulasan</h2>
@@ -163,12 +161,11 @@ const ReviewMuseumPage = () => {
                     animate={{
                         scale: 1
                     }}>
-          <div onClick={() => setToggle(!toggle)} style={{width: "7%", height: "7%", position:"absolute", top: "-3.5%", right: "-3.5%", backgroundImage: `url(${CloseButton})`, backgroundSize: "100% 100%"}}></div>
+          <div onClick={() => setToggle(!toggle)} style={{cursor: "pointer", width: "7%", height: "7%", position:"absolute", top: "-3.5%", right: "-3.5%", backgroundImage: `url(${CloseButton})`, backgroundSize: "100% 100%"}}></div>
           <form style={{ display: "flex", flexDirection: "column", gap: "25px", padding: "3px" }}>
             <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
               <h1 style={{textAlign: "center", color: "#101626"}}>{museumData.name}</h1>
             </div>
-            {/* Mengganti input number dengan radio button */}
             <div
                 style={{
                   display: "flex",
@@ -190,13 +187,12 @@ const ReviewMuseumPage = () => {
                   </label>
                 ))}
               </div>
-              {/* ... */}
             <div style={{position:"relative", width: "100%", height: "60%", display: "flex", flexDirection: "column", gap: "5px"}}>
-              <input style={{fontFamily: "sans-serif", width: "50%", fontSize: "20px"}} placeholder='name' type="text" name="user" value={formData.user} onChange={handleInputChange} />
-              <textarea style={{fontFamily: "sans-serif", fontSize: "20px", width: "calc(100% - 10px)", height: "70%"}} placeholder='write a review...' name="review" value={formData.review} onChange={handleInputChange} />
+              <input className='input' style={{fontFamily: "sans-serif", width: "50%", fontSize: "20px"}} placeholder='name' type="text" name="user" value={formData.user} onChange={handleInputChange} />
+              <textarea className='text-area' style={{fontFamily: "sans-serif", fontSize: "20px", width: "calc(100% - 10px)", height: "70%"}} placeholder='write a review...' name="review" value={formData.review} onChange={handleInputChange} />
             </div>
             <div style={{position: "relative", width: "100%", display: "flex", justifyContent: "flex-end", height: "30%", alignItems: "flex-end"}}>
-              <button style={{width: "35%", height: "65%"}} type="button" onClick={handleAddReview}>
+              <button className='submit-button' style={{width: "35%", height: "65%"}} type="button" onClick={() => handleAddReview()}>
                 SUBMIT
               </button>
             </div>

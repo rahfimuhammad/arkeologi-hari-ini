@@ -1,5 +1,5 @@
 import React from 'react';
-import "../pages/traditionalBoatsOfIndonesia.css"
+import "../pages/traditionalBoatsOfIndonesia/traditionalBoatsOfIndonesia.css"
 
 const JsonDisplay = ({ data }) => {
   return (

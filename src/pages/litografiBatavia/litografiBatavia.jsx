@@ -1,14 +1,14 @@
 import React from "react";
 import './litografiBatavia.css'
-import closeButton from "../assets/icon-closeButton.png"
-import MuseumLogo from "../assets/icon-museumLogo.png"
-import ScrollTopButton from "../assets/icon-scrollTopButton.png"
-import Navbar from "../components/Navbar";
+import closeButton from "../../assets/icon-closeButton.png"
+import MuseumLogo from "../../assets/icon-museumLogo.png"
+import ScrollTopButton from "../../assets/icon-scrollTopButton.png"
+import Navbar from "../../components/Navbar";
 import axios from 'axios'
 import {useState, useEffect} from "react"
 import { Link } from "react-router-dom";
 import {motion} from "framer-motion"
-import { useDetect } from "../hooks/hooks"
+import { useDetect } from "../../hooks/hooks"
 
 
 

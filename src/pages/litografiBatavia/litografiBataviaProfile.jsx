@@ -1,15 +1,15 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { useDetect } from "../hooks/hooks";
+import { useDetect } from "../../hooks/hooks";
 import { useEffect, useState } from "react";
 import {motion} from "framer-motion"
 import axios from "axios";
 import './litografiBatavia.css'
-import BackButton from "../assets/icon-backButton.png"
-import CloseButton from "../assets/icon-closeButton.png"
-import Post from "../assets/icon-post.png"
-import NonBatavia from "../assets/icon-nonBatavia.png"
-import MuseumLogo from "../assets/icon-museumLogo.png"
+import BackButton from "../../assets/icon-backButton.png"
+import CloseButton from "../../assets/icon-closeButton.png"
+import Post from "../../assets/icon-post.png"
+import NonBatavia from "../../assets/icon-nonBatavia.png"
+import MuseumLogo from "../../assets/icon-museumLogo.png"
 
 
 

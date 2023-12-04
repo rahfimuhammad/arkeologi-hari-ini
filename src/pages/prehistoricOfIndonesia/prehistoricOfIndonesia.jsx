@@ -1,9 +1,9 @@
 import "./prehistoricOfIndonesia.css"
 import React, { useEffect, useState} from "react";
 import {motion} from "framer-motion"
-import Navbar from "../components/Navbar"
-import ScrollIcon from "../assets/icon-scrollIcon.png"
-import { useFetch, useDetect } from "../hooks/hooks";
+import Navbar from "../../components/Navbar"
+import ScrollIcon from "../../assets/icon-scrollIcon.png"
+import { useFetch, useDetect } from "../../hooks/hooks";
 
 
 const PrehistoricOfIndonesia = () => {
