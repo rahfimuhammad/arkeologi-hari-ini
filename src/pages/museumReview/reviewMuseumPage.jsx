@@ -17,6 +17,7 @@ const ReviewMuseumPage = () => {
   const [toggle, setToggle] = useState(false)
   const [hover, setHover] = useState(null)
   const orientation = useDetect()
+  const [averageRating, setAverageRating] = useState(0);
 
   const [formData, setFormData] = useState({
     user: '',
@@ -103,8 +104,15 @@ const ReviewMuseumPage = () => {
   }
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [data])
+    window.scrollTo(0, 0);
+  
+    if (museumData.rate && museumData.rate.length > 0) {
+      // Menghitung rata-rata rating dari array museumData.rate
+      const totalRating = museumData.rate.reduce((sum, rating) => sum + rating, 0);
+      const avgRating = totalRating / museumData.rate.length;
+      setAverageRating(avgRating);
+    }
+  }, [museumData]);
 
   return (
     <>
@@ -112,10 +120,10 @@ const ReviewMuseumPage = () => {
       <div className="reviews-content-container" style={{minHeight: "100vh", backgroundImage: `url(${Grid})`, backgroundRepeat: "repeat", backgroundSize: "100px auto", display: "flex", flexDirection: "column", alignItems: "center", width: "100%", gap: "20px", padding: "0 0 20px 0"}}>
         <div className='reviews-container' style={{display: "flex"}}>
             <img src={museumData.logo} alt={museumData.name} className='museum-pict' style={{borderRadius: "50%"}}/>
-            <div className="desc-museum" style={{display: "flex", flexDirection: "column"}}>
+            <div className="desc-museum" style={{display: "flex", flexDirection: "column", gap: "2px"}}>
               <h1 style={{width: "fit-content"}}>{museumData.name}</h1>
               <h2 onClick={() => console.log(museumData.reviews.length)}>{museumData.location}</h2>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo illo nostrum eveniet similique ipsum natus tempore. Deleniti temporibus sed amet?</p>
+              <p>{museumData.description}</p>
             </div>
         </div>
         <div style={{ width: "fit-content", display: "flex", padding: "15px 0", gap: "20px", alignItems: "center"}}>
@@ -133,14 +141,14 @@ const ReviewMuseumPage = () => {
                       type="radio"
                       name="rating"
                       value={ratingValue}
-                      checked={4}
+                      checked={averageRating}
                       style={{ height: "20%" }}
                     />
-                    <FaStar size={23} className='stars-user' color={4 <= i? "#e4e5e9" : "#ffc107" }/>
+                    <FaStar size={23} className='stars-user' color={averageRating <= i? "#e4e5e9" : "#ffc107" }/>
                   </label>
                 ))}
               </div>
-              <p>{museumData.rate?.length} rating</p>
+              <p className='info-rating'><b> {averageRating.toFixed(1)}</b> {averageRating >= 2? `(${museumData.rate?.length} ratings)` : `(${museumData.rate?.length} rating)`}</p>
                 </div>
                 <div onClick={() => setToggle(!toggle)} className='review-button' style={{height: "fit-content", display: "flex", justifyContent: "center", padding: "15px 45px"}}>REVIEW</div>
               </div>

@@ -3,8 +3,8 @@ import Home from "./pages/home/home.jsx"
 import {Route, Routes} from 'react-router-dom'
 import LoadingBar from "./components/loading/LoadingBar.jsx";
 
-const PrehistoricOfIndonesia = lazy(() => import ("./pages/prehistoricOfIndonesia/prehistoricOfIndonesia"))
-const BorobudurInNumbers = lazy(() => import ("./pages/borobudurInNumbers/borobudurInNumbers"))
+const PrehistoricOfIndonesia = lazy(() => import ("./pages/prehistoricOfIndonesia/prehistoricOfIndonesia.jsx"))
+const BorobudurInNumbers = lazy(() => import ("./pages/borobudurInNumbers/borobudurInNumbers.jsx"))
 const LitografiBatavia = lazy(() => import ("./pages/litografiBatavia/litografiBatavia.jsx"))
 const LitografiBataviaProfile = lazy(() => import ("./pages/litografiBatavia/litografiBataviaProfile.jsx"))
 const TraditionalBoatsOfIndonesia = lazy(() => import ("./pages/traditionalBoatsOfIndonesia/traditionalBoatsOfIndonesia.jsx"))
