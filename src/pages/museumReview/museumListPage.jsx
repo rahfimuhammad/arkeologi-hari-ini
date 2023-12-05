@@ -6,63 +6,75 @@ import "./museumReview.css"
 import Navbar from "../../components/Navbar"
 import { FaStar } from 'react-icons/fa'
 import Grid from "../../assets/grid.svg"
+import LoadingBar from "../../components/loading/LoadingBar.jsx";
 
 const MuseumListPage = () => {
   
-    const data = useFetch("https://museumreview.onrender.com/museum")
-    const [averageRating, setAverageRating] = useState(0);
+  const data = useFetch('https://museumreview.onrender.com/museum');
+  const [averageRatings, setAverageRatings] = useState([]);
 
-    useEffect(() => {
-      window.scrollTo(0, 0);
-  
-      if (data && data.length > 0) {
-        // Menghitung rata-rata rating dari semua ulasan
-        const totalRating = data.reduce((sum, value) => sum + value.rate.reduce((acc, curr) => acc + curr, 0), 0);
-        const avgRating = totalRating / data[0].rate.length; // Membagi dengan total jumlah rating
-        setAverageRating(() => avgRating); // Menggunakan functional update
-      }
-    }, [data]);
+  useEffect(() => {
+    if (data && data.length > 0) {
+      // Menghitung rata-rata rating dari setiap museum
+      const avgRatings = data.map((museum) => {
+        const totalRating = museum.rate.reduce((acc, curr) => acc + curr, 0);
+        return totalRating / museum.rate.length;
+      });
+
+      setAverageRatings(avgRatings);
+    }
+  }, [data]);
 
   return (
     <div>
       <Navbar/>
       <div className="museum-main" style={{backgroundImage: `url(${Grid})`, backgroundRepeat: "repeat", backgroundSize: "100px auto", minHeight: "100vh"}}>
         <div className="card-container">
-          {data === undefined? "" : data.map((value, index) => (
-              <Link to={`review-museum/${data[index].id}`}>
-                <div key={value.id} className="card-museum">
+          {data === undefined ? (
+            <LoadingBar />) : (
+            data.map((museum, index) => (
+              <Link to={`review-museum/${museum.id}`} key={museum.id}>
+                <div className="card-museum">
                   <div className="card-image" style={{width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                    <img src={value.logo} style={{height: "95%", width: "auto"}}/>
+                    <img src={museum.logo} style={{height: "95%", width: "auto"}}/>
                   </div>
                   <div className="card-content" style={{padding: "2%"}}>
-                    <h1 className='title-museum' style={{color: "#101626"}}>{value.name}</h1>
+                    <h1 className='title-museum' style={{color: "#101626"}}>{museum.name}</h1>
                     <h2 className='location-museum'>Jakarta, Indonesia</h2>
-                    <div style={{display: "flex", flexDirection: "column", alignItems: "flex-end"}}>
-                      <div style={{display: "flex", gap: "5px", alignItems: "center"}}>
-                          {[1, 2, 3, 4, 5].map((ratingValue, i) => (
-                            <label key={ratingValue}>
-                              <input type="radio" name="rating" value={ratingValue} checked={0}/>
-                              <FaStar className='stars-user' color={0 <= i? "#e4e5e9" : "#ffc107" }/>
-                            </label>
-                          ))}
-                        </div>
-                        <div style={{display: "flex", flexDirection: "column", alignItems: "flex-end"}}>
-                          <p className='info-rating'>
-                          <b>{value.rate[0] > 0
-                          ? `${averageRating.toFixed(1)}`
-                          : '0'}</b>
-                          </p>
-                          <p className='info-rating' style={{padding: "0"}}>{value.rate?.length >= 2? `${value.rate?.length} ratings` : `${value.rate?.length} rating`}</p>
-                        </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                      <div style={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
+                        {[1, 2, 3, 4, 5].map((ratingValue, i) => (
+                        <label key={ratingValue}>
+                          <input type="radio" name="rating" value={ratingValue} defaultChecked={averageRatings[index] === ratingValue} />
+                          <FaStar className="stars-user" color={ratingValue <= Math.round(averageRatings[index]) ? '#ffc107' : '#e4e5e9'} />
+                        </label>
+                        ))}
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+                        <p className="info-rating">
+                          <b>
+                            {averageRatings[index] > 0
+                            ? `${averageRatings[index].toFixed(1)}`
+                            : '0'}
+                          </b>
+                        </p>
+                        <p className="info-rating" style={{ padding: '0' }}>
+                            {museum.rate?.length >= 2
+                            ? `${museum.rate?.length} ratings`
+                            : `${museum.rate?.length} rating`}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </Link>
-            ))}
+                  ))
+                )}
+            </div>
         </div>
-      </div>
     </div>
   );
 };
 
 export default MuseumListPage;
+

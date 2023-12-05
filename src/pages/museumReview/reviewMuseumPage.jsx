@@ -148,7 +148,7 @@ const ReviewMuseumPage = () => {
                   </label>
                 ))}
               </div>
-              <p className='info-rating'><b> {averageRating.toFixed(1)}</b> {averageRating >= 2? `(${museumData.rate?.length} ratings)` : `(${museumData.rate?.length} rating)`}</p>
+              <p className='info-rating'><b> {averageRating.toFixed(1)}</b> {museumData.rate?.length >= 2? `(${museumData.rate?.length} ratings)` : `(${museumData.rate?.length} rating)`}</p>
                 </div>
                 <div onClick={() => setToggle(!toggle)} className='review-button' style={{height: "fit-content", display: "flex", justifyContent: "center", padding: "15px 45px"}}>REVIEW</div>
               </div>

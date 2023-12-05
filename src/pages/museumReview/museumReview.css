@@ -252,11 +252,15 @@ input[type=radio] {
 
 @media only screen and (max-width: 330px) {
 
-    .title-museum {
+    .title-museum, h1 {
         font-size: 18px;}
     
-    .location-museum {
+    .location-museum, h2 {
         font-size: 15px;}
+
+    p {
+        font-size: 13px;
+    }
     
     .stars {
         width: 30px;
