@@ -75,8 +75,8 @@ const ReviewMuseumPage = () => {
       data.map((review, index) => {
         return (
           <div key={index} className="review-container">
-            <h2>{review.user}</h2>
-            <p>{review.review}</p>
+            <h2 className='h2'>{review.user}</h2>
+            <p className='p'>{review.review}</p>
             <div
                 style={{
                   display: "flex",
@@ -117,7 +117,7 @@ const ReviewMuseumPage = () => {
   return (
     <>
       <Link to="/museum-list"><img className='logo-main-museum' src={`${MuseumLogo}`} alt='museum-logo' style={{height: orientation? "6vh" : "10vh", width: "auto", position: "absolute", top: "1vh", left: "1vh"}}/></Link>
-      <div className="reviews-content-container" style={{minHeight: "100vh", backgroundImage: `url(${Grid})`, backgroundRepeat: "repeat", backgroundSize: "100px auto", display: "flex", flexDirection: "column", alignItems: "center", width: "100%", gap: "20px", padding: "0 0 20px 0"}}>
+      <div className="reviews-content-container" style={{minHeight: "calc(100vh - 20px)", backgroundImage: `url(${Grid})`, backgroundRepeat: "repeat", backgroundSize: "100px auto", display: "flex", flexDirection: "column", alignItems: "center", width: "100%", gap: "20px", padding: "0 0 20px 0"}}>
         <div className='reviews-container' style={{display: "flex"}}>
             <img src={museumData.logo} alt={museumData.name} className='museum-pict' style={{borderRadius: "50%"}}/>
             <div className="desc-museum" style={{display: "flex", flexDirection: "column", gap: "2px"}}>

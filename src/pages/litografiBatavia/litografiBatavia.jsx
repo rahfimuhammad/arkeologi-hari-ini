@@ -182,7 +182,7 @@ const LitografiBatavia = () => {
                         <div className={orientation? "test2" : "landscapeTest2"}>
                             <div className={orientation? "litografiSource" : "landscapeLitografiSource"}>
                                 <img src={MuseumLogo} alt="logo museum"/>
-                                <p><b>Koleksi asli di </b>{modal.source}</p>
+                                <p><b>Publikasi </b>{modal.source}</p>
                             </div>
                             <div className={orientation? "modalContent" : "landscapeModalContent"}><p><b>{modal.author} </b>{modal.description}</p></div>
                         </div>

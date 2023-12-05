@@ -77,8 +77,7 @@
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
-    align-items: center;
-    margin-top: 10px;}
+    align-items: center;}
 
 .review-container {
     width: 90%;
@@ -126,9 +125,9 @@
     justify-content: center;
     align-items: center;}
 
-    .modal-review form {
-        width: 95%;
-        height: 95%;}
+.modal-review form {
+    width: 95%;
+    height: 95%;}
 
 button {
     color: white;
@@ -162,7 +161,7 @@ input[type=radio] {
             grid-gap: 10px}
         
         .card-museum {
-            width: 32vw;}
+            width: 31vw;}
 
         .card-image {
             height: 14.5vw;}

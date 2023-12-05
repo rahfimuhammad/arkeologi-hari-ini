@@ -6,7 +6,7 @@ import "./museumReview.css"
 import Navbar from "../../components/Navbar"
 import { FaStar } from 'react-icons/fa'
 import Grid from "../../assets/grid.svg"
-import LoadingBar from "../../components/loading/LoadingBar";
+import LoadingBar from "../../components/loading/LoadingBar.jsx";
 
 const MuseumListPage = () => {
   
@@ -30,7 +30,7 @@ const MuseumListPage = () => {
       <Navbar/>
       <div className="museum-main" style={{backgroundImage: `url(${Grid})`, backgroundRepeat: "repeat", backgroundSize: "100px auto", minHeight: "100vh"}}>
         <div className="card-container">
-          {data === undefined ? (
+          {data === 0 ? (
            <div><LoadingBar /></div>) : (
             data.map((museum, index) => (
               <Link to={`review-museum/${museum.id}`} key={museum.id}>
