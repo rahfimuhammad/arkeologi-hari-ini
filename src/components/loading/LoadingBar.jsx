@@ -4,6 +4,7 @@ import Loading from "./Loading";
 const LoadingBar = () => {
     return (
         <div style={{position: "absolute",
+                    zIndex: "20",
                     width: "100vw",
                     height: "90vh",
                     backgroundColor: "white",

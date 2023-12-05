@@ -121,9 +121,9 @@ const ReviewMuseumPage = () => {
         <div className='reviews-container' style={{display: "flex"}}>
             <img src={museumData.logo} alt={museumData.name} className='museum-pict' style={{borderRadius: "50%"}}/>
             <div className="desc-museum" style={{display: "flex", flexDirection: "column", gap: "2px"}}>
-              <h1 style={{width: "fit-content"}}>{museumData.name}</h1>
-              <h2 onClick={() => console.log(museumData.reviews.length)}>{museumData.location}</h2>
-              <p>{museumData.description}</p>
+              <h1 className="h1" style={{width: "fit-content"}}>{museumData.name}</h1>
+              <h2 className="h2"onClick={() => console.log(museumData.reviews.length)}>{museumData.location}</h2>
+              <p className="p">{museumData.description}</p>
             </div>
         </div>
         <div style={{ width: "fit-content", display: "flex", padding: "15px 0", gap: "20px", alignItems: "center"}}>
@@ -153,7 +153,7 @@ const ReviewMuseumPage = () => {
                 <div onClick={() => setToggle(!toggle)} className='review-button' style={{height: "fit-content", display: "flex", justifyContent: "center", padding: "15px 45px"}}>REVIEW</div>
               </div>
         <div className='user-review' style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-          <h2>{museumData.reviews?.length} Ulasan</h2>
+          <h2 className="h2">{museumData.reviews?.length} Ulasan</h2>
             <div className="review-wrapper">
               {mapReview()}
           </div>
@@ -172,7 +172,7 @@ const ReviewMuseumPage = () => {
           <div onClick={() => setToggle(!toggle)} style={{cursor: "pointer", width: "7%", height: "7%", position:"absolute", top: "-3.5%", right: "-3.5%", backgroundImage: `url(${CloseButton})`, backgroundSize: "100% 100%"}}></div>
           <form style={{ display: "flex", flexDirection: "column", gap: "25px", padding: "3px" }}>
             <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
-              <h1 style={{textAlign: "center", color: "#101626"}}>{museumData.name}</h1>
+              <h1 className="h1" style={{textAlign: "center", color: "#101626"}}>{museumData.name}</h1>
             </div>
             <div
                 style={{

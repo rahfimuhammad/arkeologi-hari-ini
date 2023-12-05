@@ -1,15 +1,15 @@
-h1, h2, p {
+.h1, .h2, .p, .title-museum, .location-museum, .info-rating {
     margin: 0;}
 
-h1 {
+.h1 {
     font-size: 25px;
     color: #101626;}
 
-h2 {
+.h2 {
     font-size: 18px;
     color: #444343;}
 
-p {
+.p {
     font-size: 18px;
     color: #101626;}
 
@@ -229,14 +229,14 @@ input[type=radio] {
             width: 60vw;
             height: 60vw;}
             
-        h1 {
+        .h1 {
             font-size: 25px;}
             
-        h2 {
+        .h2 {
             font-size: 22px;
             color: #444343;}
             
-        p {
+        .p {
             font-size: 20px;}
         
         .modal-review, #mr-portrait {
@@ -258,7 +258,7 @@ input[type=radio] {
     .location-museum, h2 {
         font-size: 15px;}
 
-    p {
+    .p {
         font-size: 13px;
     }
     
