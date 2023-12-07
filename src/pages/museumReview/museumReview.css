@@ -45,6 +45,7 @@
     border: .5px solid #101626;
     background-color: white;
     width: 23vw;
+    padding: 15px 0 0 0;
     border-radius: 5px;
     height: fit-content;
     transition: scale 200ms ease;}
@@ -75,12 +76,16 @@
     width: 100%;
     height: fit-content;
     display: flex;
+    gap: 10px;
+    padding: 0 0 20px 0;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;}
 
 .review-container {
-    width: 90%;
+    background-color: white;
+    border: #101626 2px solid;
+    width: 80%;
     height: fit-content;
     padding: 1vw;}
 
@@ -92,8 +97,9 @@
     width: 45%;}
 
 .user-review {
+    background-color: white;
     padding: 3px;
-    border: 1px solid #101626 ;
+    border: 2px solid #101626 ;
     width: 45%;}
 
 .modal-review {
@@ -115,6 +121,9 @@
     transition: background-color 600ms ease-out;
     transition: color 600ms ease-in;}
 
+.review-button {
+    padding: 15px 45px}
+
 .review-button:hover, .submit-button:hover {
     background-color: white;
     color: #101626;}
@@ -132,16 +141,17 @@
 button {
     color: white;
     border: 1px solid black;
-    font-weight: bold;
-    border-radius: 5px;
+    font-weight: bold;  
     background-color: #101626;
     font-weight: bold;
     font-size: 18px;}
 
 .input, .text-area {
+    background-color: transparent;
     padding: 4px;
-    border: 2px solid black;
-    border-radius: 2px;}
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;}
 
 input[type=radio] {
     display: none;}
@@ -178,7 +188,17 @@ input[type=radio] {
 
         .modal-review, #mr-portrait, #mr-landscape {
             width: 40vw;
-            height: 40vw;}}
+            height: 40vw;}
+        
+        .review-button, .submit-button {
+            color: white;
+            background-color: #101626;
+            transition: none;
+            transition: none;}
+        
+        .review-button:hover, .submit-button:hover {
+            background-color: #101626;
+            color: white;}}
 
     @media only screen and (max-width: 700px) {
         
@@ -204,6 +224,10 @@ input[type=radio] {
         .reviews-container, .user-review {
             width: 90%;}
 
+        .user-review {
+            border: none;
+            background-color: transparent;}
+
         .museum-pict {
             width: 30vw;
             height: 30vw;}
@@ -216,7 +240,8 @@ input[type=radio] {
             text-align: center;}
 
         .review-container {
-            width: 85vw;
+            border: #101626 1px solid;
+            width: 90%;
             padding: 2vw;}
 
         .reviews-container {
@@ -258,9 +283,11 @@ input[type=radio] {
         font-size: 15px;}
 
     .p {
-        font-size: 13px;
-    }
+        font-size: 13px;}
+
+    .review-button {
+        padding: 8px 24px}
     
     .stars {
-        width: 30px;
-        height: 30px;}}
+        width: 23px;
+        height: 23px;}}

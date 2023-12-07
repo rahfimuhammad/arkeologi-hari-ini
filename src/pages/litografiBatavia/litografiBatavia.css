@@ -87,7 +87,7 @@
         padding: 13vh 0 0 0;}
     
     .litografiImage, .landscapeLitografiImage {
-        border: 1px solid #747474;
+        border: 1px solid #9c9c9c;
         width: 23vw;
         height: 17vw;}
     
@@ -185,22 +185,25 @@
         background-color: white;}
 
     .landscapeTest {
-        height: 70vh;
+        padding: 3vw 0;
+        height: max-content;
         display: flex;
         flex-direction: row;
         align-items: center;}
 
     .landscapeTest2 {
+        position: relative;
         width: 45%;
         height: 100%;
-        padding: 15% 2.5% 0 2.5%;
+        gap: .5vw;
+        align-self: flex-start;
+        padding: 1vw 2.5% 0 2.5%;
         display: flex;
-        margin: 5vw 0;
         flex-direction: column;}
 
     .landscapeModalImageContainer {
         width: 50%;
-        height: 75vh;
+        height: max-content;
         display: flex;
         align-items: center;}
 
@@ -209,6 +212,7 @@
         height: auto;}
 
     .landscapeModalTitle {
+        z-index: 10;
         position: absolute;
         right: 0;
         width: 45%;
@@ -245,7 +249,7 @@
 
     .landscapeModalContent {
         width: 95%;
-        padding: 1vw 0 4vw 0;}
+        padding: 0 0 4vw 0;}
 
     .landscapeModalContent p {
         margin: 0;
@@ -481,8 +485,8 @@
                 grid-gap: 10px;}
 
             .litografiImage, .landscapeLitografiImage {
-                width: 32vw;
-                height: 25vw;}
+                width: 31vw;
+                height: 24.5vw;}
 
             .storyWrapper p {
                 font-size: 14px;}
@@ -517,9 +521,6 @@
 
             .litografiTitle p {
                 font-size: 11px;}
-
-            .landscapeTest {
-                height: 80vh;}
             
             .landscapeModalTitle h1 {
                     font-size: 16px;}

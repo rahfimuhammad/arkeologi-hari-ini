@@ -1,4 +1,4 @@
-h2, p, h3 {
+.boatsImageSourceLandscape, #title, #title-landscape, #start, #start-landscape, .boatsModal p, .boatsSummary p, .boatsSummaryLandscape p, .boatsTitle h2, .boatsTitleLandscape h2 {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

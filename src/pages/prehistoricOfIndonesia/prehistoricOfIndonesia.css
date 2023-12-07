@@ -136,8 +136,8 @@ a:visited {
     margin-bottom: -24vw;}
 
 .line-horizontal {
-    width: 10px;
-    height: 5px;
+    width: 16px;
+    height: 8px;
     background-color: rgba(53, 52, 52, 0.4);}
 
 .line-wrapper {
@@ -155,14 +155,14 @@ a:visited {
     align-items: center;}
 
 .line-one, .line-two, .line-three, .line-four {
-    width: 5px;
+    width: 8px;
     background-color: rgba(53, 52, 52, 0.4);}
 
 .line-one {
-    height: calc(60vw - 5px);}
+    height: calc(60vw - 8px);}
 
 .line-two {
-    height: calc(46.2vw - 5px);}
+    height: calc(46.2vw - 8px);}
 
 .line-three {
     height: 113.1vw;}
@@ -422,8 +422,8 @@ a:visited {
             height: calc(11vw - 2px);}
 
         #years {
-            width: 13vw;
-            height: 6.5vw;}
+            width: 15vw;
+            height: 7.5vw;}
 
         #years p {
             font-size: 15px;}
@@ -474,7 +474,7 @@ a:visited {
                     padding: 5% 3% 0% 3%;}
                 
                 #years p {
-                    font-size: 10px;}
+                    font-size: 13px;}
                 
                 .modal-content {
                     border-radius: 10px;
@@ -505,15 +505,21 @@ a:visited {
                     font-size: 18px;}
             
                 .modal-title h3 {
-                    font-size: 13px;}
+                    font-size: 15px;}
             
                 .modal-summary p {
-                    font-size: 14px;}}
+                    font-size: 16px;}}
         
                     @media only screen and (max-width: 376px) {
 
                         #years {
-                            font-size: 9px;}}
+                            font-size: 9px;}
+                        
+                        .modal-title h3 {
+                            font-size: 13px;}
+                        
+                        .modal-summary p {
+                            font-size: 14px;}}
 
                         @media only screen and (max-width: 330px) {
 

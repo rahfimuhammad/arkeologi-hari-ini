@@ -8,16 +8,20 @@ import { FaStar } from 'react-icons/fa'
 import CloseButton from "../../assets/icon-closeButton.svg"
 import MuseumLogo from "../../assets/museum-logo.svg"
 import Grid from "../../assets/grid.svg"
+import Loading from "../../components/loading/Loading"
 
 const ReviewMuseumPage = () => {
   const { id } = useParams()
   const index = parseInt(id)
+  const orientation = useDetect()
   const museumData = useFetch(`https://museumreview.onrender.com/museum/${index}`)
   const data = museumData.reviews
   const [toggle, setToggle] = useState(false)
   const [hover, setHover] = useState(null)
-  const orientation = useDetect()
   const [averageRating, setAverageRating] = useState(0);
+  const [error, setError] = useState(false)
+  const [loading, setLoading] =useState(false)
+  const [success, setSucces] =useState(false)
 
   const [formData, setFormData] = useState({
     user: '',
@@ -37,7 +41,6 @@ const ReviewMuseumPage = () => {
     try {
       let postData = {};
 
-      // Ulasan
       if (formData.review && formData.user && formData.rating) {
         postData = {
           user: formData.user,
@@ -46,28 +49,42 @@ const ReviewMuseumPage = () => {
         };
 
         const reviewResponse = await axios.post(`https://museumreview.onrender.com/museum/${index}/reviews`, postData);
+        // setToggle(!toggle)
+        setLoading(true)
+        // alert("berhasil")
+        setSucces(true)
+        setFormData({
+          user: '',
+          rating: '',
+          review: '',})
 
-        setToggle(!toggle)
       }
 
-      // Jika hanya ada rating
       if ((formData.rating && (!formData.review && !formData.user)) || (formData.review && formData.user && formData.rating) ) {
         const rateData = {
           rating: parseInt(formData.rating),
         };
 
         const rateResponse = await axios.post(`https://museumreview.onrender.com/museum/${index}/rate`, rateData);
-
-        setToggle(!toggle)
-        // console.log('Rating berhasil ditambahkan:', rateResponse.data);
+        // setToggle(!toggle)
+        setLoading(true)
+        // alert("berhasil")
+        setSucces(true)
+        setFormData({
+          user: '',
+          rating: '',
+          review: '',})
         
       }
-      alert("Succesed")
+
+      else {
+        setError(true)
+      }
 
     } catch (error) {
-      // console.error('Error adding review/rating:', error);
       alert("server tidak merespon, coba lagi nanti")
     }
+    setLoading(false)
   };
 
   const mapReview = () => {
@@ -103,6 +120,12 @@ const ReviewMuseumPage = () => {
       )
   }
 
+  const closeButton = () => {
+    setToggle(!toggle)
+    setSucces(false)
+    setError(false)
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0);
   
@@ -122,7 +145,7 @@ const ReviewMuseumPage = () => {
             <img src={museumData.logo} alt={museumData.name} className='museum-pict' style={{borderRadius: "50%"}}/>
             <div className="desc-museum" style={{display: "flex", flexDirection: "column", gap: "2px"}}>
               <h1 className="h1" style={{width: "fit-content"}}>{museumData.name}</h1>
-              <h2 className="h2"onClick={() => console.log(museumData.reviews.length)}>{museumData.location}</h2>
+              <h2 className="h2">{museumData.location}</h2>
               <p className="p">{museumData.description}</p>
             </div>
         </div>
@@ -150,10 +173,10 @@ const ReviewMuseumPage = () => {
               </div>
               <p className='info-rating'><b> {averageRating.toFixed(1)}</b> {museumData.rate?.length >= 2? `(${museumData.rate?.length} ratings)` : `(${museumData.rate?.length} rating)`}</p>
                 </div>
-                <div onClick={() => setToggle(!toggle)} className='review-button' style={{height: "fit-content", display: "flex", justifyContent: "center", padding: "15px 45px"}}>REVIEW</div>
+                <div onClick={() => setToggle(!toggle)} className='review-button' style={{height: "fit-content", display: "flex", justifyContent: "center"}}>REVIEW</div>
               </div>
         <div className='user-review' style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-          <h2 className="h2">{museumData.reviews?.length} Ulasan</h2>
+          <h2 className="h2" style={{padding: "10px 0"}}>{museumData.reviews?.length} Ulasan</h2>
             <div className="review-wrapper">
               {mapReview()}
           </div>
@@ -161,15 +184,17 @@ const ReviewMuseumPage = () => {
       </div>
 
       {toggle && <motion.div className="modal-review-overlay" style={{ position: "fixed", top: "0", left: "0", zIndex: "15", width: "100%", height: "100vh", backgroundColor: "rgba(0, 0, 0, .8", display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <div className="close" onClick={() => setToggle(!toggle)} style={{ width: "100%", height: "100vh", position: "absolute", top: "0", left: "0", zIndex: "15" }}></div>
-        <motion.div className="modal-review" id={orientation? "mr-portrait" : "mr-landscape" } style={{ zIndex: "16", position: "absolute", top: orientation? "15vh" : "" }} 
+        <div className="close" onClick={() => closeButton()} style={{ width: "100%", height: "100vh", position: "absolute", top: "0", left: "0", zIndex: "15" }}></div>
+        <motion.div className="modal-review" id={orientation? "mr-portrait" : "mr-landscape" } style={{ paddingBottom: "5px", zIndex: "16", position: "absolute", top: orientation? "15vh" : "" }} 
                     initial={{
                         scale: 0
                           }}
                     animate={{
                         scale: 1
                     }}>
-          <div onClick={() => setToggle(!toggle)} style={{cursor: "pointer", width: "7%", height: "7%", position:"absolute", top: "-3.5%", right: "-3.5%", backgroundImage: `url(${CloseButton})`, backgroundSize: "100% 100%"}}></div>
+          {success && <div style={{display: "flex", justifyContent: "center", alignItems: "center", position: "absolute", top: "0", left: "0" ,width: "100%", height: "100%", backgroundColor: "white", zIndex: "16", color: "#101626"}}><h1>BERHASIL!</h1></div>}
+          {loading && !success && <div style={{display: "flex", justifyContent: "center", alignItems: "center", position: "absolute", top: "0", left: "0" ,width: "100%", height: "100%", backgroundColor: "white", zIndex: "16"}}><div style={{width: "50%"}}><Loading/></div></div>}
+          <div onClick={() => closeButton()} style={{zIndex: "17", cursor: "pointer", width: "7%", height: "7%", position:"absolute", top: "-3.5%", right: "-3.5%", backgroundImage: `url(${CloseButton})`, backgroundSize: "100% 100%"}}></div>
           <form style={{ display: "flex", flexDirection: "column", gap: "25px", padding: "3px" }}>
             <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
               <h1 className="h1" style={{textAlign: "center", color: "#101626"}}>{museumData.name}</h1>
@@ -195,12 +220,13 @@ const ReviewMuseumPage = () => {
                   </label>
                 ))}
               </div>
-            <div style={{position:"relative", width: "100%", height: "60%", display: "flex", flexDirection: "column", gap: "5px"}}>
-              <input className='input' style={{fontFamily: "sans-serif", width: "50%", fontSize: "20px"}} placeholder='name' type="text" name="user" value={formData.user} onChange={handleInputChange} />
-              <textarea className='text-area' style={{fontFamily: "sans-serif", fontSize: "20px", width: "calc(100% - 10px)", height: "70%"}} placeholder='write a review...' name="review" value={formData.review} onChange={handleInputChange} />
+            <div style={{position:"relative", width: "100%", height: "75%", display: "flex", flexDirection: "column", gap: "5px"}}>
+              <input className='input' style={{border: "1px solid black", fontFamily: "sans-serif", width: "50%", fontSize: "20px"}} placeholder='name' type="text" name="user" value={formData.user} onChange={handleInputChange} />
+              <textarea className='text-area' style={{border: "1px solid black", fontFamily: "sans-serif", fontSize: "20px", width: "calc(100% - 18px)", height: "50%"}} placeholder='write a review...' name="review" value={formData.review} onChange={handleInputChange} />
             </div>
-            <div style={{position: "relative", width: "100%", display: "flex", justifyContent: "flex-end", height: "30%", alignItems: "flex-end"}}>
-              <button className='submit-button' style={{width: "35%", height: "65%"}} type="button" onClick={() => handleAddReview()}>
+            <div style={{position: "relative", width: "100%", display: "flex", justifyContent: "space-between", height: "30%", alignItems: "flex-end"}}>
+              <span style={{height: "65%", padding: "0 2px"}}>{error && <span>Input tidak valid</span>}</span>
+              <button disabled={loading} className='submit-button' style={{width: "35%", height: "80%"}} type="button" onClick={() => {setLoading(true); handleAddReview()}}>
                 SUBMIT
               </button>
             </div>
