@@ -49,9 +49,8 @@ const ReviewMuseumPage = () => {
         };
 
         const reviewResponse = await axios.post(`https://museumreview.onrender.com/museum/${index}/reviews`, postData);
-        // setToggle(!toggle)
+
         setLoading(true)
-        // alert("berhasil")
         setSucces(true)
         setFormData({
           user: '',

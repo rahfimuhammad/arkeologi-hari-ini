@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { useFetch } from '../../hooks/hooks'
+import axios from 'axios';
 import "./museumReview.css"
 import Navbar from "../../components/Navbar"
 import { FaStar, FaSearch } from 'react-icons/fa'
@@ -10,14 +10,32 @@ import LoadingBar from "../../components/loading/LoadingBar.jsx";
 
 const MuseumListPage = () => {
   
-  const data = useFetch('https://museumreview.onrender.com/museum');
+  const [data, setData] = useState([])
   const [averageRatings, setAverageRatings] = useState([]);
   const [input, setInput] = useState("")
   const [result, setResult] = useState([])
 
   useEffect(() => {
+    const fetchData = async() => {
+
+        try {
+            let response = await axios.get(
+              'https://museumreview.onrender.com/museum'
+                )
+            setData(response.data)
+        } 
+        catch (error) {
+          alert('server tidak merespon')
+        }
+    }
+  fetchData();
+
+}, []);
+
+
+  useEffect(() => {
     if (data && data.length > 0) {
-      // Menghitung rata-rata rating dari setiap museum
+      
       const avgRatings = data.map((museum) => {
         const totalRating = museum.rate.reduce((acc, curr) => acc + curr, 0);
         return totalRating / museum.rate.length;
@@ -46,7 +64,7 @@ const MuseumListPage = () => {
   return (
     <div>
       <Navbar/>
-      <div className="museum-main" style={{backgroundImage: `url(${Grid})`, backgroundRepeat: "repeat", backgroundSize: "100px auto", minHeight: "100vh"}}>
+      <div className="museum-main" style={{backgroundImage: `url(${Grid})`, backgroundRepeat: "repeat", backgroundSize: "100px auto", minHeight: "100vh"}} onClick={() => setResult([])}>
         <div className="search-wrapper">
           <div className="search-bar-container">
             <FaSearch color="#696969"/>
@@ -59,8 +77,8 @@ const MuseumListPage = () => {
           })}</div>
         </div>
         <div className="card-container">
-          {data === 0 ? (
-           <div><LoadingBar /></div>) : (
+          {data.length === 0 ? (
+           <div><LoadingBar/></div>) : (
             data.map((museum, index) => (
               <Link to={`review-museum/${museum.id}`}>
                 <div className="card-museum" key={museum.id}>

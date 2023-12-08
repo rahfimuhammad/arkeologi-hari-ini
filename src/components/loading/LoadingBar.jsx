@@ -5,9 +5,9 @@ const LoadingBar = () => {
     return (
         <div style={{position: "absolute",
                     zIndex: "20",
-                    width: "100vw",
+                    width: "100%",
                     height: "90vh",
-                    backgroundColor: "white",
+                    backgroundColor: "transparent",
                     top: "10vh",
                     left: "0",
                     display: "flex",

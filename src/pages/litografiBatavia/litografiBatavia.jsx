@@ -4,6 +4,7 @@ import closeButton from "../../assets/icon-closeButton.png"
 import MuseumLogo from "../../assets/icon-museumLogo.png"
 import ScrollTopButton from "../../assets/icon-scrollTopButton.png"
 import Navbar from "../../components/Navbar";
+import LoadingBar from "../../components/loading/LoadingBar";
 import axios from 'axios'
 import {useState, useEffect} from "react"
 import { Link } from "react-router-dom";
@@ -73,7 +74,7 @@ const LitografiBatavia = () => {
 
         return data.length === 0? 
         
-        console.log("Wait") :
+        <LoadingBar/> :
 
         data.map((value, index) => {
              
