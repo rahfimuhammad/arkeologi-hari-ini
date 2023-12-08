@@ -14,8 +14,48 @@
     color: #101626;}
 
 .info-rating {
-    font-size: 15px;
-}
+    font-size: 15px;}
+
+.search-wrapper {
+    z-index: 2;
+    position: absolute;
+    top: 12vh;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px}
+
+.search-result {
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    width: 60%;
+    max-height: 40vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    height: 15px;
+    width: 60%;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+    border: 2px solid #696969;}
+
+.museum-search-input {
+    width: 100%;
+    font-size: 17px;
+    color: #696969;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;}
 
 .title-museum {
     color: #101626;
@@ -31,7 +71,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
     width: 100%;
+    padding: 12vh 0 0 0;
     min-height: 90vh;}
 
 .card-container {
@@ -42,7 +84,7 @@
     grid-gap: 10px;}
 
 .card-museum {
-    border: .5px solid #101626;
+    border: 2px solid #696969;
     background-color: white;
     width: 23vw;
     padding: 15px 0 0 0;
@@ -208,8 +250,14 @@ input[type=radio] {
 
     @media only screen and (max-width: 600px) {
 
+        .search-bar-container {
+            width: 90vw;}
+
+        .search-result {
+            width: 90%;}
+
         .card-container {
-            padding: 10vh 0 2vh 0;
+            padding: 6vh 0 2vh 0;
             width: 94vw;
             position: relative;
             display: flex;

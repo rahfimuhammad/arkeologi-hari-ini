@@ -511,9 +511,6 @@ a:visited {
                     font-size: 16px;}}
         
                     @media only screen and (max-width: 376px) {
-
-                        #years {
-                            font-size: 9px;}
                         
                         .modal-title h3 {
                             font-size: 13px;}
@@ -523,8 +520,8 @@ a:visited {
 
                         @media only screen and (max-width: 330px) {
 
-                            #years {
-                                font-size: 6px;}
+                            #years p {
+                                font-size: 9px;}
 
                             .modal-image img {
                                 width: 40px;

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useFetch } from '../../hooks/hooks'
 import "./museumReview.css"
 import Navbar from "../../components/Navbar"
-import { FaStar } from 'react-icons/fa'
+import { FaStar, FaSearch } from 'react-icons/fa'
 import Grid from "../../assets/grid.svg"
 import LoadingBar from "../../components/loading/LoadingBar.jsx";
 
@@ -12,6 +12,8 @@ const MuseumListPage = () => {
   
   const data = useFetch('https://museumreview.onrender.com/museum');
   const [averageRatings, setAverageRatings] = useState([]);
+  const [input, setInput] = useState("")
+  const [result, setResult] = useState([])
 
   useEffect(() => {
     if (data && data.length > 0) {
@@ -25,16 +27,43 @@ const MuseumListPage = () => {
     }
   }, [data]);
 
+  const displaySearch = (value) => {
+    
+    const results = data.filter((museum) => {
+      return (
+        value && museum && museum.name && museum.name.toLowerCase().includes(value))
+     
+    }) 
+
+    setResult(results)
+  }
+
+  const handleChange = (value) => {
+      setInput(value)
+      displaySearch(value)
+  }
+
   return (
     <div>
       <Navbar/>
       <div className="museum-main" style={{backgroundImage: `url(${Grid})`, backgroundRepeat: "repeat", backgroundSize: "100px auto", minHeight: "100vh"}}>
+        <div className="search-wrapper">
+          <div className="search-bar-container">
+            <FaSearch color="#696969"/>
+            <input className='museum-search-input' placeholder='search museum' type="text" value={input.toLowerCase()} onChange={(e) => handleChange(e.target.value)} />
+          </div>
+          <div className="search-result">{result?.map((v, i) => {
+            return (
+              <Link to={`review-museum/${v.id}`}><div style={{padding: "5px"}} key={v.id}>{v.name}</div></Link>
+            )
+          })}</div>
+        </div>
         <div className="card-container">
           {data === 0 ? (
            <div><LoadingBar /></div>) : (
             data.map((museum, index) => (
-              <Link to={`review-museum/${museum.id}`} key={museum.id}>
-                <div className="card-museum">
+              <Link to={`review-museum/${museum.id}`}>
+                <div className="card-museum" key={museum.id}>
                   <div className="card-image" style={{width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
                     <img src={museum.logo} style={{height: "95%", width: "auto"}}/>
                   </div>

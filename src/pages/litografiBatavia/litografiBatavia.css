@@ -36,9 +36,9 @@
 
     .storyTest, .landscapeStoryTest {
         position: relative;
-        border: 1px solid #747474;
+        border: 2px solid #747474;
         background-position: center center;
-        background-size: 105% auto;
+        background-size: 110% auto;
         border-radius: 50%;}
 
     .storyTest {
@@ -87,7 +87,6 @@
         padding: 13vh 0 0 0;}
     
     .litografiImage, .landscapeLitografiImage {
-        border: 1px solid #9c9c9c;
         width: 23vw;
         height: 17vw;}
     
@@ -180,7 +179,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 80%;
+        width: 65%;
         height: fit-content;
         background-color: white;}
 
@@ -512,6 +511,9 @@
             .landscapeBioDescription h2 {
                 font-size: 19px;
                 padding: 0 0 3px 0;}
+
+            .landscapeLitografiModal {
+                width: 80%;}
 
             .landscapeBioDescription p {
                 font-size: 15px;}
