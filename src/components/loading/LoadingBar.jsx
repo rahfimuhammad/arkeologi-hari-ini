@@ -1,24 +1,23 @@
-import React from "react";
-import Loading from "./Loading";
+import React from 'react'
+import { TailSpin } from 'react-loader-spinner'
 
-const LoadingBar = () => {
+const LoadingBar = ({size, height}) => {
     return (
-        <div style={{position: "absolute",
-                    zIndex: "20",
-                    width: "100%",
-                    height: "90vh",
-                    backgroundColor: "transparent",
-                    top: "10vh",
-                    left: "0",
+        <div style={{ width: "100%",
+                    height: height || "100%",
                     display: "flex",
                     justifyContent: "center",
-                    alignItems: "center"}}>
-            <div style={{height: "20vh", width: "20vh", position: "absolute"}}>
-                <Loading/>
-            </div>
+                    alignItems: "center",
+                    backgroundColor: "transparent"}}>
+            <TailSpin visible={true}
+                    height="32"
+                    width="32"
+                    color="#7b8b8b"
+                    ariaLabel="tail-spin-loading"
+                    radius="1"
+                    wrapperStyle={{}}
+                    wrapperClass=""/>
         </div>
-        
-        
     )
 }
 

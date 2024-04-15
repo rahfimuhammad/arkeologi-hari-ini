@@ -8,7 +8,7 @@ import { FaStar } from 'react-icons/fa'
 import CloseButton from "../../assets/icon-closeButton.svg"
 import MuseumLogo from "../../assets/museum-logo.svg"
 import Grid from "../../assets/grid.svg"
-import Loading from "../../components/loading/Loading"
+// import Loading from "../../components/loading/Loading"
 
 const ReviewMuseumPage = () => {
   const { id } = useParams()
@@ -192,7 +192,7 @@ const ReviewMuseumPage = () => {
                         scale: 1
                     }}>
           {success && <div style={{display: "flex", justifyContent: "center", alignItems: "center", position: "absolute", top: "0", left: "0" ,width: "100%", height: "100%", backgroundColor: "white", zIndex: "16", color: "#101626"}}><h1>BERHASIL!</h1></div>}
-          {loading && !success && <div style={{display: "flex", justifyContent: "center", alignItems: "center", position: "absolute", top: "0", left: "0" ,width: "100%", height: "100%", backgroundColor: "white", zIndex: "16"}}><div style={{width: "50%"}}><Loading/></div></div>}
+          {/* {loading && !success && <div style={{display: "flex", justifyContent: "center", alignItems: "center", position: "absolute", top: "0", left: "0" ,width: "100%", height: "100%", backgroundColor: "white", zIndex: "16"}}><div style={{width: "50%"}}><Loading/></div></div>} */}
           <div onClick={() => closeButton()} style={{zIndex: "17", cursor: "pointer", width: "7%", height: "7%", position:"absolute", top: "-3.5%", right: "-3.5%", backgroundImage: `url(${CloseButton})`, backgroundSize: "100% 100%"}}></div>
           <form style={{ display: "flex", flexDirection: "column", gap: "25px", padding: "3px" }}>
             <div style={{width: "100%", display: "flex", justifyContent: "center"}}>

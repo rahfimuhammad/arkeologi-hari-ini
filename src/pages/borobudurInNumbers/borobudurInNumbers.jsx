@@ -28,10 +28,10 @@ return (
 <Navbar/>
 
     <div style={{width: "100%", height: "100vh", position: "relative", display: "flex", justifyContent: "center", alignItems: "center"}}>
-        <div className={orientation? "introPortrait" : "introLandscape"} style={{position: "absolute", right: "2.5%", width: "95%", display: "flex"}}>
+        <div className={orientation? "introPortrait" : "introLandscape"} style={{width: "95%", display: "flex"}}>
             <div className={orientation? "introContentPortrait" : "introContentLandscape"} style={{backgroundImage: `url(${BorobudurCover})`, backgroundPosition: "center center", backgroundSize: "100% auto" }}></div>
             <div className={orientation? "introContentPortrait" : "introContentLandscape"} id="introContentPortrait" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                <h1 style={{textAlign: "center"}}><span style={{color: "#51827a"}}>Borobudur </span><span style={{color: "#363636"}}>dalam </span><span style={{color: "#51827a"}}>Angka</span></h1>
+                <h1 style={{textAlign: "center", margin: "0"}}><span style={{color: "#51827a"}}>Borobudur </span><span style={{color: "#363636"}}>dalam </span><span style={{color: "#51827a"}}>Angka</span></h1>
             </div>
         </div>
     </div>

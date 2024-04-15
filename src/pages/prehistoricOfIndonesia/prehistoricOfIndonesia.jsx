@@ -4,14 +4,14 @@ import {motion} from "framer-motion"
 import Navbar from "../../components/Navbar"
 import ScrollIcon from "../../assets/icon-scrollIcon.png"
 import { useFetch, useDetect } from "../../hooks/hooks";
+import { X } from "phosphor-react";
 
 
 const PrehistoricOfIndonesia = () => {
 
     const [offSetY, setOffSetY] = useState(0)
-    const data = useFetch("https://prehistoric.cyclic.app/prehistoric")
+    const data = useFetch("https://arkeologihariini.cyclic.app/prehistoric")
     const [description, setDescription] = useState([])
-    const [button, setButton] = useState([])
     const [modal, setModal] = useState(false)
     const orientation = useDetect()
 
@@ -30,72 +30,54 @@ const PrehistoricOfIndonesia = () => {
         window.scrollTo(0, 0)
     }, [])
 
-    // Filtering data from by index
+    const parallaxSource = [
+        {value: 0.4, id: "background"},
+        {value: 0.35, id: "mountain"},
+        {value: 0.3, id: "jungle0"},
+        {value: 0.25, id: "jungle1"},
+        {value: 0.20, id: "jungle2"},
+        {value: 0.15, id: "jungle3"},
+        {value: 0, id: "prehistoricMan"}
+    ]
 
-    let onFiltering = async(index) => {
+    const parallaxSourceMap = parallaxSource.map((value) => {
+        return (
+            <div 
+                className="parallaxImage" id={value.id}
+                style={{transform: `translateY(${offSetY * value.value}px)`}}
+            >
+            </div>
+        )
+    })
+
+    // Filtering data by index
+
+    const onFiltering = (index) => {
         try {
             setDescription(data[index])
             setModal(!modal)}
         
-        catch (error) {   }}
+        catch (error) { 
+            console.log(error)
+        }}
 
-    // Modal Handle Button
-
-    let toggleModal = () => {
-        setModal(!modal)
-    }
+    // onModalActive
 
     useEffect(() => {
-        
         modal? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset'
-      }, [modal])
-
-    // Set Button by Image ftom API
-
-    useEffect(() => {
-        
-        const onGetButton = () => {
-        
-            let responseButton = data.map((value) => {
-                return value.button
-            })
-            setButton(responseButton)
-        }
-        onGetButton()
-    },[data])
+    }, [modal])
 
     return (
-<>
-<Navbar/>
+            <>
+                <Navbar/>
                 <div className="prehistoricParallaxContainer">
                     <div className={orientation? "prehistoricParallaxWrapperPortrait" : "prehistoricParallaxWrapperLandscape"} >
-                        <div className="parallaxImage" id="background"
-                        style={{transform: `translateY(${offSetY * 0.4}px)`, zIndex: "0" }}
-                        ></div>
-                        <div className="parallaxImage"  id="mountain"
-                        style={{transform: `translateY(${offSetY * 0.35}px)` }}
-                        ></div>
-                        <div className="parallaxImage"  id="jungle0"
-                        style={{transform: `translateY(${offSetY * 0.3}px)` }}
-                        ></div>
-                        <div className="parallaxImage"  id="jungle1"
-                        style={{transform: `translateY(${offSetY * 0.25}px)` }}
-                        ></div>
-                        <div className="parallaxImage"  id="jungle2"
-                        style={{transform: `translateY(${offSetY * 0.2}px)` }}
-                        ></div>
-                        <div className="parallaxImage"  id="jungle3"
-                        style={{transform: `translateY(${offSetY * 0.15}px)` }}
-                        ></div>
-                        <div className="parallaxImage"  id="prehistoricMan"
-                        ></div>
+                        {parallaxSourceMap}
                         <div className={offSetY > 0? "displayNone" : "prehistoricInstruction"} style={{top: orientation? "55vh" : "91vh"}}>
-                            <img className= {orientation? "scrollIcon" : "scrollIconLandscape"} src={ScrollIcon}/>
+                            <img className= {orientation? "scrollIcon" : "scrollIconLandscape"} src={ScrollIcon} alt="scrollIcon"/>
                         </div>
                     </div>
                 </div>
-                    
-
                 <div className="prehistoricMainContainer" id= {orientation? "portraitContainer" : "landscapeContainer"}>
                             {/* Line */}
                             <div className="prehistoricLineContainer" >
@@ -133,12 +115,12 @@ const PrehistoricOfIndonesia = () => {
                                 <div className="dashed-line"></div>
                                 <div className="content-container-first" style={{justifyContent: "space-between"}}>
                                     <div className="btn-container" style={{justifyContent: "space-between"}}>
-                                        <input onClick={() => onFiltering(0)} id="btn" type="image" src= {button[0]} style={{backgroundColor: "#a3a3a3"}} alt="Paleolitik"></input>
-                                        <input onClick={() => onFiltering(1)} id="btn" type="image" src= {button[1]}  style={{backgroundColor: "#d0ddef"}} alt="Nomadeden"></input>
-                                        <input onClick={() => onFiltering(2)} id="btn" type="image" src= {button[2]} style={{backgroundColor: "#b57c7c"}} alt="Beburu meramu"></input>
+                                        <input onClick={() => onFiltering(0)} id="btn" type="image" src= {data[0]?.button} style={{backgroundColor: "#a3a3a3"}} alt="Paleolitik"></input>
+                                        <input onClick={() => onFiltering(1)} id="btn" type="image" src= {data[1]?.button}  style={{backgroundColor: "#d0ddef"}} alt="Nomadeden"></input>
+                                        <input onClick={() => onFiltering(2)} id="btn" type="image" src= {data[2]?.button} style={{backgroundColor: "#b57c7c"}} alt="Beburu meramu"></input>
                                     </div>
                                     <div className="btn-container-middle" style={{justifyContent: "center"}}>
-                                        <input onClick={() => onFiltering(3)} id="btn" type="image" src= {button[3]} style={{backgroundColor: "#e5e5e5"}} alt="Homo Erectus Arkaik"></input>
+                                        <input onClick={() => onFiltering(3)} id="btn" type="image" src= {data[3]?.button} style={{backgroundColor: "#e5e5e5"}} alt="Homo Erectus Arkaik"></input>
                                     </div>
                                     <div className="btn-container"style={{justifyContent: "flex-end"}}>
                                         <span id="years-container">
@@ -152,7 +134,7 @@ const PrehistoricOfIndonesia = () => {
                                 <div className="content-container-second" style={{justifyContent: "space-between"}}>
                                     <div className="btn-container"></div>
                                     <div className="btn-container-middle" style={{justifyContent: "center"}}>
-                                        <input onClick= {() => onFiltering(4)} id="btn" type="image" src= {button[4]} style={{backgroundColor: "#e5e5e5"}} alt="Homo Erectus Tipik"></input>
+                                        <input onClick= {() => onFiltering(4)} id="btn" type="image" src= {data[4]?.button} style={{backgroundColor: "#e5e5e5"}} alt="Homo Erectus Tipik"></input>
                                     </div>
                                     <div className="btn-container"style={{justifyContent: "flex-end"}}>
                                         <span id="years-container">
@@ -166,7 +148,7 @@ const PrehistoricOfIndonesia = () => {
                                 <div className="content-container-third" style={{justifyContent: "space-between"}}>
                                     <div className="btn-container"></div>
                                     <div className="btn-container-middle" style={{justifyContent: "center"}}>
-                                        <input onClick= {() => onFiltering(5)} id="btn" type="image" src= {button[5]} style={{backgroundColor: "#e5e5e5"}} alt="Homo Erectus Progresif"></input>
+                                        <input onClick= {() => onFiltering(5)} id="btn" type="image" src= {data[5]?.button} style={{backgroundColor: "#e5e5e5"}} alt="Homo Erectus Progresif"></input>
                                     </div>
                                     <div className="btn-container"style={{justifyContent: "flex-end"}}>
                                         <span id="years-container">
@@ -178,14 +160,14 @@ const PrehistoricOfIndonesia = () => {
                                 </div>
                                 <div className="content-container-fourth" style={{justifyContent: "space-between"}}>
                                     <div className="btn-container" style={{justifyContent: "center"}}>
-                                        <input onClick= {() => onFiltering(6)} id="btn" type="image" src= {button[6]} style={{backgroundColor: "#dbe2f0"}} alt="Menetap"></input>
+                                        <input onClick= {() => onFiltering(6)} id="btn" type="image" src= {data[6]?.button} style={{backgroundColor: "#dbe2f0"}} alt="Menetap"></input>
                                     </div>
                                     <div className="btn-container" style={{justifyContent: "flex-start"}}>
-                                        <input onClick= {() => onFiltering(7)} id="btn" type="image" src= {button[7]} style={{backgroundColor: "#545245"}} alt="Homo Floresiensis"></input>
+                                        <input onClick= {() => onFiltering(7)} id="btn" type="image" src= {data[7]?.button} style={{backgroundColor: "#545245"}} alt="Homo Floresiensis"></input>
                                         <div className="btn-container"style={{justifyContent: "flex-end"}}>
                                             <span id="years-container">
                                                 <div id="years">
-                                                    <p>94.000 tahun yang lalu</p>
+                                                    <p style={{margin: "17px 1px"}}>94.000 tahun yang lalu</p>
                                                 </div>
                                             </span>
                                         </div>
@@ -194,10 +176,10 @@ const PrehistoricOfIndonesia = () => {
                                 <div className="dashed-line"></div>
                                 <div className="content-container-fifth" style={{justifyContent: "space-between"}}>
                                     <div className="btn-container" style={{justifyContent: "center"}}>
-                                        <input onClick= {() => onFiltering(8)} id="btn" type="image" src= {button[8]} style={{backgroundColor: "#a3a3a3"}} alt="Alat tulang"></input>
+                                        <input onClick= {() => onFiltering(8)} id="btn" type="image" src= {data[8]?.button} style={{backgroundColor: "#a3a3a3"}} alt="Alat tulang"></input>
                                     </div>
                                     <div className="btn-container-middle" style={{justifyContent: "center"}}>
-                                        <input onClick= {() => onFiltering(9)} id="btn" type="image" src= {button[9]} style={{backgroundColor: "#2c2b24"}} alt="Homo Wajakensis"></input>
+                                        <input onClick= {() => onFiltering(9)} id="btn" type="image" src= {data[9]?.button} style={{backgroundColor: "#2c2b24"}} alt="Homo Wajakensis"></input>
                                     </div>
                                     <div className="btn-container" style={{justifyContent: "flex-end"}}>
                                         <span id="years-container">
@@ -209,7 +191,7 @@ const PrehistoricOfIndonesia = () => {
                                 </div>
                                 <div className="content-container-sixth" style={{justifyContent: "space-between"}}>
                                     <div className="btn-container" style={{justifyContent: "center"}}>
-                                        <input onClick={() => onFiltering(10)} id="btn" type="image" src= {button[10]} alt="Rock Art" style={{backgroundColor: "#53625c"}}></input>
+                                        <input onClick={() => onFiltering(10)} id="btn" type="image" src= {data[10]?.button} alt="Rock Art" style={{backgroundColor: "#53625c"}}></input>
                                     </div>
                                     <div className="btn-container-middle">
                                     </div>
@@ -219,10 +201,10 @@ const PrehistoricOfIndonesia = () => {
                                 <div className="dashed-line"></div>
                                 <div className="content-container-seventh" style={{justifyContent: "space-between"}}>
                                     <div className="btn-container" style={{justifyContent: "center"}}>
-                                        <input onClick={() => onFiltering(11)} id="btn" type="image" src= {button[11]} style={{backgroundColor: "#b57c7c"}} alt="Bercocok tanam"></input>
+                                        <input onClick={() => onFiltering(11)} id="btn" type="image" src= {data[11]?.button} style={{backgroundColor: "#b57c7c"}} alt="Bercocok tanam"></input>
                                     </div>
                                     <div className="btn-container-middle" style={{justifyContent: "center"}}>
-                                        <input onClick={() => onFiltering(12)} id="btn" type="image" src= {button[12]} style={{backgroundColor: "#bdb8ad"}} alt="Australomelanesid"></input>
+                                        <input onClick={() => onFiltering(12)} id="btn" type="image" src= {data[12]?.button} style={{backgroundColor: "#bdb8ad"}} alt="Australomelanesid"></input>
                                     </div>
                                     <div className="btn-container" style={{justifyContent: "flex-end"}}>
                                         <span id="years-container">
@@ -234,20 +216,19 @@ const PrehistoricOfIndonesia = () => {
                                 </div>
                                 <div className="content-container-eighth" style={{justifyContent: "flex-start"}}>
                                     <div className="btn-container" style={{justifyContent: "space-between"}}>
-                                        <input onClick={() => onFiltering(14)} id="btn" type="image" src= {button[14]} style={{backgroundColor: "#a3a3a3"}} alt="Pra-Neolitik"></input>
-                                        <input onClick= {() => onFiltering(13)} id="btn" type="image" src= {button[13]} style={{backgroundColor: "#a3a3a3"}} alt="Tanah liat"></input>
+                                        <input onClick={() => onFiltering(14)} id="btn" type="image" src= {data[14]?.button} style={{backgroundColor: "#a3a3a3"}} alt="Pra-Neolitik"></input>
+                                        <input onClick= {() => onFiltering(13)} id="btn" type="image" src= {data[13]?.button} style={{backgroundColor: "#a3a3a3"}} alt="Tanah liat"></input>
                                     </div>
                                 </div>
-                             
                                 
                                 <div className="dashed-line"></div>
                                 <div className="content-container-ninth" style={{justifyContent: "space-between"}}>
                                     <div className="btn-container"style={{justifyContent: "space-between"}}>
-                                        <input onClick={() => onFiltering(15)} id="btn" type="image" src= {button[15]} style={{backgroundColor: "#a3a3a3"}} alt="Neolitik"></input>
-                                        <input onClick={() => onFiltering(16)} id="btn" type="image" src= {button[16]} style={{backgroundColor: "#b57c7c"}} alt="Bercocok tanam"></input>
+                                        <input onClick={() => onFiltering(15)} id="btn" type="image" src= {data[15]?.button} style={{backgroundColor: "#a3a3a3"}} alt="Neolitik"></input>
+                                        <input onClick={() => onFiltering(16)} id="btn" type="image" src= {data[16]?.button} style={{backgroundColor: "#b57c7c"}} alt="Bercocok tanam"></input>
                                     </div>                    
                                     <div className="btn-container" style={{justifyContent: "space-between"}}>
-                                        <input onClick={() => onFiltering(17)} id="btn" type="image" src= {button[17]} style={{backgroundColor: "#bdb8ad"}} alt="Austronesia"></input>
+                                        <input onClick={() => onFiltering(17)} id="btn" type="image" src= {data[17]?.button} style={{backgroundColor: "#bdb8ad"}} alt="Austronesia"></input>
                                         <span id="years-container">
                                             <div id="years">
                                                 <p>3.600 tahun yang lalu</p>
@@ -257,8 +238,8 @@ const PrehistoricOfIndonesia = () => {
                                 </div>
                                 <div className="content-container-ten">
                                 <div className="btn-container" style={{justifyContent: "space-between"}}>
-                                        <input onClick= {() => onFiltering(18)} id="btn" type="image" src= {button[18]} style={{backgroundColor: "#53625c"}} alt="Megalitik"></input>
-                                        <input onClick= {() => onFiltering(19)} id="btn" type="image" src= {button[19]} style={{backgroundColor: "#a3a3a3"}} alt="Zaman logam"></input> 
+                                        <input onClick= {() => onFiltering(18)} id="btn" type="image" src= {data[18]?.button} style={{backgroundColor: "#53625c"}} alt="Megalitik"></input>
+                                        <input onClick= {() => onFiltering(19)} id="btn" type="image" src= {data[19]?.button} style={{backgroundColor: "#a3a3a3"}} alt="Zaman logam"></input> 
                                     </div>
                                 </div>
                             </div>
@@ -266,15 +247,17 @@ const PrehistoricOfIndonesia = () => {
 
             {/* Modal */}
 
-            {modal && <motion.div className="modal" 
-                          initial={{
+            {modal && <motion.div 
+                        className="modal" 
+                        initial={{
                             opacity: 0
                         }}
                         animate={{
                             opacity: 1
                         }}>
-                    <div className="overlay"
-                         onClick={toggleModal}></div>
+                    <div 
+                        className="overlay"
+                        onClick={() => setModal(!modal)}></div>
 
                         <motion.div className="modal-content"
                             initial={{
@@ -283,23 +266,18 @@ const PrehistoricOfIndonesia = () => {
                             animate={{
                                 scale: 1
                             }}>
-                            <motion.div className="modal-header">
-                                <motion.div className="modal-image">
+                            <div className="modal-header">
+                                <div className="modal-image">
                                     <img id="modal-animation"src={description.button} alt={description.name}></img>
-                                </motion.div>
-                                <motion.div className="modal-title">
+                                </div>
+                                <div className="modal-title">
                                     <h1>{description.name}</h1>
                                     <h3>Periode: {description.age}</h3>
-                                </motion.div>
-                                <motion.div className="modal-button" onClick={toggleModal}>
-                                
-                                    <div id="mdiv">
-                                        <div className="mdiv">
-                                            <div className="md"></div>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            </motion.div>
+                                </div>
+                                <div className="modal-button" onClick={() => setModal(!modal)}>
+                                    <X size={25} color="rgb(109, 106, 106)"/>
+                                </div>
+                            </div>
                                 <div className="modal-summary">
                                     <p>{description.description} </p>
                                 </div>
@@ -308,8 +286,7 @@ const PrehistoricOfIndonesia = () => {
                                 </div>
                         </motion.div>
                 </motion.div>}
-</>       
-       
+            </>       
     )
 }
 

@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div>
-      <Suspense fallback={<LoadingBar/>}>
+      <Suspense fallback={<LoadingBar size={25} height="100vh"/>}>
         <Routes>
             <Route  path="/" element={ <Home/> }/>
               <Route  path="prasejarah-indonesia" element= {<PrehistoricOfIndonesia />} />

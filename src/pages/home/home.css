@@ -37,7 +37,7 @@ a:visited {
     justify-content: center;}
     
 .content {
-    border: 1px solid rgb(209, 203, 203);
+    border: 1px solid #212121;
     position: relative;
     width: 30vw;
     height: 15vw;

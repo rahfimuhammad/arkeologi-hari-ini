@@ -108,12 +108,16 @@
     transform: rotateZ(30deg);}
 
 .introPortrait {
+    position: absolute; 
+    right: 2.5%;
     height: fit-content;
     bottom: 10vh;
     flex-direction: column;
     justify-content: space-between;}
 
 .introLandscape {
+    position: absolute; 
+    right: 2.5%;
     flex-direction: row;
     align-items: center;}
 
@@ -213,6 +217,7 @@
     width: 80%;
     height: fit-content;
     text-align: center;
+    margin: 20px 0px;
     color: #51827a;
     font-family: 'JetBrains Mono', monospace;
     font-size: 22px;}
@@ -312,6 +317,11 @@
     .description p {
             font-size: 26px;}}
 
+    @media only screen and (max-width: 800px) {
+        .introContentLandscape h1 {
+            font-size: 50px;
+        }}
+
     @media only screen and (max-width: 700px) {
 
         .introContentLandscape h1 {
@@ -323,10 +333,9 @@
     @media only screen and (max-width: 600px) {
 
         .introPortrait {
-            height: calc(50vw + 95vw);}
-
-        #introContentPortrait {
-            height: 50vw;}
+            position: relative;
+            bottom: 0;
+            right: 0;}
 
         .introContentPortrait {
             width: 95vw;
@@ -353,6 +362,7 @@
             font-size: 25px;}
 
         .description p {
+            margin: 13px 0;
             font-size: 14px;}}
     
     @media only screen and (max-width: 376px) {
@@ -380,9 +390,4 @@
         
         .introContentPortrait h1 {
             font-size: 32px;}}
-
-    @media screen and (max-width: 330px), screen and (max-height: 481px) {
-       
-                .introPortrait {
-                    bottom: 5vh;}}
 

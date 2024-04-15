@@ -1,110 +1,115 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import './litografiBatavia.css'
-import closeButton from "../../assets/icon-closeButton.png"
-import MuseumLogo from "../../assets/icon-museumLogo.png"
-import ScrollTopButton from "../../assets/icon-scrollTopButton.png"
-import Navbar from "../../components/Navbar";
-import LoadingBar from "../../components/loading/LoadingBar";
 import axios from 'axios'
-import {useState, useEffect} from "react"
 import { Link } from "react-router-dom";
-import {motion} from "framer-motion"
 import { useDetect } from "../../hooks/hooks"
-
-
+import { MagnifyingGlass, House, PaintBrush, CaretRight, CaretLeft } from "phosphor-react";
+import Modal from "./components/Modal";
+import Content from "./components/Content";
+import LoadingBar from "../../components/loading/LoadingBar";
 
 const LitografiBatavia = () => {
 
-    const [data, setData] = useState([])
+    const [artworks, setArtworks] = useState([])
+    const [authors, setAuthors] = useState([])
     const [modal, setModal] = useState([])
     const [toggle, setToggle] = useState(false)
     const orientation = useDetect()
-    const [offSetY, setOffSetY] = useState(0)
+    const [sideToggle, setSideToggle] = useState(false)
+    const [category, setCategory] = useState("batavia")
+    const [search, setSearch] = useState("")
+    const [authorLoading, setAuthorLoading] = useState(false)
+    const [artworksLoading, setArtworksLoading] = useState(false)
 
-/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  */ 
-    
-    const handleScroll = () => setOffSetY(window.scrollY) 
-
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll)
-        
-        return () => window.removeEventListener("scroll", handleScroll)
-        
-    }, [])
-
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-
-    const onGetData = async() => {
+    const onGetArtworks = async() => {
 
         try {
+            setArtworksLoading(true)
             let response = await axios.get(
-                "https://prehistoric.cyclic.app/litografiBatavia"
+                `https://arkeologihariini.cyclic.app/litography/artwork?category=${category}&search=${search}`
                 )
-            setData(response.data)
+            setArtworks(response.data?.data?.artworks)
         } 
         catch (error) {
+            console.log(error)
+        } finally {
+            setArtworksLoading(false)
         }
     }
 
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+    const onGetAuthors = async() => {
+
+        try {
+            setAuthorLoading(true)
+            let response = await axios.get(
+                'https://arkeologihariini.cyclic.app/litography/authors'
+                )
+            setAuthors(response.data?.data)
+        } 
+        catch (error) {
+            console.log(error)
+        } finally {
+            setAuthorLoading(false)
+        }
+    }
 
     useEffect(() => {
-        window.scrollTo(0, 0)
-        onGetData()
+        onGetAuthors()
     },[])
 
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/    
+    useEffect(() => {
+        onGetArtworks()
+    },[category, search])   
 
     const mapStory = () => {
 
-        return data.map((value, index) => {
+        return authors.map((value, index) => {
             
             return (
-                        <div className={orientation? "storyWrapper" : "landscapeStoryWrapper"} style={{position: "relative", display: "flex", flexDirection: "column", alignItems: "center"}}>
-                            <Link to={`profile/${data[index].category}`} className={orientation? "storyTest" : "landscapeStoryTest"} style={{backgroundImage: `url(${value.picture})`}}></Link>
-                            <p>{value.nickName}</p>
-                        </div>
+                        <Link 
+                            to={`profile/${value.id}`} 
+                            className="artists-story" key={index}
+                        >
+                            <div  
+                                className='artists-profile-picture'
+                                style={{backgroundImage: `url(${value.picture})`}}
+                            >
+                            </div>
+                            <div
+                                style={{display: "flex", 
+                                        flexDirection: "column",
+                                        width: "calc(100% - 67px)", 
+                                        gap: "2px"}}
+                            >
+                                <h4>
+                                    {value.nickname}
+                                </h4>
+                                <p className="proffession"> 
+                                    {value.proffession}
+                                </p>
+                            </div>
+                        </Link>
             )
         }) 
     }
-
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
     
     const mapContent = () => {
-
-        return data.length === 0? 
         
-        <LoadingBar/> :
-
-        data.map((value, index) => {
-             
+        return artworks.map((value, index) => {
             return (
-
-                value.workBatavia.map((v, i) => {
-                    return (
-
-                <div className="litografiImageWrapper" key={index + i} style={{padding: "0 0 1vw 0"}}>
-                    <div className= {orientation? "litografiImage" : "landscapeLitografiImage"} 
-                         style={{ borderRadius: "1%", backgroundImage: `url(${v.thumbnail})`, backgroundSize: "150% auto", backgroundPosition: "center center", cursor: "pointer"}}
-                         onClick={() => getModal(index, i)}></div>
-                    <div className={orientation? "caption" : "landscapeCaption"} style={{padding: "1vw 0 0 0", display: "flex", flexDirection: "column"}}>
-                            <Link to={`profile/${data[index].category}`} className="litografiAuthor"><h1>{value.author}</h1></Link>
-                            <div className="litografiTitle"><p>{v.title}</p></div>
-                    </div>
-                </div>
-                    )
-                })
+                <Content
+                    value={value}
+                    index={index}
+                    getModal={getModal}
+                    orientation={orientation}
+                />
             )
         })
     }
 
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+    const getModal = (index) => {
 
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-
-    const getModal = (parent, child) => {
-
-        setModal(data[parent].workBatavia[child])
+        setModal(artworks[index])
         setToggle(!toggle)
         }
 
@@ -116,84 +121,134 @@ const LitografiBatavia = () => {
         useEffect(() => {
         
             if (toggle) {
-              document.body.style.overflow = 'hidden'}
+                document.body.style.overflow = 'hidden'}
             else {
                 document.body.style.overflow = 'unset'}
-          }, [toggle])
+        }, [toggle])
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
     return (
-        <>
-            <Navbar/>
-            <div className="litografiBataviaMain" style={{padding: "0 0 20px 0"}}>
-                <div className={orientation? "story" : "landscapeStory"} style={{position: "relative", width: "95%", height: "fit-content", overflowX: "auto", overflowY: "hidden", zIndex: "11", scrollbarWidth: "none"}}>
-                    <div style={{position: "relative", width: "fit-content", height: "fit-content", display: "flex", flexDirection: "row", scrollbarWidth: "2px", whiteSpace: "nowrap" }}>
-                        {mapStory()}
+    <>    
+        <div className="layout-litografi-batavia">
+            <div className="navbar-litografi-batavia">
+                <div className="navigator-litografi-batavia">
+                    <h3 className="title-litografi-batavia">Litografi</h3>
+                    <div 
+                        style={{marginLeft: "10px",
+                                cursor: "pointer",
+                                fontWeight: "bold",
+                                display: "flex",
+                                alignItems: "center",
+                                height: "55px",
+                                borderBottom: `${category === "batavia" ? "2px solid black" : "2px solid transparent"}`}} 
+                        onClick={() => setCategory("batavia")}
+                    >
+                        <h5>Batavia</h5>
+                    </div>
+                    <div 
+                        style={{cursor: "pointer",
+                                fontWeight: "bold",
+                                display: "flex",
+                                alignItems: "center",
+                                height: "55px",
+                                borderBottom: `${!category? "2px solid black" : "2px solid transparent"}`}}
+                        onClick={() => setCategory("")}
+                    >
+                        <h5>All Collections</h5>
                     </div>
                 </div>
-                <div className={orientation? "litografiBataviaContainer" : "landscapeLitografiBataviaContainer"}>
-                    {mapContent()}
-                </div>
-                <div className={offSetY > 120? orientation? "scrollTopButton" : "landscapeScrollTopButton" : ""} 
-                     style={{position: "fixed",
-                             cursor: "pointer",
-                             opacity: "0",
-                             scale: "0", 
-                             backgroundImage: `url(${ScrollTopButton})`, 
-                             backgroundPosition: "center center", 
-                             backgroundSize: "100% auto"}}
-                     onClick={() => window.scrollTo(0, 0)}>
-                </div>
-            {toggle &&             
-                <div style={{position: "fixed", width: "100%", 
-                            height: "100vh", zIndex: "12", 
-                            top: 0, left: "0", right: "0", 
-                            bottom: "0", display: "flex", 
-                            justifyContent: "center", alignItems: "center"}}>
-                    <div className="modalOverlay" 
-                                    onClick={closeModal}
-                                    style={{position: "absolute",
-                                            top: "0",
-                                            bottom: "0",
-                                            left: "0",
-                                            right: "0",
-                                            backgroundColor: "rgba(0, 0, 0, .7)",
-                                            zIndex: "12"}}>
-                    </div>
-
-                <motion.div className={orientation? "litografiModal" : "landscapeLitografiModal"} 
-                     style={{position: "absolute", zIndex: "13"}}
-                     initial={{
-                        scale: 0
-                    }}
-                    animate={{
-                        scale: 1
-                    }}>
-                    <div className={orientation? "modalTitle" : "landscapeModalTitle"}>
-                        <div className="modalTitleWrapper">
-                            <h1>{modal.title}</h1>
-                        </div>
-                        <img onClick={closeModal} src={closeButton} style={{cursor: "pointer"}}/>
-                    </div>
-                    <div className={orientation? "test" : "landscapeTest"}>
-                        <div className={orientation? "modalImageContainer" : "landscapeModalImageContainer"}>
-                            <img src={modal.thumbnail}/>
-                        </div>
-                        <div className={orientation? "test2" : "landscapeTest2"}>
-                            <div className={orientation? "litografiSource" : "landscapeLitografiSource"}>
-                                <img src={MuseumLogo} alt="logo museum"/>
-                                <p><b>Publikasi </b>{modal.source}</p>
-                            </div>
-                            <div className={orientation? "modalContent" : "landscapeModalContent"}><p><b>{modal.author} </b>{modal.description}</p></div>
-                        </div>
-                    </div>
-                    
-                </motion.div>
-                </div>
-                }
+                <Link 
+                    to={"/"}
+                    className="back-home-litografi-batavia">
+                    <House size={22} color="white"/>
+                </Link>
             </div>
-        </>
+            {sideToggle && <div className="sidebar-overlay"></div>}
+            <div className="main-content-litografi">
+                <div className={`sidebar ${sideToggle ? "active" : ""}`}>
+                    <div 
+                        className='toggle-sidebar'
+                        onClick={() => setSideToggle(!sideToggle)}
+                        style={{width: "50px",
+                                height: "50px",
+                                zIndex: "3",
+                                position: "absolute",
+                                top: "calc(50% - 25px)",
+                                borderRadius: "50%",
+                                right: "-25px"}}
+                    >
+                        <CaretRight 
+                            style={{position: "absolute", 
+                                    top: "calc(50% - 10px)", 
+                                    left: "calc(100% - 25px"}} 
+                            size={20} 
+                            color='white' 
+                        />
+                        <CaretLeft 
+                            style={{position: "absolute", 
+                                    top: "calc(50% - 10px)", 
+                                    right: "calc(100% - 25px"}} 
+                            size={20} 
+                            color='white' 
+                        />
+                    </div>
+                    <div
+                        style={{display: "flex",
+                                gap: "10px",
+                                alignItems: "center",
+                                width: "calc(100% - 100px)",
+                                padding: "10px 50px 0 50px"}}  
+                    >
+                        <div
+                            style={{display: "flex",
+                                    gap: "10px",
+                                    width: "100%",
+                                    padding: "10px 0",
+                                    borderBottom: "1px solid #cccccc",
+                                    alignItems: "center"}}  
+                        >
+                            <PaintBrush size={25}/>
+                            <h3>Artists</h3>
+                        </div>
+                    </div>
+                    {
+                    authorLoading
+                    ? <LoadingBar size={25}/> 
+                    :<div className="story-litografi-batavia">
+                        { mapStory()}
+                    </div>
+                    }
+                </div>
+                <div className="content-container-litografi-batavia">
+                    <div className="searchbar-litografi-batavia">
+                        <div className="searchbar-container-litografi-batavia">
+                            <MagnifyingGlass size={20}/>
+                            <input
+                                type="text"
+                                onChange={(e) => setSearch(e.target.value)}
+                                placeholder="Search lithography"
+                                className="searchbar-input-litografi-batavia"
+                                style={{border: "none",
+                                        outline: "none",
+                                        width: "100%",
+                                        backgroundColor: "transparent",
+                                        height: "32px"}}
+                            />
+                        </div>
+                    </div>
+                    {
+                    artworksLoading
+                    ? <LoadingBar size={25}/> 
+                    :<div className="content-litografi-batavia">
+                        {mapContent()}
+                    </div>
+                    }
+                </div>
+            </div>
+            {toggle && <Modal closeModal={closeModal} modal={modal}/>}
+        </div>
+        </>    
     )
 }
 

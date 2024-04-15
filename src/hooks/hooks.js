@@ -12,7 +12,7 @@ export const useFetch = (url) => {
                 let response = await axios.get(
                     url
                     )
-                setData(response.data)
+                setData(response?.data?.data)
             } 
             catch (error) {
                 console.log('error')

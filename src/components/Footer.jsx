@@ -11,7 +11,7 @@ const Footer = () => {
         
             <div className="footer-container">
                 <div className="say-hi">
-                    <h3>Hubungi kami:</h3>
+                    <h3 style={{margin: "15px 0"}}>Hubungi kami:</h3>
                 </div>
                 <div className="social-media">
                     <a href="https://www.linkedin.com/in/archaeology-today-1a395928b/">

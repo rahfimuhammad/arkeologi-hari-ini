@@ -1,17 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-* {-webkit-tap-highlight-color: transparent;}
-
-a {
-    color: black;}
-
-a:visited {
-    color: black;}
-
-:root {
-    color-scheme: only light;}
-
 .prehistoricParallaxWrapperLandscape, .prehistoricParallaxContainer {
     width: 100%;
     position: relative;
@@ -126,7 +115,6 @@ a:visited {
     width: 100%;
     height: fit-content;
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;}
 
 .side-line-first {
@@ -144,7 +132,6 @@ a:visited {
     width: 22vw;
     height: fit-content;
     display: flex;
-    flex-direction: row;
     align-items: flex-start;}
 
 .line-wrap {
@@ -199,8 +186,7 @@ a:visited {
     position: relative;
     width: 100%;
     height: fit-content;
-    display: flex;
-    flex-direction: row;}
+    display: flex;}
 
 .content-container-second {
     margin-bottom: 12vw;}
@@ -234,8 +220,7 @@ a:visited {
     
 .btn-container, .btn-container-middle {
     height: fit-content;
-    display: flex;
-    flex-direction: row;}
+    display: flex;}
 
 .btn-container {
     width: 22vw;;}
@@ -248,7 +233,7 @@ a:visited {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;}
-  
+
 #years {
     width: 6vw;
     height: 3vw;
@@ -256,6 +241,7 @@ a:visited {
 
 #years p {
     font-size: 15px;
+    margin: 13px 1px;
     font-weight: bold;} 
     
 #btn:hover {
@@ -263,13 +249,11 @@ a:visited {
 
 /* Modal */
 
- .modal, .overlay {
+.modal, .overlay {
     width: 100%;
     height: 100vh;
     position: fixed;
     top: 0;
-    bottom: 0;
-    right: 0;
     left: 0;
     z-index: 13;}
 
@@ -296,31 +280,11 @@ a:visited {
 
 .modal-button {
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
     width: 15%;}
 
 .modal-button:hover {
     cursor: pointer;}
-
-#mdiv {
-    width: 25px;
-    height: 25px;}
-  
-.mdiv {
-    height: 25px;
-    width: 2px;
-    margin-left: 12px;
-    background-color: rgb(109, 106, 106);
-    transform: rotate(45deg);
-    Z-index: 1;}
-  
-.md {
-    height: 25px;
-    width: 2px;
-    background-color: rgb(109, 106, 106);
-    transform: rotate(90deg);
-    Z-index: 2;}
 
 .modal-image img {
     width: 100px;
@@ -329,13 +293,11 @@ a:visited {
 .modal-header {
     width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;}
 
 .modal-image {
     width: 18%;
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
     align-items: center;}
 
@@ -400,7 +362,7 @@ a:visited {
 
         .line-one, .line-two, .line-three, .line-four {
             width: 0.75vw;}
-                 
+
         .line-one {
             height: 109.75vw;}
         
@@ -480,19 +442,6 @@ a:visited {
                     border-radius: 10px;
                     width: 90%;
                     margin-top: 10%;}
-                    
-                #mdiv {
-                    width: 25px;
-                    height: 25px;}
-                    
-                .mdiv {
-                    height: 15px;
-                    width: 2px;
-                    margin-left: 12px;}
-                    
-                .md {
-                    height: 15px;
-                    width: 2px;}
                     
                 .modal-image img {
                     width: 55px;
