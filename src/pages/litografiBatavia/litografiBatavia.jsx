@@ -59,16 +59,18 @@ const LitografiBatavia = () => {
 
     useEffect(() => {
         onGetArtworks()
-    },[category, search])   
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [category, search])   
 
     const mapStory = () => {
 
-        return authors.map((value, index) => {
+        return authors.map((value) => {
             
             return (
                         <Link 
                             to={`profile/${value.id}`} 
-                            className="artists-story" key={index}
+                            className="artists-story" 
+                            key={value.id}
                         >
                             <div  
                                 className='artists-profile-picture'
@@ -98,10 +100,12 @@ const LitografiBatavia = () => {
         return artworks.map((value, index) => {
             return (
                 <Content
+                    type={'home'}
                     value={value}
                     index={index}
                     getModal={getModal}
                     orientation={orientation}
+                    key={index}
                 />
             )
         })
@@ -216,7 +220,7 @@ const LitografiBatavia = () => {
                     authorLoading
                     ? <LoadingBar size={25}/> 
                     :<div className="story-litografi-batavia">
-                        { mapStory()}
+                        {mapStory()}
                     </div>
                     }
                 </div>

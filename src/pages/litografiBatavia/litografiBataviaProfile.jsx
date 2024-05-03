@@ -30,7 +30,6 @@ const LitografiBataviaProfile = () => {
                 `https://arkeologihariini.cyclic.app/litography/artworkbyauthor/${id}?category=${category}`
                 )
             setDetail(response.data?.data?.artworks)
-            console.log(response.data?.data)
         } 
         catch (error) {
             console.log(error)
@@ -55,11 +54,12 @@ const LitografiBataviaProfile = () => {
     useEffect(() => {
         onGetArtwork()
         window.scrollTo(0, 0)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [category])
 
     useEffect(() => {
         onGetAuthor()
-        window.scrollTo(0, 0)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const getModal = (index) => {
@@ -85,10 +85,12 @@ const LitografiBataviaProfile = () => {
         return detail.map((value, index ) => {
             return (
                 <Content
+                    type={'profile'}
                     value={value}
                     index={index}
                     getModal={getModal}
                     orientation={orientation}
+                    key={index}
                 />
             )
         })

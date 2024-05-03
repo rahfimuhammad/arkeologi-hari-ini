@@ -2,7 +2,26 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { User, PaintBrushBroad } from 'phosphor-react'
 
-const Content = ({value, index, getModal, orientation}) => {
+const Content = ({value, index, getModal, orientation, type}) => {
+
+    const profileNavigtation = () => {
+        if(type === 'home') {
+            return (
+                <Link to={`profile/${value.litographyAuthorId}`} className="litografiAuthor">
+                    <User size={15} color="#212121"/>
+                    <h4>{value.litographyAuthor?.author}</h4>
+                </Link>
+            )
+        } else {
+            return (
+                <div className="litografiAuthor">
+                    <User size={15} color="#212121"/>
+                    <h4>{value.litographyAuthor?.author}</h4>
+                </div>
+            )
+        }
+    }
+    
     return (
             <div className="litografi-container">
                 <div  
@@ -21,10 +40,7 @@ const Content = ({value, index, getModal, orientation}) => {
                     style={{display: "flex", 
                             flexDirection: "column"}}
                 >
-                    <Link to={`profile/${value.litographyAuthorId}`} className="litografiAuthor">
-                        <User size={15} color="#212121"/>
-                        <h4>{value.litographyAuthor?.author}</h4>
-                    </Link>
+                    {profileNavigtation()}
                     <div className="litografiTitle">
                         <PaintBrushBroad size={15} color="#212121" />
                         <p>{value.title}</p>
