@@ -7,7 +7,7 @@ const Content = ({value, index, getModal, orientation, type}) => {
     const profileNavigtation = () => {
         if(type === 'home') {
             return (
-                <Link to={`profile/${value.litographyAuthorId}`} className="litografiAuthor" id='helloworld!!'>
+                <Link to={`profile/${value.litographyAuthorId}`} className="litografiAuthor" id='helloworld!'>
                     <User size={15} color="#212121"/>
                     <h4>{value.litographyAuthor?.author}</h4>
                 </Link>
