@@ -58,6 +58,6 @@
     "@babel/preset-flow": "^7.22.5",
     "@babel/preset-react": "^7.22.5",
     "@svgr/webpack": "^8.0.1",
-    "gh-pages": "^6.0.0"
+    "gh-pages": "^6.1.1"
   }
 }
