@@ -18,7 +18,7 @@ const Home = () => {
             <div className="home-container">
                 <div className="content-wrapper">
                     {/* <Link className="content" id="museumReview" to= "museum-list"></Link> */}
-                    {/* <Link className="content" id="traditionalBoatsOfIndonesia" to= "perahu-nusantara"></Link> */}
+                    <Link className="content" id="traditionalBoatsOfIndonesia" to= "perahu-nusantara"></Link>
                     <Link className="content" id="litografiBatavia" to= "litografi-batavia"></Link>
                     <Link className="content" id="borobudurInNumbers" to= "borobudur-dalam-angka"></Link>
                     <Link className="content" id="prehistoricOfIndonesia" to= "prasejarah-indonesia"></Link>

@@ -11,7 +11,7 @@ import JsonData from "../../database/db.json"
 const TraditionalBoatsOfIndonesia = () => {
 
     const orientation = useDetect()
-    const data = useFetch("https://prehistoric.cyclic.app//traditionalBoats")
+    const data = useFetch("https://arkeologihariini.cyclic.app/boats")
     const [currentIndex, setCurrentIndex] = useState(0);
     const sliderRef = useRef(null);
     const [toggle, setToggle] = useState(false)
@@ -92,7 +92,7 @@ const TraditionalBoatsOfIndonesia = () => {
                                     <div className={orientation? "boatsTitle" : "boatsTitleLandscape"}><h2>{value.name}</h2></div>
                                     <div className="boatsLine" style={{padding: orientation? "0 3vw" : "0 1vw"}}></div>
                                     <div className={orientation? "boatsSummary" : "boatsSummaryLandscape"}>
-                                        <p style={{textAlign: "justify", display: orientation? "" : "none"}}>{value.summary} <span style={{cursor: "pointer"}} onClick={() => getModal(index)}><b><u>selengkapnya...</u></b></span></p>
+                                        <p style={{textAlign: "justify", display: orientation? "" : "none"}}>{orientation? value.description.slice(0, 175) : value.description} <span style={{cursor: "pointer"}} onClick={() => getModal(index)}><b><u>selengkapnya...</u></b></span></p>
                                         <p style={{textAlign: "justify", display: orientation? "none" : ""}}>{value.description}</p>
                                     </div>
                                 </div>
