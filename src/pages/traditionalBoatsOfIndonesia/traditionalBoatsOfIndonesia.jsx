@@ -11,7 +11,7 @@ import JsonData from "../../database/db.json"
 const TraditionalBoatsOfIndonesia = () => {
 
     const orientation = useDetect()
-    const data = useFetch("https://arkeologihariini.cyclic.app/boats")
+    const data = useFetch("https://ark-server-c6b26987c576.herokuapp.com/boats")
     const [currentIndex, setCurrentIndex] = useState(0);
     const sliderRef = useRef(null);
     const [toggle, setToggle] = useState(false)
@@ -21,59 +21,59 @@ const TraditionalBoatsOfIndonesia = () => {
 
     useEffect(() => {
 
-        const handleScroll = () => {
-                   
-            const scrollXValue = sliderRef.current.scrollLeft;
-                return  setTrigger(scrollXValue)};
+    const handleScroll = () => {
+        const scrollXValue = sliderRef.current.scrollLeft;
+            return  setTrigger(scrollXValue)
+    };
                 
-                sliderRef.current.addEventListener('scroll', handleScroll);}, []);
+        sliderRef.current.addEventListener('scroll', handleScroll);}, []);
 
     const handleNext = () => {
             
-            const newIndex = sliderRef.current.scrollLeft + sliderRef.current.offsetWidth ;
+        const newIndex = sliderRef.current.scrollLeft + sliderRef.current.offsetWidth ;
             setCurrentIndex(newIndex);
             snapToSlide(newIndex);
-                         };
-                      
+    };
+            
     const handlePrev = () => {
                         
-            const newIndex = sliderRef.current.scrollLeft - sliderRef.current.offsetWidth ;
+        const newIndex = sliderRef.current.scrollLeft - sliderRef.current.offsetWidth ;
             setCurrentIndex(newIndex);
             snapToSlide(newIndex);
-                         };
-                      
+    };
+    
     const snapToSlide = (key) => {
-                           
-            sliderRef.current.scrollTo({
+            
+        sliderRef.current.scrollTo({
                 left: key,
                 behavior: 'smooth'});
-                };
+    };
 
     useEffect(() => {
             
         setTrigger(sliderRef.current.scrollLeft)
                                     
-                },[])
+    },[])
 
     const getModal = (index) => {
 
         setModal(data[index])
         setToggle(!toggle)
-        }
+    }
 
     let closeModal = () => {
         setModal([])
         setToggle(!toggle)
-        }
+    }
 
     const getGlosarium = () => {
         
         setGlosariumToggle(!glosariumToggle)
-        }
+    }
 
     let closeGlosarium = () => {
         setGlosariumToggle(!glosariumToggle)
-        }
+    }
 
     useEffect(() => {
         
@@ -118,16 +118,16 @@ const TraditionalBoatsOfIndonesia = () => {
                 {glosariumToggle && <div onClick={closeGlosarium} style={{position: "absolute", width: "100vw", height: "100vh", zIndex: "16", top: "0", left: "0", backgroundColor: "rgb(0, 0, 0, 0.8)", overflow: "hidden"}}><div className="glosariumContainer" style={{backgroundColor: "rgba(255, 255, 255, .8)", padding: "3vw 0", overflowY: "auto", height: "50vh", overflowX: "hidden"}}><JsonDisplay data={JsonData}/></div></div>}
                 <div className="buttonContainer" style={{display:"flex", flexDirection: "row",justifyContent: "space-between", position: "absolute", zIndex:"12", bottom: "5vh", right: "5%", width: "30vw", height: "5vw"}}>
                     <div onClick={handlePrev} className="prevButtonContainer"  id={orientation || trigger < window.innerWidth? "buttonContainerFalse" : "buttonContainerTrue"} style={{display:"flex", justifyContent: "center", alignItems: "center", width: "14vw", height: "100%", cursor: "pointer", border: "2px solid rgb(48, 67, 89)"}}>
-                         <div className="prevButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "1px solid #2c363b"}}>
-                             <h3 className="boatsImageSourceLandscape" style={{position: "static", color: "#2c363b"}}>prev</h3>
-                         </div>
-                     </div>
-                     <div onClick={handleNext} type="button" className="nextButtonContainer" id={orientation || trigger < window.innerWidth? "buttonContainerFalse" : "buttonContainerTrue"} style={{display: currentIndex < 0? "none" : "flex", justifyContent: "center", alignItems: "center", width: "14vw", height: "100%", cursor: "pointer", border: "2px solid rgb(48, 67, 89)"}}>
-                         <div className="nextButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "1px solid #2c363b"}}>
-                             <h3 className="boatsImageSourceLandscape" style={{position: "static", color: "#2c363b"}}>next</h3>
-                         </div>
-                     </div>
-                 </div>
+                        <div className="prevButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "1px solid #2c363b"}}>
+                            <h3 className="boatsImageSourceLandscape" style={{position: "static", color: "#2c363b"}}>prev</h3>
+                        </div>
+                    </div>
+                    <div onClick={handleNext} type="button" className="nextButtonContainer" id={orientation || trigger < window.innerWidth? "buttonContainerFalse" : "buttonContainerTrue"} style={{display: currentIndex < 0? "none" : "flex", justifyContent: "center", alignItems: "center", width: "14vw", height: "100%", cursor: "pointer", border: "2px solid rgb(48, 67, 89)"}}>
+                        <div className="nextButton" style={{display: "flex", justifyContent: "center", alignItems: "center", width: "12.5vw", height: "3.5vw", border: "1px solid #2c363b"}}>
+                            <h3 className="boatsImageSourceLandscape" style={{position: "static", color: "#2c363b"}}>next</h3>
+                        </div>
+                    </div>
+                </div>
                 <div className="scroller snapsInline" style={{backgroundColor: "#2c363b", backgroundImage: `url(${Grid})`, backgroundRepeat: "repeat"}} ref={sliderRef}>
                     <div className="boatsContentContainer">
                         <div className="coverWrapper" style={{width: "100vw", height: "100vh", zIndex: "14", position: "absolute"}}>
@@ -140,8 +140,8 @@ const TraditionalBoatsOfIndonesia = () => {
                                     </div>
                                 </div>
                             </div>
-                         </div>
-                     </div>       
+                        </div>
+                    </div>       
                     {mapContent()}      
                 </div>
                 {toggle && <div className="boatsModalContainer" onClick={closeModal} style={{display: orientation? "flex" : "none", position: "absolute", zIndex: "16", top: "0", left: "0", width: "100%", height: "100vh", backgroundColor: "rgb(0, 0, 0, 0.8)"}}>

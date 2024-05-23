@@ -26,7 +26,7 @@ const LitografiBatavia = () => {
         try {
             setArtworksLoading(true)
             let response = await axios.get(
-                `https://arkeologihariini.cyclic.app/litography/artwork?category=${category}&search=${search}`
+                `https://ark-server-c6b26987c576.herokuapp.com/litography/artwork?category=${category}&search=${search}`
                 )
             setArtworks(response.data?.data?.artworks)
         } 
@@ -42,7 +42,7 @@ const LitografiBatavia = () => {
         try {
             setAuthorLoading(true)
             let response = await axios.get(
-                'https://arkeologihariini.cyclic.app/litography/authors'
+                'https://ark-server-c6b26987c576.herokuapp.com/litography/authors'
                 )
             setAuthors(response.data?.data)
         } 

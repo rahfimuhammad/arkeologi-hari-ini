@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/arkeologi-hari-ini/static/css/main.2f025849.css",
-    "main.js": "/arkeologi-hari-ini/static/js/main.10fa6eed.js",
+    "main.js": "/arkeologi-hari-ini/static/js/main.441aa721.js",
     "static/css/696.2dc3d2ab.chunk.css": "/arkeologi-hari-ini/static/css/696.2dc3d2ab.chunk.css",
     "static/js/696.00b7d405.chunk.js": "/arkeologi-hari-ini/static/js/696.00b7d405.chunk.js",
     "static/css/784.8f0a667c.chunk.css": "/arkeologi-hari-ini/static/css/784.8f0a667c.chunk.css",
@@ -11,7 +11,7 @@
     "static/css/71.f9fff238.chunk.css": "/arkeologi-hari-ini/static/css/71.f9fff238.chunk.css",
     "static/js/71.4aa5c47a.chunk.js": "/arkeologi-hari-ini/static/js/71.4aa5c47a.chunk.js",
     "static/css/201.50bcd65d.chunk.css": "/arkeologi-hari-ini/static/css/201.50bcd65d.chunk.css",
-    "static/js/201.0755e236.chunk.js": "/arkeologi-hari-ini/static/js/201.0755e236.chunk.js",
+    "static/js/201.1990584c.chunk.js": "/arkeologi-hari-ini/static/js/201.1990584c.chunk.js",
     "static/css/863.8a9a6499.chunk.css": "/arkeologi-hari-ini/static/css/863.8a9a6499.chunk.css",
     "static/js/863.c535ac8d.chunk.js": "/arkeologi-hari-ini/static/js/863.c535ac8d.chunk.js",
     "static/css/930.8a9a6499.chunk.css": "/arkeologi-hari-ini/static/css/930.8a9a6499.chunk.css",
@@ -44,7 +44,7 @@
     "static/media/trb-Grid.svg": "/arkeologi-hari-ini/static/media/trb-Grid.44573756f759d27e31918bdd9c1ce2b6.svg",
     "static/media/icon-closeButton.svg": "/arkeologi-hari-ini/static/media/icon-closeButton.98588f058bfcda3b0d3a9d415723ee95.svg",
     "main.2f025849.css.map": "/arkeologi-hari-ini/static/css/main.2f025849.css.map",
-    "main.10fa6eed.js.map": "/arkeologi-hari-ini/static/js/main.10fa6eed.js.map",
+    "main.441aa721.js.map": "/arkeologi-hari-ini/static/js/main.441aa721.js.map",
     "696.2dc3d2ab.chunk.css.map": "/arkeologi-hari-ini/static/css/696.2dc3d2ab.chunk.css.map",
     "696.00b7d405.chunk.js.map": "/arkeologi-hari-ini/static/js/696.00b7d405.chunk.js.map",
     "784.8f0a667c.chunk.css.map": "/arkeologi-hari-ini/static/css/784.8f0a667c.chunk.css.map",
@@ -54,7 +54,7 @@
     "71.f9fff238.chunk.css.map": "/arkeologi-hari-ini/static/css/71.f9fff238.chunk.css.map",
     "71.4aa5c47a.chunk.js.map": "/arkeologi-hari-ini/static/js/71.4aa5c47a.chunk.js.map",
     "201.50bcd65d.chunk.css.map": "/arkeologi-hari-ini/static/css/201.50bcd65d.chunk.css.map",
-    "201.0755e236.chunk.js.map": "/arkeologi-hari-ini/static/js/201.0755e236.chunk.js.map",
+    "201.1990584c.chunk.js.map": "/arkeologi-hari-ini/static/js/201.1990584c.chunk.js.map",
     "863.8a9a6499.chunk.css.map": "/arkeologi-hari-ini/static/css/863.8a9a6499.chunk.css.map",
     "863.c535ac8d.chunk.js.map": "/arkeologi-hari-ini/static/js/863.c535ac8d.chunk.js.map",
     "930.8a9a6499.chunk.css.map": "/arkeologi-hari-ini/static/css/930.8a9a6499.chunk.css.map",
@@ -67,6 +67,6 @@
   },
   "entrypoints": [
     "static/css/main.2f025849.css",
-    "static/js/main.10fa6eed.js"
+    "static/js/main.441aa721.js"
   ]
 }
