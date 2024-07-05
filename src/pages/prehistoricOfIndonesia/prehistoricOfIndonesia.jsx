@@ -10,7 +10,7 @@ import { X } from "phosphor-react";
 const PrehistoricOfIndonesia = () => {
 
     const [offSetY, setOffSetY] = useState(0)
-    const data = useFetch("https://ark-server-c6b26987c576.herokuapp.com/prehistoric")
+    const data = useFetch("https://ark-hari-ini-api.onrender.com/prehistoric")
     const [description, setDescription] = useState([])
     const [modal, setModal] = useState(false)
     const orientation = useDetect()

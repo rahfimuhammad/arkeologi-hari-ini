@@ -11,7 +11,7 @@ import JsonData from "../../database/db.json"
 const TraditionalBoatsOfIndonesia = () => {
 
     const orientation = useDetect()
-    const data = useFetch("https://ark-server-c6b26987c576.herokuapp.com/boats")
+    const data = useFetch("https://ark-hari-ini-api.onrender.com/boats")
     const [currentIndex, setCurrentIndex] = useState(0);
     const sliderRef = useRef(null);
     const [toggle, setToggle] = useState(false)
