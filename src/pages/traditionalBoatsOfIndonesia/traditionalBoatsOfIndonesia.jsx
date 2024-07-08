@@ -7,11 +7,12 @@ import Grid from "../../assets/trb-Grid.svg"
 import Glosarium from "../../assets/Glosarium.svg"
 import JsonDisplay from "../../components/JsonDisplay";
 import JsonData from "../../database/db.json"
+import LoadingBar from "../../components/loading/LoadingBar"
 
 const TraditionalBoatsOfIndonesia = () => {
 
     const orientation = useDetect()
-    const data = useFetch("https://ark-hari-ini-api.onrender.com/boats")
+    const { data, loading } = useFetch("https://ark-hari-ini-api.onrender.com/boats")
     const [currentIndex, setCurrentIndex] = useState(0);
     const sliderRef = useRef(null);
     const [toggle, setToggle] = useState(false)
@@ -111,6 +112,23 @@ const TraditionalBoatsOfIndonesia = () => {
     return (
         <>
             <div className="mainBoatsContainer">
+            {loading? 
+                    <div
+                        style={{
+                            position: "absolute",
+                            backgroundColor: "rgba(0, 0, 0, 0.5)",
+                            top: "0",
+                            left: "0",
+                            zIndex: "9999",
+                            width: "100%",
+                            height: "100vh",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
+                        <LoadingBar/>
+                    </div> : null}
                 <div style={{position: "fixed", zIndex: "15"}}>
                     <Navbar/>
                 </div>

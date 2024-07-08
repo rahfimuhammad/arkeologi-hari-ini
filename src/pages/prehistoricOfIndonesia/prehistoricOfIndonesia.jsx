@@ -5,12 +5,13 @@ import Navbar from "../../components/Navbar"
 import ScrollIcon from "../../assets/icon-scrollIcon.png"
 import { useFetch, useDetect } from "../../hooks/hooks";
 import { X } from "phosphor-react";
+import LoadingBar from "../../components/loading/LoadingBar";
 
 
 const PrehistoricOfIndonesia = () => {
 
     const [offSetY, setOffSetY] = useState(0)
-    const data = useFetch("https://ark-hari-ini-api.onrender.com/prehistoric")
+    const { data, loading } = useFetch("https://ark-hari-ini-api.onrender.com/prehistoric")
     const [description, setDescription] = useState([])
     const [modal, setModal] = useState(false)
     const orientation = useDetect()
@@ -64,12 +65,29 @@ const PrehistoricOfIndonesia = () => {
     // onModalActive
 
     useEffect(() => {
-        modal? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset'
-    }, [modal])
+        modal || loading? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset'
+    }, [modal, loading])
 
     return (
             <>
                 <Navbar/>
+                {loading? 
+                    <div
+                        style={{
+                            position: "absolute",
+                            backgroundColor: "rgba(0, 0, 0, 0.5)",
+                            top: "0",
+                            left: "0",
+                            zIndex: "9999",
+                            width: "100%",
+                            height: "100vh",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
+                        <LoadingBar/>
+                    </div> : null}
                 <div className="prehistoricParallaxContainer">
                     <div className={orientation? "prehistoricParallaxWrapperPortrait" : "prehistoricParallaxWrapperLandscape"} >
                         {parallaxSourceMap}

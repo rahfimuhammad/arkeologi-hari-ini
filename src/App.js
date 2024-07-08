@@ -10,6 +10,7 @@ const LitografiBataviaProfile = lazy(() => import ("./pages/litografiBatavia/lit
 const TraditionalBoatsOfIndonesia = lazy(() => import ("./pages/traditionalBoatsOfIndonesia/traditionalBoatsOfIndonesia.jsx"))
 const MuseumListPage = lazy(() => import ("./pages/museumReview/museumListPage.jsx"))
 const ReviewMuseumPage = lazy(() => import ("./pages/museumReview/reviewMuseumPage.jsx"))
+const ErrorPage = lazy(() => import ("./pages/errorPage.jsx"))
 
 function App() {
 
@@ -18,13 +19,14 @@ function App() {
       <Suspense fallback={<LoadingBar size={25} height="100vh"/>}>
         <Routes>
             <Route  path="/" element={ <Home/> }/>
-              <Route  path="prasejarah-indonesia" element= {<PrehistoricOfIndonesia />} />
-              <Route  path="litografi-batavia" element= {<LitografiBatavia />}/>
-              <Route  path= "litografi-batavia/profile/:id" element= {<LitografiBataviaProfile />}/>
-              <Route  path="borobudur-dalam-angka" element= {<BorobudurInNumbers />} />
-              <Route  path="perahu-nusantara" element= {<TraditionalBoatsOfIndonesia />} />
-              <Route  path="museum-list" element= {<MuseumListPage />} />
+              <Route path="prasejarah-indonesia" element= {<PrehistoricOfIndonesia />} />
+              <Route path="litografi-batavia" element= {<LitografiBatavia />}/>
+              <Route path= "litografi-batavia/profile/:id" element= {<LitografiBataviaProfile />}/>
+              <Route path="borobudur-dalam-angka" element= {<BorobudurInNumbers />} />
+              <Route path="perahu-nusantara" element= {<TraditionalBoatsOfIndonesia />} />
+              <Route path="museum-list" element= {<MuseumListPage />} />
               <Route path="museum-list/review-museum/:id" element= {<ReviewMuseumPage />} />
+              <Route path="error" element={<ErrorPage />}/>
             <Route/>
         </Routes>
       </Suspense>

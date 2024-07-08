@@ -1,28 +1,35 @@
 import axios from "axios"
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom";
 
 export const useFetch = (url) => {
     
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate()
     
     useEffect(() => {
         const fetchData = async() => {
 
             try {
+                setLoading(true)
                 let response = await axios.get(
                     url
                     )
                 setData(response?.data?.data)
             } 
             catch (error) {
-                console.log('error')
+                navigate('/error')
+            } finally {
+                setLoading(false)
             }
         }
-      fetchData();
+    fetchData();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [url]);
     
-    return data;
+    return {data, loading};
     };
 
 export const useDetect = () => {
