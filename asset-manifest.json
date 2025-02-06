@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/arkeologi-hari-ini/static/css/main.2f025849.css",
-    "main.js": "/arkeologi-hari-ini/static/js/main.01ea988e.js",
+    "main.js": "/arkeologi-hari-ini/static/js/main.dd0bb0d2.js",
     "static/css/696.2dc3d2ab.chunk.css": "/arkeologi-hari-ini/static/css/696.2dc3d2ab.chunk.css",
     "static/js/696.fff422c2.chunk.js": "/arkeologi-hari-ini/static/js/696.fff422c2.chunk.js",
     "static/css/784.8f0a667c.chunk.css": "/arkeologi-hari-ini/static/css/784.8f0a667c.chunk.css",
@@ -11,7 +11,7 @@
     "static/css/71.f9fff238.chunk.css": "/arkeologi-hari-ini/static/css/71.f9fff238.chunk.css",
     "static/js/71.469bc3e9.chunk.js": "/arkeologi-hari-ini/static/js/71.469bc3e9.chunk.js",
     "static/css/201.50bcd65d.chunk.css": "/arkeologi-hari-ini/static/css/201.50bcd65d.chunk.css",
-    "static/js/201.b42e947a.chunk.js": "/arkeologi-hari-ini/static/js/201.b42e947a.chunk.js",
+    "static/js/201.fc6ea4e5.chunk.js": "/arkeologi-hari-ini/static/js/201.fc6ea4e5.chunk.js",
     "static/css/863.8a9a6499.chunk.css": "/arkeologi-hari-ini/static/css/863.8a9a6499.chunk.css",
     "static/js/863.c535ac8d.chunk.js": "/arkeologi-hari-ini/static/js/863.c535ac8d.chunk.js",
     "static/css/930.8a9a6499.chunk.css": "/arkeologi-hari-ini/static/css/930.8a9a6499.chunk.css",
@@ -21,7 +21,7 @@
     "static/js/384.ca433fe0.chunk.js": "/arkeologi-hari-ini/static/js/384.ca433fe0.chunk.js",
     "static/js/730.8b2bb7de.chunk.js": "/arkeologi-hari-ini/static/js/730.8b2bb7de.chunk.js",
     "static/js/135.06cf3d42.chunk.js": "/arkeologi-hari-ini/static/js/135.06cf3d42.chunk.js",
-    "static/js/31.4df1ed10.chunk.js": "/arkeologi-hari-ini/static/js/31.4df1ed10.chunk.js",
+    "static/js/31.a390ba9e.chunk.js": "/arkeologi-hari-ini/static/js/31.a390ba9e.chunk.js",
     "static/media/brb-BorobudurCover.png": "/arkeologi-hari-ini/static/media/brb-BorobudurCover.42fb5248993426428147.png",
     "static/media/hmpg-prehistoricOfIndonesia.png": "/arkeologi-hari-ini/static/media/hmpg-prehistoricOfIndonesia.8667ca5dc1aafb5d34dd.png",
     "static/media/hmpg-borobudurInNumbers.png": "/arkeologi-hari-ini/static/media/hmpg-borobudurInNumbers.70e9a9a5f9c024625cc2.png",
@@ -46,7 +46,7 @@
     "static/media/trb-Grid.svg": "/arkeologi-hari-ini/static/media/trb-Grid.44573756f759d27e31918bdd9c1ce2b6.svg",
     "static/media/icon-closeButton.svg": "/arkeologi-hari-ini/static/media/icon-closeButton.98588f058bfcda3b0d3a9d415723ee95.svg",
     "main.2f025849.css.map": "/arkeologi-hari-ini/static/css/main.2f025849.css.map",
-    "main.01ea988e.js.map": "/arkeologi-hari-ini/static/js/main.01ea988e.js.map",
+    "main.dd0bb0d2.js.map": "/arkeologi-hari-ini/static/js/main.dd0bb0d2.js.map",
     "696.2dc3d2ab.chunk.css.map": "/arkeologi-hari-ini/static/css/696.2dc3d2ab.chunk.css.map",
     "696.fff422c2.chunk.js.map": "/arkeologi-hari-ini/static/js/696.fff422c2.chunk.js.map",
     "784.8f0a667c.chunk.css.map": "/arkeologi-hari-ini/static/css/784.8f0a667c.chunk.css.map",
@@ -56,7 +56,7 @@
     "71.f9fff238.chunk.css.map": "/arkeologi-hari-ini/static/css/71.f9fff238.chunk.css.map",
     "71.469bc3e9.chunk.js.map": "/arkeologi-hari-ini/static/js/71.469bc3e9.chunk.js.map",
     "201.50bcd65d.chunk.css.map": "/arkeologi-hari-ini/static/css/201.50bcd65d.chunk.css.map",
-    "201.b42e947a.chunk.js.map": "/arkeologi-hari-ini/static/js/201.b42e947a.chunk.js.map",
+    "201.fc6ea4e5.chunk.js.map": "/arkeologi-hari-ini/static/js/201.fc6ea4e5.chunk.js.map",
     "863.8a9a6499.chunk.css.map": "/arkeologi-hari-ini/static/css/863.8a9a6499.chunk.css.map",
     "863.c535ac8d.chunk.js.map": "/arkeologi-hari-ini/static/js/863.c535ac8d.chunk.js.map",
     "930.8a9a6499.chunk.css.map": "/arkeologi-hari-ini/static/css/930.8a9a6499.chunk.css.map",
@@ -66,10 +66,10 @@
     "384.ca433fe0.chunk.js.map": "/arkeologi-hari-ini/static/js/384.ca433fe0.chunk.js.map",
     "730.8b2bb7de.chunk.js.map": "/arkeologi-hari-ini/static/js/730.8b2bb7de.chunk.js.map",
     "135.06cf3d42.chunk.js.map": "/arkeologi-hari-ini/static/js/135.06cf3d42.chunk.js.map",
-    "31.4df1ed10.chunk.js.map": "/arkeologi-hari-ini/static/js/31.4df1ed10.chunk.js.map"
+    "31.a390ba9e.chunk.js.map": "/arkeologi-hari-ini/static/js/31.a390ba9e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2f025849.css",
-    "static/js/main.01ea988e.js"
+    "static/js/main.dd0bb0d2.js"
   ]
 }
