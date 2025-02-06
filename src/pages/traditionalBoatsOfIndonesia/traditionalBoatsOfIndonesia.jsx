@@ -12,7 +12,7 @@ import LoadingBar from "../../components/loading/LoadingBar"
 const TraditionalBoatsOfIndonesia = () => {
 
     const orientation = useDetect()
-    const { data, loading } = useFetch("https://ark-hari-ini-api.onrender.com/boats")
+    const { data, loading } = useFetch("http://localhost:2000/boats")
     const [currentIndex, setCurrentIndex] = useState(0);
     const sliderRef = useRef(null);
     const [toggle, setToggle] = useState(false)

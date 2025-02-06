@@ -27,6 +27,7 @@ const LitografiBataviaProfile = () => {
         try {
             setArtworksLoading(true)
             let response = await axios.get(
+                // `http://localhost:2000/litography/artworkbyauthor/${id}?category=${category}`
                 `https://ark-hari-ini-api.onrender.com/litography/artworkbyauthor/${id}?category=${category}`
                 )
             setDetail(response.data?.data?.artworks)
@@ -43,6 +44,7 @@ const LitografiBataviaProfile = () => {
         try {
             let response = await axios.get(
                 `https://ark-hari-ini-api.onrender.com/litography/author/${id}`
+                // `http://localhost:2000/litography/author/${id}`
                 )
             setAuthor(response.data?.data)
         } 

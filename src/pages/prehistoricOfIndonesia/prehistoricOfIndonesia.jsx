@@ -12,6 +12,7 @@ const PrehistoricOfIndonesia = () => {
 
     const [offSetY, setOffSetY] = useState(0)
     const { data, loading } = useFetch("https://ark-hari-ini-api.onrender.com/prehistoric")
+    // const { data, loading } = useFetch("http://localhost:2000/prehistoric")
     const [description, setDescription] = useState([])
     const [modal, setModal] = useState(false)
     const orientation = useDetect()

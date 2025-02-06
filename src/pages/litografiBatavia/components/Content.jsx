@@ -9,14 +9,14 @@ const Content = ({value, index, getModal, orientation, type}) => {
             return (
                 <Link to={`profile/${value.litographyAuthorId}`} className="litografiAuthor" id='helloworld!'>
                     <User size={15} color="#212121"/>
-                    <h4>{value.litographyAuthor?.author}</h4>
+                    <h4>{value.litographyauthor?.author}</h4>
                 </Link>
             )
         } else {
             return (
                 <div className="litografiAuthor">
                     <User size={15} color="#212121"/>
-                    <h4>{value.litographyAuthor?.author}</h4>
+                    <h4>{value.litographyauthor?.author}</h4>
                 </div>
             )
         }
